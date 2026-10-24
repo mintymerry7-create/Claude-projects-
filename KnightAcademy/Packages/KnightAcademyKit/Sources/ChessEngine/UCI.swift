@@ -156,7 +156,33 @@ public actor UCIEngine: ChessEngine {
         }
         for (k, v) in startupOptions { await transport.send(.setoption(name: k, value: v)) }
         started = true
+        try await resync()
+    }
+
+    /// Re-synchronises with the engine: stops any search, discards buffered
+    /// output and waits for a fresh readyok. Transports may deliver output
+    /// out of order (ChessKitEngine yields each response from its own Task),
+    /// so stale lines are drained after a short settle delay.
+    private func resync() async throws {
+        await transport.send(.stop)
+        try await Task.sleep(nanoseconds: 120_000_000)
+        await queue.drain()
         try await sync()
+        needsResync = false
+    }
+
+    // Searches are serialised; the actor is re-entrant across awaits.
+    private var busy = false
+    private var waiters: [CheckedContinuation<Void, Never>] = []
+    private var needsResync = false
+
+    private func acquire() async {
+        if !busy { busy = true; return }
+        await withCheckedContinuation { waiters.append($0) }
+    }
+
+    private func release() {
+        if waiters.isEmpty { busy = false } else { waiters.removeFirst().resume() }
     }
 
     /// Waits for a message matching `predicate`, with a timeout.
@@ -191,7 +217,10 @@ public actor UCIEngine: ChessEngine {
     public func search(_ request: SearchRequest) async throws -> SearchResult {
         let legal = request.position.legalMoves()
         guard !legal.isEmpty else { throw EngineError.noLegalMoves }
+        await acquire()
+        defer { release() }
         try await ensureStarted()
+        if needsResync { try await resync() }
 
         let skill = request.skillLevel.map { max(0, min(20, $0)) } ?? 20
         if skill != currentSkill {
@@ -230,7 +259,11 @@ public actor UCIEngine: ChessEngine {
             best = mv
         } catch is CancellationError {
             await transport.send(.stop)
+            needsResync = true
             throw EngineError.cancelled
+        } catch {
+            needsResync = true
+            throw error
         }
         let sorted = lines.values.sorted { $0.multipv < $1.multipv }
         return SearchResult(bestMove: best, lines: sorted)
@@ -285,6 +318,12 @@ actor LineQueue {
             waiter = nil
             w.1.resume(returning: nil)
         }
+    }
+
+    /// Discards buffered lines.
+    func drain() {
+        lines.removeAll()
+        head = 0
     }
 
     func next(timeout: TimeInterval) async -> String? {

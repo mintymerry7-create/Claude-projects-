@@ -149,7 +149,7 @@ public struct GameAnalyzer: Sendable {
         }
     }
 
-    static func sanLine(_ moves: [Move], from start: Position, limit: Int = 6) -> [String] {
+    public static func sanLine(_ moves: [Move], from start: Position, limit: Int = 6) -> [String] {
         var p = start
         var out: [String] = []
         for m in moves.prefix(limit) {

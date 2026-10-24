@@ -1,0 +1,71 @@
+# XcodeGen spec. The generated KnightAcademy.xcodeproj is committed; regenerate
+# with `xcodegen generate` after adding or removing files.
+name: KnightAcademy
+options:
+  bundleIdPrefix: app.knightacademy
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  developmentLanguage: en
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+packages:
+  KnightAcademyKit:
+    path: Packages/KnightAcademyKit
+  ChessKitEngine:
+    url: https://github.com/chesskit-app/chesskit-engine
+    from: "0.6.0"
+targets:
+  KnightAcademy:
+    type: application
+    platform: iOS
+    sources:
+      - path: App/KnightAcademy
+        excludes:
+          - "Resources/EngineNets"
+      - path: App/KnightAcademy/Resources/EngineNets
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - package: KnightAcademyKit
+        product: KnightAcademyKit
+      - package: ChessKitEngine
+        product: ChessKitEngine
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.knightacademy.ios
+        PRODUCT_NAME: KnightAcademy
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Knight Academy
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.education
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: YES
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: ""
+schemes:
+  KnightAcademy:
+    build:
+      targets:
+        KnightAcademy: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - package: KnightAcademyKit/ChessCoreTests
+        - package: KnightAcademyKit/ChessEngineTests
+        - package: KnightAcademyKit/OpeningDatabaseTests
+        - package: KnightAcademyKit/LearningTests
+        - package: KnightAcademyKit/AppFeaturesTests
+    archive:
+      config: Release

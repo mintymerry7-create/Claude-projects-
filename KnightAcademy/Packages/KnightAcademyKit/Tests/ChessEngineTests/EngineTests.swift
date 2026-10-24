@@ -189,5 +189,23 @@ final class StockfishUCITests: XCTestCase {
         XCTAssertEqual(analysis.moves[5].classification, .blunder)
         XCTAssertEqual(analysis.moves[4].classification == .blunder || analysis.moves[4].classification == .mistake, false)
     }
+
+    func testCancelledSearchDoesNotLeakIntoNextOne() async throws {
+        guard let url = stockfishURL() else { throw XCTSkip("Stockfish binary not installed") }
+        let engine = UCIEngine(name: "Stockfish", transport: ProcessUCITransport(executable: url), options: [("Threads", "1")])
+        defer { Task { await engine.shutdown() } }
+        let long = Task { try await engine.search(SearchRequest(position: .start, limit: .time(5_000))) }
+        try await Task.sleep(nanoseconds: 300_000_000)
+        long.cancel()
+        _ = try? await long.value
+        let r = try await engine.search(SearchRequest(position: try Position(fen: "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1"), limit: .depth(6)))
+        XCTAssertEqual(r.bestMove.uci, "a1a8")
+        // Concurrent requests are serialised.
+        async let a = engine.search(SearchRequest(position: .start, limit: .depth(6)))
+        async let b = engine.search(SearchRequest(position: try Position(fen: "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1"), limit: .depth(6)))
+        let (ra, rb) = try await (a, b)
+        XCTAssertTrue(Position.start.isLegal(ra.bestMove))
+        XCTAssertEqual(rb.bestMove.uci, "a1a8")
+    }
     #endif
 }

@@ -1,0 +1,558 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		009752E5D755D24FAFBB617A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504B08FC3DA596F3323E6E9A /* SettingsView.swift */; };
+		0EF222A61FDBA4E48047D893 /* VariationExplorerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6646619D2E775194DADE1E1 /* VariationExplorerView.swift */; };
+		0FCF6B3B4BBF60891D68F380 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6260794388670523337AC150 /* RootView.swift */; };
+		139231F1463867E2F8A428F3 /* KnightAcademyKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD9DD50B58F6E7E76A312C9B /* KnightAcademyKit */; };
+		24123030A4EDBE2ABD3B8249 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00311B1BC3DA185986C9C7E0 /* Theme.swift */; };
+		347FA21AECC9A734F44C07FE /* EngineNets in Resources */ = {isa = PBXBuildFile; fileRef = 2F30656C246425ACD9DBAAD4 /* EngineNets */; };
+		3D2253FB94C3C9A6B308E009 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DD1C67FCB822B9EFB00A17 /* Router.swift */; };
+		4278DD1512D18BD45799D7EB /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC57627DEC6CA0982D337418 /* Feedback.swift */; };
+		4ABF6AEED184526350B01365 /* RepertoireEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09467920015DB6A200FF1259 /* RepertoireEditorView.swift */; };
+		5024A8F771B902D57E4E42A2 /* OpeningTrainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CDE6EC4B4F295FD880A75 /* OpeningTrainerView.swift */; };
+		56A336D220FF2C828CEDA08A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B022C5BEC00E615206D15 /* GameView.swift */; };
+		65B077AE7824AAD0EF290344 /* OpeningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F71EDA552F3D5761A2099 /* OpeningDetailView.swift */; };
+		6ED594565CF9F9D1EBCC0A75 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F693D52AF66B096864D858 /* ChessBoardView.swift */; };
+		96C28378459B9F73CDB173C2 /* SessionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9025E393C9A48B2776548 /* SessionViews.swift */; };
+		9A1E6D13FEA9B21459E6B94D /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D7463A967E73F16D8C2C2 /* Components.swift */; };
+		9C5066805F223E7C38B0BD73 /* PracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4553ADF217CC138CB6EBF384 /* PracticeView.swift */; };
+		A468C03F9DD9ADD825F8F551 /* OpeningsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989841A4D2558E49F7151AEF /* OpeningsView.swift */; };
+		B0EFD36F187EDE38F57DCFA9 /* StockfishEngineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E5C09221530322891A37C3 /* StockfishEngineProvider.swift */; };
+		D019F92281C64CE1DAF0102E /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2223A708B5294FF04D446E3 /* PlayView.swift */; };
+		DA1407120FE5C74EA2B78497 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B69FF096AFAB084FE9D894 /* HomeView.swift */; };
+		E0C63B9CCA83361C52E24E02 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA7784AB8A6C7FF9360F586 /* ProfileView.swift */; };
+		E386369B1DB81CE1AC6C4F46 /* GameReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E654B18729332D4AD20B8EF4 /* GameReviewView.swift */; };
+		E6ECA2EC3C8CBA8E25FC8A0E /* KnightAcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25FE3296EB5EB93AB3FA810 /* KnightAcademyApp.swift */; };
+		E88CB090C1A06CE2CB17FD64 /* ChessKitEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 29BD86619319AA98DA587704 /* ChessKitEngine */; };
+		EDAFED981B73756FB242005A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB99205820AE9912DCC3A775 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00311B1BC3DA185986C9C7E0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		09467920015DB6A200FF1259 /* RepertoireEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireEditorView.swift; sourceTree = "<group>"; };
+		0FA7784AB8A6C7FF9360F586 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2F30656C246425ACD9DBAAD4 /* EngineNets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = EngineNets; path = App/KnightAcademy/Resources/EngineNets; sourceTree = SOURCE_ROOT; };
+		35E5C09221530322891A37C3 /* StockfishEngineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockfishEngineProvider.swift; sourceTree = "<group>"; };
+		42F693D52AF66B096864D858 /* ChessBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoardView.swift; sourceTree = "<group>"; };
+		4553ADF217CC138CB6EBF384 /* PracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeView.swift; sourceTree = "<group>"; };
+		504B08FC3DA596F3323E6E9A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		57A9025E393C9A48B2776548 /* SessionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViews.swift; sourceTree = "<group>"; };
+		57BFC5394005DE8F2DE91344 /* KnightAcademy.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KnightAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6260794388670523337AC150 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		65B69FF096AFAB084FE9D894 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		889B022C5BEC00E615206D15 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		989841A4D2558E49F7151AEF /* OpeningsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningsView.swift; sourceTree = "<group>"; };
+		9D0F71EDA552F3D5761A2099 /* OpeningDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningDetailView.swift; sourceTree = "<group>"; };
+		A2223A708B5294FF04D446E3 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		A25FE3296EB5EB93AB3FA810 /* KnightAcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnightAcademyApp.swift; sourceTree = "<group>"; };
+		AB99205820AE9912DCC3A775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD1CDE6EC4B4F295FD880A75 /* OpeningTrainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningTrainerView.swift; sourceTree = "<group>"; };
+		C8DD1C67FCB822B9EFB00A17 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DC57627DEC6CA0982D337418 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		E40D7463A967E73F16D8C2C2 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		E654B18729332D4AD20B8EF4 /* GameReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReviewView.swift; sourceTree = "<group>"; };
+		E6646619D2E775194DADE1E1 /* VariationExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationExplorerView.swift; sourceTree = "<group>"; };
+		F3C10FDADC38E992043BC2DB /* KnightAcademyKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KnightAcademyKit; path = Packages/KnightAcademyKit; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1F9750BBF17488F22CF544C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				139231F1463867E2F8A428F3 /* KnightAcademyKit in Frameworks */,
+				E88CB090C1A06CE2CB17FD64 /* ChessKitEngine in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AABE8927A69010608F682B9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0FA7784AB8A6C7FF9360F586 /* ProfileView.swift */,
+				09467920015DB6A200FF1259 /* RepertoireEditorView.swift */,
+				504B08FC3DA596F3323E6E9A /* SettingsView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4C3A31E63DA2251877512FED /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A25FE3296EB5EB93AB3FA810 /* KnightAcademyApp.swift */,
+				6260794388670523337AC150 /* RootView.swift */,
+				C8DD1C67FCB822B9EFB00A17 /* Router.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A7F6018DE9EF42A1FBECB27 = {
+			isa = PBXGroup;
+			children = (
+				9D3DED4ECEF7E568305B9DC2 /* App */,
+				C605A4A2748A62B679585788 /* Packages */,
+				61D02BB0F6EC2D434E537CB1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F74E69F6F26F6B3A754E71C /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				4553ADF217CC138CB6EBF384 /* PracticeView.swift */,
+				57A9025E393C9A48B2776548 /* SessionViews.swift */,
+			);
+			path = Practice;
+			sourceTree = "<group>";
+		};
+		61D02BB0F6EC2D434E537CB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57BFC5394005DE8F2DE91344 /* KnightAcademy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		819D0DB1D20A092B2A3FA16F /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				35E5C09221530322891A37C3 /* StockfishEngineProvider.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		884A933B8E2A5E1A8D74D74C /* Play */ = {
+			isa = PBXGroup;
+			children = (
+				E654B18729332D4AD20B8EF4 /* GameReviewView.swift */,
+				889B022C5BEC00E615206D15 /* GameView.swift */,
+				A2223A708B5294FF04D446E3 /* PlayView.swift */,
+			);
+			path = Play;
+			sourceTree = "<group>";
+		};
+		93BBCB03EF43F3AB74975B07 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E40D7463A967E73F16D8C2C2 /* Components.swift */,
+				DC57627DEC6CA0982D337418 /* Feedback.swift */,
+				00311B1BC3DA185986C9C7E0 /* Theme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		9D3DED4ECEF7E568305B9DC2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FAE575E006797C2346034D50 /* KnightAcademy */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A240CDFFAB71E7C12C497876 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AB99205820AE9912DCC3A775 /* Assets.xcassets */,
+				2F30656C246425ACD9DBAAD4 /* EngineNets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A2A88107A76551157225B563 /* Openings */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F71EDA552F3D5761A2099 /* OpeningDetailView.swift */,
+				989841A4D2558E49F7151AEF /* OpeningsView.swift */,
+				BD1CDE6EC4B4F295FD880A75 /* OpeningTrainerView.swift */,
+				E6646619D2E775194DADE1E1 /* VariationExplorerView.swift */,
+			);
+			path = Openings;
+			sourceTree = "<group>";
+		};
+		B054E8C39B760C9CC5820D0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				65B69FF096AFAB084FE9D894 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B2A12838E1B9DABCF83BEE2A /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				42F693D52AF66B096864D858 /* ChessBoardView.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		C605A4A2748A62B679585788 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				F3C10FDADC38E992043BC2DB /* KnightAcademyKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		FAE575E006797C2346034D50 /* KnightAcademy */ = {
+			isa = PBXGroup;
+			children = (
+				4C3A31E63DA2251877512FED /* App */,
+				B2A12838E1B9DABCF83BEE2A /* Board */,
+				93BBCB03EF43F3AB74975B07 /* DesignSystem */,
+				819D0DB1D20A092B2A3FA16F /* Engine */,
+				B054E8C39B760C9CC5820D0E /* Home */,
+				A2A88107A76551157225B563 /* Openings */,
+				884A933B8E2A5E1A8D74D74C /* Play */,
+				5F74E69F6F26F6B3A754E71C /* Practice */,
+				1AABE8927A69010608F682B9 /* Profile */,
+				A240CDFFAB71E7C12C497876 /* Resources */,
+			);
+			path = KnightAcademy;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0F6C376D4F17CE55105FD8A /* KnightAcademy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22103498EC34B1999F0B5C09 /* Build configuration list for PBXNativeTarget "KnightAcademy" */;
+			buildPhases = (
+				3EA2ECBDA0C3CE9E7BEAE205 /* Sources */,
+				4552441F7E52CE0F81FE34E6 /* Resources */,
+				B1F9750BBF17488F22CF544C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KnightAcademy;
+			packageProductDependencies = (
+				AD9DD50B58F6E7E76A312C9B /* KnightAcademyKit */,
+				29BD86619319AA98DA587704 /* ChessKitEngine */,
+			);
+			productName = KnightAcademy;
+			productReference = 57BFC5394005DE8F2DE91344 /* KnightAcademy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A307804BFE8CC6F15D28D0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F0F6C376D4F17CE55105FD8A = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6B8B29A2343605433A403F58 /* Build configuration list for PBXProject "KnightAcademy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5A7F6018DE9EF42A1FBECB27;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				95B5884D27A69577CE5353D1 /* XCRemoteSwiftPackageReference "chesskit-engine" */,
+				FBA7E4FDC96BC857BCC30BE8 /* XCLocalSwiftPackageReference "Packages/KnightAcademyKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0F6C376D4F17CE55105FD8A /* KnightAcademy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4552441F7E52CE0F81FE34E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDAFED981B73756FB242005A /* Assets.xcassets in Resources */,
+				347FA21AECC9A734F44C07FE /* EngineNets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EA2ECBDA0C3CE9E7BEAE205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED594565CF9F9D1EBCC0A75 /* ChessBoardView.swift in Sources */,
+				9A1E6D13FEA9B21459E6B94D /* Components.swift in Sources */,
+				4278DD1512D18BD45799D7EB /* Feedback.swift in Sources */,
+				E386369B1DB81CE1AC6C4F46 /* GameReviewView.swift in Sources */,
+				56A336D220FF2C828CEDA08A /* GameView.swift in Sources */,
+				DA1407120FE5C74EA2B78497 /* HomeView.swift in Sources */,
+				E6ECA2EC3C8CBA8E25FC8A0E /* KnightAcademyApp.swift in Sources */,
+				65B077AE7824AAD0EF290344 /* OpeningDetailView.swift in Sources */,
+				5024A8F771B902D57E4E42A2 /* OpeningTrainerView.swift in Sources */,
+				A468C03F9DD9ADD825F8F551 /* OpeningsView.swift in Sources */,
+				D019F92281C64CE1DAF0102E /* PlayView.swift in Sources */,
+				9C5066805F223E7C38B0BD73 /* PracticeView.swift in Sources */,
+				E0C63B9CCA83361C52E24E02 /* ProfileView.swift in Sources */,
+				4ABF6AEED184526350B01365 /* RepertoireEditorView.swift in Sources */,
+				0FCF6B3B4BBF60891D68F380 /* RootView.swift in Sources */,
+				3D2253FB94C3C9A6B308E009 /* Router.swift in Sources */,
+				96C28378459B9F73CDB173C2 /* SessionViews.swift in Sources */,
+				009752E5D755D24FAFBB617A /* SettingsView.swift in Sources */,
+				B0EFD36F187EDE38F57DCFA9 /* StockfishEngineProvider.swift in Sources */,
+				24123030A4EDBE2ABD3B8249 /* Theme.swift in Sources */,
+				0EF222A61FDBA4E48047D893 /* VariationExplorerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8BBDE8C26199A9D378F4883D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Knight Academy";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.knightacademy.ios;
+				PRODUCT_NAME = KnightAcademy;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9E7D6BEA8B1E160626BDC817 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A377404BD5F16DB4A4ADC1A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D1A77E324F294AD128932692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Knight Academy";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.knightacademy.ios;
+				PRODUCT_NAME = KnightAcademy;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22103498EC34B1999F0B5C09 /* Build configuration list for PBXNativeTarget "KnightAcademy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1A77E324F294AD128932692 /* Debug */,
+				8BBDE8C26199A9D378F4883D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6B8B29A2343605433A403F58 /* Build configuration list for PBXProject "KnightAcademy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A377404BD5F16DB4A4ADC1A4 /* Debug */,
+				9E7D6BEA8B1E160626BDC817 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FBA7E4FDC96BC857BCC30BE8 /* XCLocalSwiftPackageReference "Packages/KnightAcademyKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/KnightAcademyKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95B5884D27A69577CE5353D1 /* XCRemoteSwiftPackageReference "chesskit-engine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chesskit-app/chesskit-engine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		29BD86619319AA98DA587704 /* ChessKitEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95B5884D27A69577CE5353D1 /* XCRemoteSwiftPackageReference "chesskit-engine" */;
+			productName = ChessKitEngine;
+		};
+		AD9DD50B58F6E7E76A312C9B /* KnightAcademyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KnightAcademyKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5A307804BFE8CC6F15D28D0A /* Project object */;
+}

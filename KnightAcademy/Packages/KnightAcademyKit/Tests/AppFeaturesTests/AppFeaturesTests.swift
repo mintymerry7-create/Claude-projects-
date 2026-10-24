@@ -312,3 +312,42 @@ final class AppModelTests: XCTestCase {
         XCTAssertEqual(m.settings.level, .intermediate)
     }
 }
+
+final class PieceLayoutTests: XCTestCase {
+    func testIdentitiesFollowMovesCastlingAndUndo() throws {
+        var layout = PieceLayout(position: .start)
+        XCTAssertEqual(layout.items.count, 32)
+        let knightID = layout.items.first { $0.square == Square("g1")! }!.id
+        var p = Position.start
+        for san in ["Nf3", "e5", "e4", "Nc6", "Bc4", "Nf6"] {
+            let m = try p.move(fromSAN: san)
+            p.make(m)
+            layout.update(to: p, via: m)
+        }
+        XCTAssertEqual(layout.items.first { $0.square == Square("f3")! }?.id, knightID)
+        let rookID = layout.items.first { $0.square == Square("h1")! }!.id
+        let castle = try p.move(fromSAN: "O-O")
+        let before = p
+        p.make(castle)
+        layout.update(to: p, via: castle)
+        XCTAssertEqual(layout.items.first { $0.square == Square("f1")! }?.id, rookID)
+        // Undo via the same move.
+        layout.update(to: before, via: castle)
+        XCTAssertEqual(layout.items.first { $0.square == Square("h1")! }?.id, rookID)
+        XCTAssertEqual(layout.items.count, 32)
+        // Unrelated jump keeps unchanged squares.
+        layout.update(to: .start, via: nil)
+        XCTAssertEqual(layout.items.count, 32)
+        XCTAssertEqual(Set(layout.items.map(\.square)), Set(Position.start.pieces(of: .white).map(\.0) + Position.start.pieces(of: .black).map(\.0)))
+    }
+
+    func testCaptureAndEnPassantRemovePieces() throws {
+        var p = try Position(fen: "rnbqkbnr/ppp1pppp/8/3pP3/8/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 3")
+        var layout = PieceLayout(position: p)
+        let ep = Move(uci: "e5d6")!
+        p.make(ep)
+        layout.update(to: p, via: ep)
+        XCTAssertEqual(layout.items.count, 31)
+        XCTAssertNil(layout.items.first { $0.square == Square("d5")! })
+    }
+}

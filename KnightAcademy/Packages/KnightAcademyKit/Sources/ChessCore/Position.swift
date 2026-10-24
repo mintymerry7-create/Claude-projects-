@@ -160,8 +160,9 @@ public struct Position: Hashable, Sendable {
         }
         if let ep = enPassant {
             let mover = sideToMove.opposite
-            let pawnSq = ep.index - 8 * mover.forward
-            let originSq = ep.index + 8 * mover.forward
+            // e.g. black played f7-f5: ep = f6, pawn on f5, origin f7.
+            let pawnSq = ep.index + 8 * mover.forward
+            let originSq = ep.index - 8 * mover.forward
             if board[pawnSq] != Piece(mover, .pawn) || board[ep.index] != nil || board[originSq] != nil {
                 enPassant = nil
             }

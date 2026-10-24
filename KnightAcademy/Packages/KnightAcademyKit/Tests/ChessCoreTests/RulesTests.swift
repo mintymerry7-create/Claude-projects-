@@ -67,6 +67,17 @@ final class FENTests: XCTestCase {
         XCTAssertEqual(p.fen, "rnbqkbnr/ppp1p1pp/8/3pPp2/8/8/PPPP1PPP/RNBQKBNR w KQkq f6 0 3")
     }
 
+    func testEnPassantSurvivesFENRoundTrip() throws {
+        for fen in ["rnbqkbnr/ppp1p1pp/8/3pPp2/8/8/PPPP1PPP/RNBQKBNR w KQkq f6 0 3",
+                    "rnbqkbnr/pppp1ppp/8/8/3Pp3/8/PPP1PPPP/RNBQKBNR b KQkq d3 0 3"] {
+            let p = try Position(fen: fen)
+            XCTAssertEqual(p.fen, fen)
+            XCTAssertTrue(p.legalMoves().contains { p.isEnPassant($0) }, fen)
+        }
+        // A stale en passant square without a matching pawn is dropped.
+        XCTAssertEqual(try Position(fen: "4k3/8/8/8/8/8/8/4K3 w - e6 0 1").enPassant, nil)
+    }
+
     func testRejectsMalformed() {
         XCTAssertThrowsError(try Position(fen: ""))
         XCTAssertThrowsError(try Position(fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP w KQkq - 0 1"))

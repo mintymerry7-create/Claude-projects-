@@ -3,235 +3,82 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Personal portfolio: projects, skills and contact.">
+  <title>Your Name</title>
+  <meta name="description" content="Personal site.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0d12;
-      --surface: #141821;
-      --border: #232938;
-      --text: #e8ebf2;
-      --muted: #9aa3b5;
-      --accent: #7c5cff;
-      --accent-2: #22d3ee;
-      --radius: 16px;
+      --bg: #f4f1ea;
+      --text: #1d1c1a;
+      --muted: #6b675f;
+      --rule: #d8d2c4;
+      --link: #b3401e;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.55;
     }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    main { max-width: 620px; margin: 0 auto; padding: 72px 20px 48px; }
+    a { color: var(--link); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); }
 
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(11, 13, 18, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+    header { margin-bottom: 56px; }
+    h1 { font-weight: 500; font-size: 30px; letter-spacing: -0.01em; }
+    header .mono { margin-top: 4px; }
+
+    section { margin-bottom: 48px; }
+    h2 {
+      font-family: "IBM Plex Mono", monospace; font-weight: 400;
+      font-size: 13px; color: var(--muted); text-transform: lowercase;
+      border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin-bottom: 16px;
     }
-    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-weight: 800; font-size: 1.2rem; }
-    .logo span { color: var(--accent); }
-    .links { display: flex; gap: 24px; font-size: 0.95rem; color: var(--muted); }
-    .links a:hover { color: var(--text); }
+    p + p { margin-top: 14px; }
+    .empty { color: var(--muted); font-style: italic; }
 
-    /* Hero */
-    .hero { padding: 96px 0 72px; position: relative; overflow: hidden; }
-    .hero::before {
-      content: ""; position: absolute; inset: -40% -10% auto auto;
-      width: 520px; height: 520px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(124, 92, 255, 0.35), transparent 70%);
-      pointer-events: none;
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 14px; border-radius: 999px;
-      background: var(--surface); border: 1px solid var(--border);
-      font-size: 0.85rem; color: var(--muted);
-    }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; }
-    h1 { font-size: clamp(2.4rem, 7vw, 4.2rem); line-height: 1.1; font-weight: 800; margin: 20px 0 16px; }
-    .grad {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 560px; }
-    .cta { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
-    .btn {
-      padding: 12px 22px; border-radius: 12px; font-weight: 600;
-      border: 1px solid var(--border); background: var(--surface);
-      transition: transform 0.15s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    ul { list-style: none; }
+    li { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; }
 
-    /* Sections */
-    section { padding: 64px 0; }
-    .eyebrow { color: var(--accent-2); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
-    h2 { font-size: 2rem; margin: 6px 0 28px; }
+    footer { margin-top: 72px; }
 
-    .about { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center; }
-    .avatar {
-      width: 200px; height: 200px; border-radius: 24px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid; place-items: center; font-size: 4rem; font-weight: 800; color: #fff;
-    }
-    .about p { color: var(--muted); margin-bottom: 12px; }
-
-    /* Projects */
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    .card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .thumb { height: 150px; display: grid; place-items: center; font-size: 3rem; }
-    .t1 { background: linear-gradient(135deg, #3b2a8a, #7c5cff); }
-    .t2 { background: linear-gradient(135deg, #0e5a6b, #22d3ee); }
-    .t3 { background: linear-gradient(135deg, #7a2d4b, #f472b6); }
-    .card-body { padding: 20px; }
-    .card h3 { font-size: 1.15rem; margin-bottom: 6px; }
-    .card p { color: var(--muted); font-size: 0.95rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-    .tag { font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; background: var(--bg); border: 1px solid var(--border); color: var(--muted); }
-
-    /* Skills */
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill { padding: 10px 18px; border-radius: 12px; background: var(--surface); border: 1px solid var(--border); font-weight: 500; }
-
-    /* Contact */
-    .contact {
-      text-align: center; padding: 48px 24px; border-radius: 24px;
-      background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(34, 211, 238, 0.12));
-      border: 1px solid var(--border);
-    }
-    .contact p { color: var(--muted); margin: 0 auto 24px; max-width: 460px; }
-    .contact .cta { justify-content: center; }
-
-    footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
-
-    @media (max-width: 640px) {
-      .links { display: none; }
-      .hero { padding: 64px 0 48px; }
-      .about { grid-template-columns: 1fr; }
-      .avatar { width: 120px; height: 120px; font-size: 2.6rem; }
+    @media (max-width: 480px) {
+      body { font-size: 18px; }
+      main { padding-top: 48px; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="wrap">
-      <a class="logo" href="#">YN<span>.</span></a>
-      <div class="links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <main>
+    <header>
+      <h1>Your Name</h1>
+      <p class="mono">city · learning to code</p>
+    </header>
 
-  <header class="hero">
-    <div class="wrap">
-      <span class="badge"><span class="dot"></span> Open to new projects</span>
-      <h1>Hi, I'm <span class="grad">Your Name</span>.<br>I build things for the web.</h1>
-      <p class="lead">Developer and creator. I make fun games, useful apps and clean websites.</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">See my work</a>
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
-    </div>
-  </header>
+    <section>
+      <h2>about</h2>
+      <p>A few lines about you, in your own words. What you're into, what you're learning, what you want to make.</p>
+    </section>
 
-  <section id="about">
-    <div class="wrap">
-      <div class="eyebrow">About</div>
-      <h2>A bit about me</h2>
-      <div class="about">
-        <div class="avatar">YN</div>
-        <div>
-          <p>I'm a self-taught developer who loves turning ideas into real projects. I mostly work on web apps and games.</p>
-          <p>Right now I'm learning more JavaScript and Python, and building something new every week.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>projects</h2>
+      <p class="empty">Nothing here yet. First project in progress.</p>
+    </section>
 
-  <section id="projects">
-    <div class="wrap">
-      <div class="eyebrow">Work</div>
-      <h2>Featured projects</h2>
-      <div class="grid">
-        <a class="card" href="#">
-          <div class="thumb t1">🎮</div>
-          <div class="card-body">
-            <h3>Arcade Game</h3>
-            <p>A browser game with touch controls and a high-score board.</p>
-            <div class="tags"><span class="tag">JavaScript</span><span class="tag">Canvas</span></div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="thumb t2">✅</div>
-          <div class="card-body">
-            <h3>Habit Tracker</h3>
-            <p>Track daily habits and streaks. Works offline on your phone.</p>
-            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">PWA</span></div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="thumb t3">🤖</div>
-          <div class="card-body">
-            <h3>Discord Bot</h3>
-            <p>A bot with mini-games and server tools for my friends.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">API</span></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+    <section>
+      <h2>contact</h2>
+      <ul>
+        <li><span>Email</span><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><span>GitHub</span><a href="https://github.com/">github.com/username</a></li>
+      </ul>
+    </section>
 
-  <section id="skills">
-    <div class="wrap">
-      <div class="eyebrow">Toolbox</div>
-      <h2>Skills</h2>
-      <div class="skills">
-        <span class="skill">HTML</span>
-        <span class="skill">CSS</span>
-        <span class="skill">JavaScript</span>
-        <span class="skill">Python</span>
-        <span class="skill">Luau / Roblox</span>
-        <span class="skill">Git &amp; GitHub</span>
-        <span class="skill">UI Design</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="wrap">
-      <div class="contact">
-        <div class="eyebrow">Contact</div>
-        <h2>Let's work together</h2>
-        <p>Have an idea or just want to say hi? My inbox is always open.</p>
-        <div class="cta">
-          <a class="btn primary" href="mailto:you@example.com">Email me</a>
-          <a class="btn" href="https://github.com/">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">© <span id="year"></span> Your Name. Built from an iPhone.</div>
-  </footer>
-
+    <footer class="mono">updated <span id="year"></span></footer>
+  </main>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

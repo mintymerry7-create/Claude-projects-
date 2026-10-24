@@ -104,6 +104,24 @@ public enum MoveExplainer {
         return Explanation(sentences: s, highlights: Array(Set(highlights)), arrows: arrows)
     }
 
+    /// A short imperative instruction such as "Play pawn to d4." or
+    /// "Capture on d5 with the knight." used above the board in lessons.
+    public static func instruction(for move: Move, in position: Position) -> String {
+        guard let piece = position[move.from] else { return "Play \(move.uci)." }
+        if position.isCastling(move) {
+            return move.to.file == 6 ? "Castle kingside." : "Castle queenside."
+        }
+        if let promo = move.promotion {
+            return position.isCapture(move)
+                ? "Capture on \(move.to.name) and promote to a \(promo.name)."
+                : "Promote the pawn on \(move.to.name) to a \(promo.name)."
+        }
+        if position.isCapture(move) {
+            return "Capture on \(move.to.name) with the \(piece.kind.name)."
+        }
+        return "Play \(piece.kind.name) to \(move.to.name)."
+    }
+
     static func capturedPiece(_ move: Move, _ p: Position) -> Piece? {
         if let c = p[move.to] { return c }
         if p.isEnPassant(move), let mover = p[move.from] { return Piece(mover.color.opposite, .pawn) }

@@ -8,6 +8,8 @@ import Learning
 struct ChessBoardView: View {
     let display: BoardDisplay
     var onMove: ((Move) -> Void)?
+    /// 0 for an edge-to-edge board.
+    var cornerRadius: CGFloat = 6
 
     @Environment(AppModel.self) private var model
     @State private var interaction = BoardInteraction()
@@ -20,8 +22,9 @@ struct ChessBoardView: View {
         var location: CGPoint
     }
 
-    init(display: BoardDisplay, onMove: ((Move) -> Void)? = nil) {
+    init(display: BoardDisplay, cornerRadius: CGFloat = 6, onMove: ((Move) -> Void)? = nil) {
         self.display = display
+        self.cornerRadius = cornerRadius
         self.onMove = onMove
         _layout = State(initialValue: PieceLayout(position: display.position))
         _lastSeenMove = State(initialValue: display.lastMove)
@@ -56,7 +59,7 @@ struct ChessBoardView: View {
                 }
             }
             .frame(width: side, height: side)
-            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
             .contentShape(Rectangle())
             .gesture(boardGesture(sq))
             .overlay {
@@ -328,7 +331,7 @@ struct BoardThumbnail: View {
     let position: Position
     var orientation: PieceColor = .white
     var lastMove: Move?
-    var theme: BoardTheme = .forest
+    var theme: BoardTheme = .wood
 
     var body: some View {
         GeometryReader { geo in

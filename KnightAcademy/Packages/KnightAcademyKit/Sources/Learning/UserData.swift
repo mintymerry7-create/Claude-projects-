@@ -158,7 +158,7 @@ public enum AppearanceSetting: String, Codable, CaseIterable, Sendable {
 }
 
 public enum BoardTheme: String, Codable, CaseIterable, Sendable {
-    case forest, walnut, slate, classic
+    case wood, forest, walnut, slate, classic
 
     public var displayName: String { rawValue.capitalized }
 }
@@ -166,8 +166,8 @@ public enum BoardTheme: String, Codable, CaseIterable, Sendable {
 public struct AppSettings: Codable, Hashable, Sendable {
     public var playerName: String = ""
     public var level: Difficulty = .beginner
-    public var appearance: AppearanceSetting = .system
-    public var boardTheme: BoardTheme = .forest
+    public var appearance: AppearanceSetting = .dark
+    public var boardTheme: BoardTheme = .wood
     public var showCoordinates: Bool = true
     public var showLegalMoves: Bool = true
     public var hapticsEnabled: Bool = true

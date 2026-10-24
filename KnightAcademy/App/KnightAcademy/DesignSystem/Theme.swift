@@ -5,17 +5,24 @@ import Learning
 /// Design tokens for Knight Academy: deep charcoal surfaces, a calm green accent.
 enum KA {
     enum Palette {
-        static let background = Color(light: 0xF3F4F1, dark: 0x101211)
-        static let surface = Color(light: 0xFFFFFF, dark: 0x1A1D1B)
-        static let surfaceElevated = Color(light: 0xE9ECE7, dark: 0x232724)
-        static let stroke = Color(light: 0xDADFD8, dark: 0x2E332F)
-        static let accent = Color(light: 0x23845A, dark: 0x4CC38A)
-        static let accentSoft = Color(light: 0xDCEFE5, dark: 0x1D3A2C)
-        static let textSecondary = Color(light: 0x5F6761, dark: 0x9AA39D)
+        static let background = Color(light: 0xF4F4F6, dark: 0x0D0D10)
+        static let surface = Color(light: 0xFFFFFF, dark: 0x1A1B1F)
+        static let surfaceElevated = Color(light: 0xEAEBEF, dark: 0x25262B)
+        static let stroke = Color(light: 0xDCDDE2, dark: 0x2E2F35)
+        static let accent = Color(light: 0x23845A, dark: 0x5BC98F)
+        static let accentSoft = Color(light: 0xDCEFE5, dark: 0x1F3A2D)
+        static let textSecondary = Color(light: 0x5F6168, dark: 0x9C9DA6)
         static let danger = Color(light: 0xC0392B, dark: 0xFF6B5E)
         static let warning = Color(light: 0xB9770E, dark: 0xF5B041)
-        static let info = Color(light: 0x2E6DA4, dark: 0x6FA8DC)
+        static let info = Color(light: 0x2E6DA4, dark: 0x7FB2E5)
         static let gold = Color(light: 0xB8860B, dark: 0xE8C547)
+        /// Progress bars on course cards (as in the course list design).
+        static let progress = Color(light: 0x6D4AE0, dark: 0x8B6CF6)
+        /// Score/coverage numbers.
+        static let score = Color(light: 0x4E9A2E, dark: 0x9BD36A)
+        /// The white instruction card above the board.
+        static let instructionCard = Color(light: 0xFFFFFF, dark: 0xFFFFFF)
+        static let instructionText = Color(light: 0x111114, dark: 0x111114)
     }
 
     enum Spacing {
@@ -72,6 +79,11 @@ struct BoardColors {
 
     static func forTheme(_ theme: BoardTheme) -> BoardColors {
         switch theme {
+        case .wood:
+            return BoardColors(light: Color(red: 0.933, green: 0.843, blue: 0.706), dark: Color(red: 0.784, green: 0.627, blue: 0.478),
+                               lastMove: Color(red: 0.80, green: 0.82, blue: 0.32).opacity(0.55),
+                               selection: Color(red: 0.42, green: 0.66, blue: 0.36).opacity(0.55),
+                               hint: Color(red: 0.36, green: 0.55, blue: 0.95).opacity(0.5))
         case .forest:
             return BoardColors(light: Color(red: 0.91, green: 0.92, blue: 0.84), dark: Color(red: 0.42, green: 0.58, blue: 0.43),
                                lastMove: Color(red: 0.86, green: 0.83, blue: 0.35).opacity(0.55),

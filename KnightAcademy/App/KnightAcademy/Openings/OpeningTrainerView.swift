@@ -51,7 +51,8 @@ struct RepertoireTrainerScreen: View {
     }
 }
 
-/// Learn / play-from-memory screen for one study plan.
+/// Learn / play-from-memory screen for one study plan: instruction card,
+/// eval bar, edge-to-edge board and a compact bottom toolbar.
 struct OpeningTrainerView: View {
     let trainer: OpeningTrainer
     let title: String
@@ -63,46 +64,26 @@ struct OpeningTrainerView: View {
     @State private var opponentTask: Task<Void, Never>?
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: KA.Spacing.m) {
-                lineHeader
-                ChessBoardView(display: trainer.display) { move in
-                    trainer.submit(move)
-                    afterLearnerMove()
-                }
-                feedbackArea
-                controls
-                if trainer.plan.settings.includeEngineAnalysis && !trainer.isFinished {
-                    EngineEvalView(position: trainer.position)
-                }
-                MoveListView(sans: trainer.plan.tree.sans(to: trainer.nodeID), startPosition: .start, current: nil)
+        VStack(spacing: 0) {
+            header
+            progressRow
+            instructionCard
+                .padding(.horizontal, KA.Spacing.l)
+                .padding(.vertical, KA.Spacing.m)
+            EvalBar(position: trainer.position)
+            ChessBoardView(display: trainer.display, cornerRadius: 0) { move in
+                trainer.submit(move)
+                afterLearnerMove()
             }
-            .padding(KA.Spacing.l)
+            MoveListView(sans: trainer.plan.tree.sans(to: trainer.nodeID), startPosition: .start, current: nil)
+                .padding(.horizontal, KA.Spacing.s)
+                .padding(.top, KA.Spacing.s)
+            Spacer(minLength: 0)
+            bottomBar
         }
-        .screenBackground()
-        .navigationTitle(title)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Menu {
-                    Button { showNotes = true } label: { Label("Note on this position", systemImage: "note.text") }
-                    if let openingID {
-                        let sans = trainer.plan.tree.sans(to: trainer.nodeID)
-                        Button {
-                            model.addBookmark(title: "\(title) · \(sans.count) plies", openingID: openingID, sans: sans)
-                            Feedback.success()
-                        } label: { Label("Bookmark position", systemImage: "bookmark") }
-                        Button { router.push(.explorer(openingID: openingID)) } label: {
-                            Label("Variation explorer", systemImage: "point.3.connected.trianglepath.dotted")
-                        }
-                    }
-                    Button { trainer.restartLine() } label: { Label("Restart line", systemImage: "arrow.counterclockwise") }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                }
-                .accessibilityLabel("More options")
-            }
-        }
+        .background(KA.Palette.background.ignoresSafeArea())
+        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
         .sheet(isPresented: $showNotes) {
             PositionNoteSheet(position: trainer.position)
         }
@@ -112,77 +93,113 @@ struct OpeningTrainerView: View {
 
     // MARK: Header
 
-    private var lineHeader: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack {
-                Tag(text: trainer.mode.displayName, tint: trainer.mode == .learn ? KA.Palette.info : KA.Palette.accent)
-                if let line = trainer.currentLine {
-                    Text(line.line.name).font(.subheadline.weight(.semibold)).lineLimit(1)
-                    if line.line.kind == .trap { Tag(text: "Trap", tint: KA.Palette.danger) }
-                }
-                Spacer()
-                Text("Line \(min(trainer.completedLineIDs.count + 1, max(1, trainer.totalLines))) of \(max(1, trainer.totalLines))")
-                    .font(.caption.monospacedDigit()).foregroundStyle(KA.Palette.textSecondary)
-            }
-            ProgressView(value: Double(trainer.completedLineIDs.count), total: Double(max(1, trainer.totalLines)))
-                .tint(KA.Palette.accent)
+    private var lineNumber: Int { min(trainer.completedLineIDs.count + 1, max(1, trainer.totalLines)) }
+
+    private var header: some View {
+        HStack(spacing: 6) {
+            Image(systemName: trainer.mode == .learn ? "book.fill" : "brain.head.profile")
+            Text(trainer.mode == .learn ? "Learn" : "Practice").fontWeight(.semibold)
+            Text(title).foregroundStyle(KA.Palette.textSecondary).lineLimit(1)
+            Text("#\(lineNumber)").foregroundStyle(KA.Palette.textSecondary)
         }
+        .font(.subheadline)
+        .padding(.top, 6)
+        .accessibilityElement(children: .combine)
     }
 
-    // MARK: Feedback
+    private var lineProgress: Double {
+        guard let line = trainer.currentLine, !line.moves.isEmpty else { return trainer.isFinished ? 1 : 0 }
+        return min(1, Double(trainer.plyInLine) / Double(line.moves.count))
+    }
 
-    @ViewBuilder private var feedbackArea: some View {
+    private var progressRow: some View {
+        HStack(spacing: KA.Spacing.m) {
+            Button { dismiss() } label: {
+                Image(systemName: "arrow.left").font(.title3.weight(.medium))
+                    .frame(width: 36, height: 36)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Back")
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule().fill(KA.Palette.surfaceElevated)
+                    Capsule().fill(KA.Palette.accent)
+                        .frame(width: max(8, geo.size.width * lineProgress))
+                        .animation(.easeOut(duration: 0.25), value: lineProgress)
+                }
+            }
+            .frame(height: 8)
+            .accessibilityElement()
+            .accessibilityLabel("Line progress")
+            .accessibilityValue("\(Int(lineProgress * 100)) percent")
+        }
+        .padding(.horizontal, KA.Spacing.l)
+        .padding(.top, 4)
+    }
+
+    // MARK: Instruction card
+
+    private var instructionCard: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            cardContent
+        }
+        .font(.callout)
+        .foregroundStyle(KA.Palette.instructionText)
+        .frame(maxWidth: .infinity, minHeight: 92, alignment: .topLeading)
+        .padding(14)
+        .background(KA.Palette.instructionCard, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .environment(\.colorScheme, .light)
+    }
+
+    @ViewBuilder private var cardContent: some View {
         switch trainer.feedback {
         case .idle:
-            prompt
+            idleContent
         case .correct(let san):
-            FeedbackBanner(kind: .success, text: "\(san) — correct!")
             explanationText
+            Text("\(san) — correct!").fontWeight(.bold).foregroundStyle(KA.Palette.accent)
         case .alternative(let san):
-            FeedbackBanner(kind: .success, text: "\(san) is also part of your study plan — switching to that line.")
             explanationText
+            Text("\(san) is also in your plan — switching lines.").fontWeight(.bold).foregroundStyle(KA.Palette.accent)
         case let .incorrect(san, hint):
-            FeedbackBanner(kind: .error, text: "\(san) is not the move here. \(hint)")
+            Text(hint)
+            Text("\(san) is not the move here.").fontWeight(.bold).foregroundStyle(KA.Palette.danger)
         case .revealed(let san):
-            FeedbackBanner(kind: .warning, text: "The move was \(san). It will come back soon for review.")
             explanationText
+            Text("The move was \(san). It will come back for review.").fontWeight(.bold).foregroundStyle(KA.Palette.warning)
         case .lineComplete(let name):
-            VStack(alignment: .leading, spacing: 10) {
-                FeedbackBanner(kind: .success, text: "Line complete: \(name)")
-                Button("Next line") {
-                    trainer.continueAfterLine()
-                    scheduleOpponentIfNeeded()
-                }
-                .buttonStyle(.primary)
+            Text("Line complete").foregroundStyle(.secondary)
+            Text(name).fontWeight(.bold)
+            Button("Next line") {
+                trainer.continueAfterLine()
+                scheduleOpponentIfNeeded()
             }
+            .buttonStyle(.primary)
         case .sessionComplete:
             sessionSummary
         }
     }
 
-    @ViewBuilder private var prompt: some View {
-        if trainer.isLearnerTurn {
-            if trainer.mode == .learn, let text = trainer.upcomingExplanation {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Play the highlighted move").font(.headline)
-                    Text(text).font(.subheadline).foregroundStyle(KA.Palette.textSecondary)
-                }
-                .card()
+    @ViewBuilder private var idleContent: some View {
+        if trainer.isLearnerTurn, let move = trainer.nextLineMove {
+            if trainer.mode == .learn {
+                if let text = trainer.upcomingExplanation { Text(text).fixedSize(horizontal: false, vertical: true) }
+                Text(MoveExplainer.instruction(for: move, in: trainer.position)).fontWeight(.bold)
             } else {
-                Text("Your move — find the move from your study plan.")
-                    .font(.subheadline).foregroundStyle(KA.Palette.textSecondary)
+                Text("Your move. Recall what your plan plays here.")
+                Text(trainer.hintLevel == 0 ? "Find the move." : "Use the highlighted piece.").fontWeight(.bold)
             }
         } else if trainer.isOpponentTurn {
-            HStack(spacing: 8) {
-                ProgressView()
-                Text("Opponent is moving…").font(.subheadline).foregroundStyle(KA.Palette.textSecondary)
-            }
+            explanationText
+            Text("Opponent is moving…").fontWeight(.bold).foregroundStyle(.secondary)
+        } else {
+            Text(trainer.plan.opening.summary)
         }
     }
 
     @ViewBuilder private var explanationText: some View {
         if let e = trainer.explanation {
-            Text(e).font(.subheadline).foregroundStyle(KA.Palette.textSecondary).fixedSize(horizontal: false, vertical: true)
+            Text(e).fixedSize(horizontal: false, vertical: true)
         }
         let note = model.note(for: trainer.position)
         if !note.isEmpty {
@@ -190,58 +207,108 @@ struct OpeningTrainerView: View {
         }
     }
 
-    private var sessionSummary: some View {
-        VStack(alignment: .leading, spacing: KA.Spacing.m) {
-            Text("Session complete").font(.title3.bold())
-            if trainer.mode == .memory {
-                let pct = trainer.gradedCount == 0 ? 0 : Int(Double(trainer.correctCount) / Double(trainer.gradedCount) * 100)
-                Text("\(trainer.correctCount) of \(trainer.gradedCount) moves recalled (\(pct)%). Missed moves are scheduled for review sooner.")
-                    .font(.subheadline)
-            } else {
-                Text("You walked through \(trainer.completedLineIDs.count) line\(trainer.completedLineIDs.count == 1 ? "" : "s"). Now test yourself from memory.")
-                    .font(.subheadline)
-                if let openingID {
-                    Button("Play from memory") {
-                        router.push(.trainer(openingID: openingID, mode: .memory, side: trainer.learnerSide, startNode: MoveTree.rootID))
-                    }
-                    .buttonStyle(.primary)
+    @ViewBuilder private var sessionSummary: some View {
+        Text("Session complete").font(.headline)
+        if trainer.mode == .memory {
+            let pct = trainer.gradedCount == 0 ? 0 : Int(Double(trainer.correctCount) / Double(trainer.gradedCount) * 100)
+            Text("\(trainer.correctCount) of \(trainer.gradedCount) moves recalled (\(pct)%). Missed moves come back sooner.")
+        } else {
+            Text("You walked through \(trainer.completedLineIDs.count) line\(trainer.completedLineIDs.count == 1 ? "" : "s"). Now test yourself from memory.")
+        }
+        HStack {
+            if trainer.mode == .learn, let openingID {
+                Button("Play from memory") {
+                    router.push(.trainer(openingID: openingID, mode: .memory, side: trainer.learnerSide, startNode: MoveTree.rootID))
                 }
+                .buttonStyle(.primary)
             }
             Button("Done") { dismiss() }.buttonStyle(.secondary)
         }
-        .card()
         .onAppear { Feedback.success() }
     }
 
-    // MARK: Controls
+    // MARK: Bottom bar
 
-    private var controls: some View {
-        HStack {
-            ToolButton(title: "Back", symbol: "arrow.uturn.backward") {
-                opponentTask?.cancel()
-                trainer.undo()
+    private var bottomBar: some View {
+        HStack(spacing: 0) {
+            Menu {
+                Button { showNotes = true } label: { Label("Note on this position", systemImage: "note.text") }
+                if let openingID {
+                    let sans = trainer.plan.tree.sans(to: trainer.nodeID)
+                    Button {
+                        model.addBookmark(title: "\(title) · \(sans.count) plies", openingID: openingID, sans: sans)
+                        Feedback.success()
+                    } label: { Label("Bookmark position", systemImage: "bookmark") }
+                    Button { router.push(.explorer(openingID: openingID)) } label: {
+                        Label("Variation explorer", systemImage: "point.3.connected.trianglepath.dotted")
+                    }
+                }
+                Button {
+                    opponentTask?.cancel()
+                    trainer.restartLine()
+                    scheduleOpponentIfNeeded()
+                } label: { Label("Restart line", systemImage: "arrow.counterclockwise") }
+            } label: {
+                barIcon("gearshape")
             }
-            if trainer.mode == .memory {
-                ToolButton(title: trainer.hintLevel == 0 ? "Hint" : trainer.hintLevel == 1 ? "More" : "Show", symbol: "lightbulb") {
+            .accessibilityLabel("More options")
+
+            barButton(trainer.mode == .memory && trainer.hintLevel > 0 ? (trainer.hintLevel == 1 ? "More" : "Show") : "Hint",
+                      symbol: "lightbulb") {
+                if trainer.mode == .memory {
                     trainer.hint()
                     if case .revealed = trainer.feedback { afterLearnerMove() }
-                }
-                .disabled(!trainer.isLearnerTurn)
-            } else {
-                ToolButton(title: "Play move", symbol: "forward.fill") {
+                } else {
                     trainer.playShownMove()
                     afterLearnerMove()
                 }
-                .disabled(!(trainer.isLearnerTurn || trainer.isOpponentTurn))
             }
-            ToolButton(title: "Restart", symbol: "arrow.counterclockwise") {
+            .disabled(!trainer.isLearnerTurn)
+
+            if let openingID {
+                barButton("Mode", symbol: "gamecontroller") {
+                    let next: TrainerMode = trainer.mode == .learn ? .memory : .learn
+                    router.push(.trainer(openingID: openingID, mode: next, side: trainer.learnerSide, startNode: trainer.startNodeID))
+                }
+            }
+
+            Button {
                 opponentTask?.cancel()
-                trainer.restartLine()
-                scheduleOpponentIfNeeded()
-            }
+                trainer.undo()
+            } label: { barIcon("chevron.left") }
+            .accessibilityLabel("Back one move")
+
+            Button {
+                trainer.playShownMove()
+                afterLearnerMove()
+            } label: { barIcon("chevron.right") }
+            .accessibilityLabel("Play move")
+            .disabled(trainer.mode == .memory ? !trainer.isOpponentTurn : !(trainer.isLearnerTurn || trainer.isOpponentTurn))
         }
-        .padding(.vertical, 4)
-        .card(padding: 6)
+        .buttonStyle(.plain)
+        .padding(.horizontal, KA.Spacing.s)
+        .padding(.vertical, 6)
+        .background(KA.Palette.background)
+    }
+
+    private func barIcon(_ symbol: String) -> some View {
+        Image(systemName: symbol)
+            .font(.title3)
+            .frame(maxWidth: .infinity, minHeight: 48)
+            .contentShape(Rectangle())
+    }
+
+    private func barButton(_ title: String, symbol: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: symbol)
+                Text(title)
+            }
+            .font(.subheadline.weight(.medium))
+            .frame(maxWidth: .infinity, minHeight: 48)
+            .contentShape(Rectangle())
+        }
+        .accessibilityLabel(title)
     }
 
     // MARK: Opponent moves
@@ -263,6 +330,59 @@ struct OpeningTrainerView: View {
             guard !Task.isCancelled else { return }
             if trainer.playOpponentMove() != nil { Feedback.move() }
         }
+    }
+}
+
+/// Thin horizontal evaluation bar: White's share on the left, score on the right.
+struct EvalBar: View {
+    let position: Position
+    @Environment(AppModel.self) private var model
+    @State private var score: EngineScore?
+    @State private var engine: ChessEngine?
+
+    private var whiteShare: Double {
+        guard let score else { return 0.5 }
+        return (score.winningChances + 1) / 2
+    }
+
+    private var label: String {
+        guard let score else { return "…" }
+        switch score {
+        case .centipawns(let cp): return String(format: "%.1f", abs(Double(cp)) / 100)
+        case .mate(let m): return "M\(abs(m))"
+        }
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                Rectangle().fill(Color(white: 0.38))
+                Rectangle().fill(Color(white: 0.95))
+                    .frame(width: geo.size.width * whiteShare)
+                    .animation(.easeOut(duration: 0.35), value: whiteShare)
+                Text(label)
+                    .font(.caption2.weight(.bold).monospacedDigit())
+                    .foregroundStyle(whiteShare >= 0.5 ? Color.black : Color.white)
+                    .padding(.horizontal, 6)
+                    .frame(maxWidth: .infinity, alignment: whiteShare >= 0.5 ? .leading : .trailing)
+            }
+        }
+        .frame(height: 16)
+        .task(id: position.fen) {
+            guard position.hasLegalMoves else { return }
+            if engine == nil { engine = model.engines.makeEngine() }
+            guard let engine else { return }
+            if let r = try? await engine.search(SearchRequest(position: position, limit: SearchLimit(depth: 12, moveTimeMs: 400))),
+               let s = r.score {
+                score = s.fromWhite(sideToMove: position.sideToMove)
+            }
+        }
+        .onDisappear {
+            if let engine { Task { await engine.shutdown() } }
+        }
+        .accessibilityElement()
+        .accessibilityLabel("Evaluation")
+        .accessibilityValue(score?.display ?? "calculating")
     }
 }
 

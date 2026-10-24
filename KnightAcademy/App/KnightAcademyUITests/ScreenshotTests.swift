@@ -58,6 +58,9 @@ final class ScreenshotTests: XCTestCase {
                             sleep(1)
                         }
                         shot("trainer-learn")
+                        let back = app.buttons["Back"].firstMatch
+                        if back.exists { back.tap() }
+                        sleep(1)
                     }
                 }
             }

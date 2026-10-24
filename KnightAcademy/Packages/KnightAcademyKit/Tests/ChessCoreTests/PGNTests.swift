@@ -116,6 +116,15 @@ final class PGNTests: XCTestCase {
 }
 
 final class ExplainerTests: XCTestCase {
+    func testInstructions() throws {
+        let p = Position.start
+        XCTAssertEqual(MoveExplainer.instruction(for: Move(uci: "d2d4")!, in: p), "Play pawn to d4.")
+        XCTAssertEqual(MoveExplainer.instruction(for: Move(uci: "g1f3")!, in: p), "Play knight to f3.")
+        let c = try Position(fen: "r3k2r/8/8/3p4/4P3/8/8/R3K2R w KQkq - 0 1")
+        XCTAssertEqual(MoveExplainer.instruction(for: Move(uci: "e1g1")!, in: c), "Castle kingside.")
+        XCTAssertEqual(MoveExplainer.instruction(for: Move(uci: "e4d5")!, in: c), "Capture on d5 with the pawn.")
+    }
+
     func testDevelopmentAndCenter() throws {
         let p = try Position.start.playing(san: "e4").playing(san: "e5")
         let e = MoveExplainer.explain(try p.move(fromSAN: "Nf3"), in: p)

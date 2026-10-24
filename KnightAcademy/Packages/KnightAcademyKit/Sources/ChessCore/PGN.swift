@@ -26,6 +26,12 @@ public struct PGNGame: Sendable, Hashable {
     public var tree: MoveTree
     public var result: String
 
+    public init(tags: [String: String], tree: MoveTree, result: String) {
+        self.tags = tags
+        self.tree = tree
+        self.result = result
+    }
+
     public var startPosition: Position { tree.startPosition }
     public var mainlineSANs: [String] { tree.mainline().map { tree[$0].san } }
     public var title: String {

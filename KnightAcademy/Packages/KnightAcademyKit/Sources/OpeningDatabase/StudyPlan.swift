@@ -64,6 +64,15 @@ public struct StudyCard: Hashable, Sendable, Identifiable {
     public let san: String
     public let positionKey: String
     public let lineIDs: [String]
+
+    public init(id: String, nodeID: Int, move: Move, san: String, positionKey: String, lineIDs: [String]) {
+        self.id = id
+        self.nodeID = nodeID
+        self.move = move
+        self.san = san
+        self.positionKey = positionKey
+        self.lineIDs = lineIDs
+    }
 }
 
 /// A line selected for study, truncated to the chosen depth.

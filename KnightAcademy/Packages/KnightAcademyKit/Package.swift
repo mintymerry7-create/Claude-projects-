@@ -23,7 +23,7 @@ let package = Package(
         ),
         .target(
             name: "Learning",
-            dependencies: ["ChessCore", "OpeningDatabase"],
+            dependencies: ["ChessCore", "ChessEngine", "OpeningDatabase"],
             resources: [.copy("Resources/curriculum.json"), .copy("Resources/puzzles.json")]
         ),
         .target(

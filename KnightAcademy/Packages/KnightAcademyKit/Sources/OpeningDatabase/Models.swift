@@ -83,6 +83,32 @@ public struct Opening: Codable, Identifiable, Hashable, Sendable {
     public let lines: [OpeningLine]
     public let source: String
 
+    public init(id: String, name: String, aliases: [String], eco: String, family: String, group: String,
+                side: PieceColor, difficulty: Difficulty, summary: String, ideas: [String], tactics: [String],
+                whitePlans: [String], blackPlans: [String], mistakes: [String], keyPositions: [KeyPosition],
+                canonicalName: String, canonicalPly: Int, fen: String, lines: [OpeningLine], source: String) {
+        self.id = id
+        self.name = name
+        self.aliases = aliases
+        self.eco = eco
+        self.family = family
+        self.group = group
+        self.side = side
+        self.difficulty = difficulty
+        self.summary = summary
+        self.ideas = ideas
+        self.tactics = tactics
+        self.whitePlans = whitePlans
+        self.blackPlans = blackPlans
+        self.mistakes = mistakes
+        self.keyPositions = keyPositions
+        self.canonicalName = canonicalName
+        self.canonicalPly = canonicalPly
+        self.fen = fen
+        self.lines = lines
+        self.source = source
+    }
+
     public var mainLine: OpeningLine { lines.first { $0.kind == .main } ?? lines[0] }
     public var keyVariations: [OpeningLine] { lines.filter { $0.kind == .key } }
     public var traps: [OpeningLine] { lines.filter { $0.kind == .trap } }

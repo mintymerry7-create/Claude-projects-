@@ -107,14 +107,7 @@ jobs:
           grep -E "error:|TEST (SUCC|FAIL)" shots.log | tail -20
           mkdir -p raw
           xcrun xcresulttool export attachments --path shots.xcresult --output-path raw
-          python3 - <<'PY'
-          import json, os, shutil
-          m = json.load(open("raw/manifest.json"))
-          for test in m:
-              for a in test.get("attachments", []):
-                  name = a.get("suggestedHumanReadableName", a["exportedFileName"])
-                  shutil.copy(os.path.join("raw", a["exportedFileName"]), os.path.join("screens", name))
-          PY
+          find raw -type f -exec cp {} screens/ \;
           ls -la screens
       - name: Build unsigned IPA (Release, iphoneos)
         run: |

@@ -79,3 +79,53 @@ jobs:
         run: |
           brew install stockfish
           swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit
+
+  screenshots-and-ipa:
+    name: Simulator screenshots + unsigned IPA
+    runs-on: macos-15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select newest Xcode
+        run: sudo xcode-select -s "$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)"
+      - name: Capture screenshots in the iOS Simulator
+        run: |
+          set +e
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k,v in sorted(d.items(), reverse=True) if 'iOS' in k for x in v if x['name'].startswith('iPhone')))")
+          xcrun simctl boot "$UDID"
+          xcrun simctl status_bar "$UDID" override --time "9:41" --batteryState charged --batteryLevel 100 --cellularBars 4 --wifiBars 3
+          mkdir -p screens
+          TEST_RUNNER_SCREENSHOT_DIR="$PWD/screens" xcodebuild test \
+            -project KnightAcademy/KnightAcademy.xcodeproj \
+            -scheme KnightAcademy \
+            -destination "id=$UDID" \
+            -only-testing:KnightAcademyUITests/ScreenshotTests \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO > shots.log 2>&1
+          grep -E "error:|TEST (SUCC|FAIL)" shots.log | tail -20
+          ls -la screens
+      - name: Build unsigned IPA (Release, iphoneos)
+        run: |
+          xcodebuild build \
+            -project KnightAcademy/KnightAcademy.xcodeproj \
+            -scheme KnightAcademy \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath dd \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO > ipa.log 2>&1 || (grep -E "error:" ipa.log | head -50; tail -30 ipa.log; exit 1)
+          mkdir -p Payload
+          cp -R dd/Build/Products/Release-iphoneos/KnightAcademy.app Payload/
+          zip -qry KnightAcademy-unsigned.ipa Payload
+          ls -la KnightAcademy-unsigned.ipa
+      - name: Publish to ci-artifacts branch
+        run: |
+          mkdir -p out && cp -R screens out/ && cp KnightAcademy-unsigned.ipa out/
+          cd out
+          git init -q -b ci-artifacts
+          git config user.name "knight-academy-ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add -A
+          git commit -qm "CI artifacts for ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" ci-artifacts

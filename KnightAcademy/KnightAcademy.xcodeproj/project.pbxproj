@@ -19,6 +19,7 @@
 		4ABF6AEED184526350B01365 /* RepertoireEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09467920015DB6A200FF1259 /* RepertoireEditorView.swift */; };
 		5024A8F771B902D57E4E42A2 /* OpeningTrainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1CDE6EC4B4F295FD880A75 /* OpeningTrainerView.swift */; };
 		56A336D220FF2C828CEDA08A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889B022C5BEC00E615206D15 /* GameView.swift */; };
+		577944F4641B1B8FDDE775E1 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C3B404E20D3E0DEA40D86 /* ScreenshotTests.swift */; };
 		65B077AE7824AAD0EF290344 /* OpeningDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F71EDA552F3D5761A2099 /* OpeningDetailView.swift */; };
 		6ED594565CF9F9D1EBCC0A75 /* ChessBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F693D52AF66B096864D858 /* ChessBoardView.swift */; };
 		96C28378459B9F73CDB173C2 /* SessionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9025E393C9A48B2776548 /* SessionViews.swift */; };
@@ -71,6 +72,7 @@
 		E40D7463A967E73F16D8C2C2 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		E654B18729332D4AD20B8EF4 /* GameReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameReviewView.swift; sourceTree = "<group>"; };
 		E6646619D2E775194DADE1E1 /* VariationExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationExplorerView.swift; sourceTree = "<group>"; };
+		EE2C3B404E20D3E0DEA40D86 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		F1945AC1E04348EA3B5F4049 /* KnightAcademyUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = KnightAcademyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3C10FDADC38E992043BC2DB /* KnightAcademyKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = KnightAcademyKit; path = Packages/KnightAcademyKit; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				7DAFB04E51C07D5563CAEEAB /* KnightAcademyUITests.swift */,
+				EE2C3B404E20D3E0DEA40D86 /* ScreenshotTests.swift */,
 			);
 			path = KnightAcademyUITests;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08B8A4A4A56C14BA86ABE328 /* KnightAcademyUITests.swift in Sources */,
+				577944F4641B1B8FDDE775E1 /* ScreenshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

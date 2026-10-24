@@ -45,6 +45,17 @@
             parallelizable = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "18B81558E84401971A3FECED"
+               BuildableName = "KnightAcademyUITests.xctest"
+               BlueprintName = "KnightAcademyUITests"
+               ReferencedContainer = "container:KnightAcademy.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "ChessCoreTests"
                BuildableName = "ChessCoreTests"
                BlueprintName = "ChessCoreTests"

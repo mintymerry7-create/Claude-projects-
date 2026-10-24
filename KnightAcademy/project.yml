@@ -51,6 +51,20 @@ targets:
         ENABLE_PREVIEWS: YES
         CODE_SIGN_STYLE: Automatic
         DEVELOPMENT_TEAM: ""
+  KnightAcademyUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: App/KnightAcademyUITests
+    dependencies:
+      - target: KnightAcademy
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: app.knightacademy.uitests
+        TEST_TARGET_NAME: KnightAcademy
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
 schemes:
   KnightAcademy:
     build:
@@ -62,6 +76,7 @@ schemes:
       config: Debug
       gatherCoverageData: true
       targets:
+        - KnightAcademyUITests
         - package: KnightAcademyKit/ChessCoreTests
         - package: KnightAcademyKit/ChessEngineTests
         - package: KnightAcademyKit/OpeningDatabaseTests

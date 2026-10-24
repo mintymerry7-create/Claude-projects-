@@ -15,7 +15,11 @@ struct KnightAcademyApp: App {
     private let engines: StockfishEngineProvider
 
     init() {
-        let store = UserDataStore(url: UserDataStore.defaultURL())
+        // UI tests start from a clean, throw-away profile.
+        let url = ProcessInfo.processInfo.arguments.contains("-uitest-reset")
+            ? FileManager.default.temporaryDirectory.appendingPathComponent("uitest-\(UUID().uuidString)/userdata.json")
+            : UserDataStore.defaultURL()
+        let store = UserDataStore(url: url)
         let provider = StockfishEngineProvider()
         provider.preferStockfish = store.data.settings.preferStockfish
         engines = provider

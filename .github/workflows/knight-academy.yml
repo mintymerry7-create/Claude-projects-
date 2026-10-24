@@ -54,5 +54,27 @@ jobs:
         with:
           name: xcodebuild-log
           path: build.log
-      - name: Run package tests on macOS
-        run: swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit
+      - name: Run package tests on macOS (with Stockfish)
+        run: |
+          brew install stockfish
+          swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit
+      - name: UI tests + package tests on the iOS Simulator
+        run: |
+          set +e
+          UDID=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k,v in sorted(d.items(), reverse=True) if 'iOS' in k for x in v if x['name'].startswith('iPhone')))")
+          echo "Simulator: $UDID"
+          xcodebuild test \
+            -project KnightAcademy/KnightAcademy.xcodeproj \
+            -scheme KnightAcademy \
+            -destination "id=$UDID" \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO > test.log 2>&1
+          status=$?
+          grep -E "error:|Test Case .*failed|Executed|TEST (SUCCEEDED|FAILED)" test.log | sort -u | tail -80
+          exit $status
+      - name: Upload test log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-test-log
+          path: test.log

@@ -1,0 +1,58 @@
+name: Knight Academy
+
+on:
+  push:
+    paths:
+      - "KnightAcademy/**"
+      - ".github/workflows/knight-academy.yml"
+  pull_request:
+    paths:
+      - "KnightAcademy/**"
+  workflow_dispatch:
+
+jobs:
+  package-tests-linux:
+    name: Package tests (Linux, real Stockfish)
+    runs-on: ubuntu-latest
+    container: swift:6.0-noble
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Stockfish for UCI integration tests
+        run: apt-get update && apt-get install -y stockfish && ln -sf /usr/games/stockfish /usr/local/bin/stockfish
+      - name: swift test
+        run: swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit
+
+  ios-build-and-test:
+    name: iOS app build + package tests (macOS)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select newest Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)
+          echo "Using $XCODE"
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+      - name: Build app for the iOS Simulator
+        run: |
+          set +e
+          xcodebuild build \
+            -project KnightAcademy/KnightAcademy.xcodeproj \
+            -scheme KnightAcademy \
+            -destination 'generic/platform=iOS Simulator' \
+            -skipPackagePluginValidation \
+            CODE_SIGNING_ALLOWED=NO > build.log 2>&1
+          status=$?
+          echo "---- errors ----"
+          grep -E "error:" build.log | sort -u | head -150
+          echo "---- tail ----"
+          tail -40 build.log
+          exit $status
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: build.log
+      - name: Run package tests on macOS
+        run: swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit

@@ -1,5 +1,6 @@
 import SwiftUI
 import UniformTypeIdentifiers
+import UIKit
 import ChessCore
 import OpeningDatabase
 import Learning

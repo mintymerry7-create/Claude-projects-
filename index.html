@@ -4,81 +4,159 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Name</title>
-  <meta name="description" content="Personal site.">
+  <meta name="description" content="Personal portfolio.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f4f1ea;
-      --text: #1d1c1a;
-      --muted: #6b675f;
-      --rule: #d8d2c4;
-      --link: #b3401e;
+      --bg: #111111;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #ededed;
+      --muted: #8f8f8f;
+      --accent: #ff6b35;
+      --radius: 10px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      font-family: "Bricolage Grotesque", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      font-family: "Newsreader", Georgia, serif;
-      font-size: 20px;
-      line-height: 1.55;
+      line-height: 1.6;
     }
-    main { max-width: 620px; margin: 0 auto; padding: 72px 20px 48px; }
-    a { color: var(--link); text-underline-offset: 3px; }
-    a:hover { text-decoration-thickness: 2px; }
-    .mono { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--muted); }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    .mono { font-family: "JetBrains Mono", monospace; font-size: 0.8rem; }
 
-    header { margin-bottom: 56px; }
-    h1 { font-weight: 500; font-size: 30px; letter-spacing: -0.01em; }
-    header .mono { margin-top: 4px; }
+    /* Nav */
+    nav { border-bottom: 1px solid var(--border); }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-weight: 800; font-size: 1.15rem; }
+    .links { display: flex; gap: 22px; color: var(--muted); }
+    .links a:hover { color: var(--accent); }
 
-    section { margin-bottom: 48px; }
-    h2 {
-      font-family: "IBM Plex Mono", monospace; font-weight: 400;
-      font-size: 13px; color: var(--muted); text-transform: lowercase;
-      border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin-bottom: 16px;
+    /* Hero */
+    .hero { padding: 88px 0 72px; border-bottom: 1px solid var(--border); }
+    .hero .mono { color: var(--accent); }
+    h1 { font-size: clamp(2.6rem, 8vw, 4.6rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; margin: 14px 0 20px; }
+    h1 .hl { color: var(--accent); }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 520px; }
+    .cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+    .btn {
+      padding: 11px 20px; border-radius: var(--radius); font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface);
     }
-    p + p { margin-top: 14px; }
-    .empty { color: var(--muted); font-style: italic; }
+    .btn:hover { border-color: var(--text); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #111; }
+    .btn.primary:hover { background: #ff8457; }
 
-    ul { list-style: none; }
-    li { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; }
+    /* Sections */
+    section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+    .head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; }
+    .head .mono { color: var(--muted); }
+    h2 { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
 
-    footer { margin-top: 72px; }
+    .about { display: grid; grid-template-columns: 160px 1fr; gap: 32px; align-items: start; }
+    .photo {
+      width: 160px; aspect-ratio: 1; border-radius: var(--radius);
+      background: var(--surface); border: 1px solid var(--border);
+      display: grid; place-items: center; color: var(--muted);
+    }
+    .about p { color: var(--muted); font-size: 1.05rem; }
+    .about p + p { margin-top: 12px; }
 
-    @media (max-width: 480px) {
-      body { font-size: 18px; }
-      main { padding-top: 48px; }
+    /* Projects */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .slot {
+      border: 1px dashed var(--border); border-radius: var(--radius);
+      padding: 24px; min-height: 170px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .slot .mono { color: var(--muted); }
+    .slot h3 { font-size: 1.2rem; font-weight: 600; color: var(--muted); }
+
+    /* Contact */
+    .contact h2 { font-size: clamp(2rem, 6vw, 3rem); }
+    .contact p { color: var(--muted); margin: 10px 0 26px; max-width: 440px; }
+
+    footer { padding: 28px 0; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; }
+
+    @media (max-width: 640px) {
+      .links { display: none; }
+      .hero { padding: 56px 0 48px; }
+      .about { grid-template-columns: 1fr; }
+      .photo { width: 110px; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Your Name</h1>
-      <p class="mono">city · learning to code</p>
-    </header>
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#">yourname</a>
+      <div class="links">
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#contact">contact</a>
+      </div>
+    </div>
+  </nav>
 
-    <section>
-      <h2>about</h2>
-      <p>A few lines about you, in your own words. What you're into, what you're learning, what you want to make.</p>
-    </section>
+  <header class="hero">
+    <div class="wrap">
+      <span class="mono">// hey there</span>
+      <h1>I'm Your Name.<br>I make <span class="hl">stuff</span> with code.</h1>
+      <p class="lead">One line about you. What you like building, what you're into.</p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
-    <section>
-      <h2>projects</h2>
-      <p class="empty">Nothing here yet. First project in progress.</p>
-    </section>
+  <section id="about">
+    <div class="wrap">
+      <div class="head"><span class="mono">01</span><h2>About</h2></div>
+      <div class="about">
+        <div class="photo mono">photo</div>
+        <div>
+          <p>A short bio goes here. Where you're from, how you got into coding, what you're learning now.</p>
+          <p>Anything else you want people to know.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section>
-      <h2>contact</h2>
-      <ul>
-        <li><span>Email</span><a href="mailto:you@example.com">you@example.com</a></li>
-        <li><span>GitHub</span><a href="https://github.com/">github.com/username</a></li>
-      </ul>
-    </section>
+  <section id="projects">
+    <div class="wrap">
+      <div class="head"><span class="mono">02</span><h2>Projects</h2></div>
+      <div class="grid">
+        <div class="slot">
+          <span class="mono">#1</span>
+          <h3>In progress…</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="mono">updated <span id="year"></span></footer>
-  </main>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head"><span class="mono">03</span><h2>Say hi</h2></div>
+      <p>Want to build something together or just talk? Reach out.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:you@example.com">Email</a>
+        <a class="btn" href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap mono">
+      <span>© <span id="year"></span> Your Name</span>
+      <span>made on my phone</span>
+    </div>
+  </footer>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>

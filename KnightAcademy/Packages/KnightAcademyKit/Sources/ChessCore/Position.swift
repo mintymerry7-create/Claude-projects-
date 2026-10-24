@@ -224,7 +224,7 @@ public struct Position: Hashable, Sendable {
 
     public var isCheck: Bool { isKingAttacked(sideToMove) }
 
-    func isKingAttacked(_ color: PieceColor) -> Bool {
+    public func isKingAttacked(_ color: PieceColor) -> Bool {
         guard let k = kingSquare(color) else { return false }
         return isAttacked(k, by: color.opposite)
     }

@@ -54,10 +54,6 @@ jobs:
         with:
           name: xcodebuild-log
           path: build.log
-      - name: Run package tests on macOS (with Stockfish)
-        run: |
-          brew install stockfish
-          swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit
       - name: UI tests + package tests on the iOS Simulator
         run: |
           set +e
@@ -78,3 +74,8 @@ jobs:
         with:
           name: xcodebuild-test-log
           path: test.log
+      - name: Run package tests on macOS (with Stockfish)
+        if: always()
+        run: |
+          brew install stockfish
+          swift test -c release --package-path KnightAcademy/Packages/KnightAcademyKit

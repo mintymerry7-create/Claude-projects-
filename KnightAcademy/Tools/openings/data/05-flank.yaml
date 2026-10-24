@@ -1,0 +1,312 @@
+family: Flank Openings
+openings:
+
+- id: english-symmetrical
+  name: English Opening – Symmetrical
+  canonical: "English Opening: Symmetrical Variation"
+  prefixes: ["English Opening: Symmetrical Variation"]
+  group: English Opening
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.c4 c5 — Black mirrors White. Play is often slow and maneuvering, with both
+    sides fianchettoing and fighting for d4/d5.
+  main: 1. c4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. Nf3 Nf6 6. O-O O-O 7. d4 cxd4 8. Nxd4 Nxd4 9. Qxd4 d6 10. Qd3
+  notes:
+    "1.c4": The English — a flank attack on d5.
+    "1...c5": Symmetry.
+    "7.d4": White breaks the symmetry in the center.
+  ideas:
+    - Long-diagonal battles and maneuvering.
+  tactics:
+    - Long-diagonal discoveries after central exchanges.
+  whitePlans:
+    - d4 break, queenside pressure.
+  blackPlans:
+    - Mirror and break with ...d5 or ...b5.
+  mistakes:
+    - Copying for too long.
+  keyPositions:
+    - after: "5...Nf6"
+      title: Symmetry
+      text: Who breaks the symmetry first, and how?
+  variations: []
+
+- id: english-kings
+  name: English Opening – Reversed Sicilian
+  aliases: [King's English]
+  canonical: "English Opening: King's English Variation"
+  prefixes: ["English Opening: King's English Variation"]
+  group: English Opening
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.c4 e5 — a Sicilian with colours reversed and an extra tempo for White.
+  main: 1. c4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. g3 d5 5. cxd5 Nxd5 6. Bg2 Nb6 7. O-O Be7 8. d3 O-O 9. a3 Be6 10. b4
+  notes:
+    "1...e5": Black takes central space.
+    "4...d5": An open Sicilian-like position reversed.
+    "10.b4": Queenside expansion.
+  ideas:
+    - White uses the extra tempo in Sicilian structures.
+  tactics:
+    - b4–b5 pushes, long-diagonal pressure.
+  whitePlans:
+    - Queenside expansion.
+  blackPlans:
+    - Central space and kingside play.
+  mistakes:
+    - Black overextending.
+  keyPositions:
+    - after: "1...e5"
+      title: Reversed Sicilian
+      text: White plays a Sicilian a tempo up.
+  variations:
+    - name: Botvinnik System
+      kind: key
+      moves: 1. c4 e5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. d3 d6 6. e4 Nge7 7. Nge2 O-O 8. O-O
+      description: White sets up pawns on c4, d3, e4 for a slow strategic game.
+
+- id: english-anglo-indian
+  name: English Opening – Anglo-Indian
+  canonical: "English Opening: Anglo-Indian Defense"
+  prefixes: ["English Opening: Anglo-Indian Defense"]
+  group: English Opening
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.c4 Nf6 keeps Black flexible. Lines often transpose to Indian defences or
+    independent English structures like the Hedgehog.
+  main: 1. c4 Nf6 2. Nc3 e6 3. Nf3 c5 4. g3 b6 5. Bg2 Bb7 6. O-O Be7 7. d4 cxd4 8. Qxd4 d6 9. Rd1 a6 10. b3
+  notes:
+    "1...Nf6": Flexible.
+    "8.Qxd4": The Hedgehog structure arises.
+  ideas:
+    - Hedgehog — Black's compact setup waits for ...b5 or ...d5.
+  tactics:
+    - Sudden ...b5 and ...d5 breaks.
+  whitePlans:
+    - Space and restriction.
+  blackPlans:
+    - Patience and timely breaks.
+  mistakes:
+    - White overextending against the Hedgehog.
+  keyPositions:
+    - after: "9...a6"
+      title: Hedgehog
+      text: Black's pawns on a6, b6, d6, e6 form the spines.
+  variations: []
+
+- id: reti-opening
+  name: Réti Opening
+  canonical: "Réti Opening"
+  prefixes: ["Réti Opening"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.Nf3 d5 2.c4 — hypermodern play: White attacks d5 from the side and often
+    fianchettoes both bishops.
+  main: 1. Nf3 d5 2. c4 e6 3. g3 Nf6 4. Bg2 Be7 5. O-O O-O 6. b3 c5 7. Bb2 Nc6 8. e3 b6 9. Nc3 Bb7
+  notes:
+    "2.c4": The Réti — pressure on d5.
+    "6.b3": Double fianchetto.
+  ideas:
+    - Control the center from the flanks.
+  tactics:
+    - Long-diagonal pressure.
+  whitePlans:
+    - Double fianchetto and central breaks d4 or e4.
+  blackPlans:
+    - Solid center.
+  mistakes:
+    - Black overextending in the center.
+  keyPositions:
+    - after: "2.c4"
+      title: Réti
+      text: White hits d5 from the wing.
+  variations: []
+
+- id: kings-indian-attack
+  name: King's Indian Attack
+  canonical: "King's Indian Attack"
+  prefixes: ["King's Indian Attack"]
+  side: white
+  difficulty: beginner
+  summary: >
+    A system: Nf3, g3, Bg2, O-O, d3, Nbd2 and e4. White aims for e5 and a kingside
+    attack — Fischer's favourite against the French setup.
+  main: 1. Nf3 d5 2. g3 Nf6 3. Bg2 c6 4. O-O Bg4 5. d3 Nbd7 6. Nbd2 e5 7. e4 dxe4 8. dxe4 Bc5 9. h3 Bh5
+  notes:
+    "2.g3": Fianchetto.
+    "7.e4": The KIA center.
+  ideas:
+    - Setup play with e4–e5 and a kingside attack.
+  tactics:
+    - e5 pushes, Nh4–f5 jumps.
+  whitePlans:
+    - e5, Nf1–h2–g4, h4–h5 attack.
+  blackPlans:
+    - Queenside expansion.
+  mistakes:
+    - Black ignoring the kingside build-up.
+  keyPositions:
+    - after: "7.e4"
+      title: KIA center
+      text: White's setup is complete.
+  variations: []
+
+- id: bird-opening
+  name: Bird's Opening
+  canonical: "Bird Opening"
+  prefixes: ["Bird Opening"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.f4 — a Dutch Defense with colours reversed. White controls e5 and plays for a
+    kingside attack.
+  main: 1. f4 d5 2. Nf3 Nf6 3. e3 g6 4. Be2 Bg7 5. O-O O-O 6. d3 c5 7. Qe1 Nc6 8. Qh4
+  notes:
+    "1.f4": Bird — e5 control.
+    "7.Qe1": The queen heads to h4.
+  ideas:
+    - Kingside attack with Qh4, f5.
+  tactics:
+    - Qh4 batteries.
+  whitePlans:
+    - Kingside attack.
+  blackPlans:
+    - Central break ...e5.
+  mistakes:
+    - White's kingside weaknesses.
+  keyPositions:
+    - after: "1.f4"
+      title: Bird
+      text: A reversed Dutch.
+  variations: []
+
+- id: froms-gambit
+  name: From's Gambit
+  canonical: "Bird Opening: From's Gambit"
+  side: black
+  difficulty: intermediate
+  summary: >
+    1.f4 e5!? — Black gambits a pawn to exploit White's weakened kingside.
+  main: 1. f4 e5 2. fxe5 d6 3. exd6 Bxd6 4. Nf3 g5 5. d4 g4 6. Ne5 Bxe5 7. dxe5 Qxd1+ 8. Kxd1 Nc6
+  notes:
+    "1...e5": From's Gambit.
+    "4...g5": The aggressive Lasker line.
+  ideas:
+    - Attack on the e1–h4 diagonal.
+  tactics:
+    - Qh4+ and Bg3# patterns.
+  whitePlans:
+    - Return material calmly.
+  blackPlans:
+    - Kingside attack.
+  mistakes:
+    - White's careless g3.
+  keyPositions:
+    - after: "3...Bxd6"
+      title: Open diagonal
+      text: The bishop eyes g3 and h2.
+  variations: []
+  traps:
+    - name: Bird's mate trap
+      trapper: black
+      moves: 1. f4 e5 2. fxe5 d6 3. exd6 Bxd6 4. Nc3 Qh4+ 5. g3 Qxg3+ 6. hxg3 Bxg3#
+      description: The weakened e1–h4 diagonal allows a famous queen sacrifice and bishop mate.
+
+- id: larsen-opening
+  name: Larsen's Opening
+  aliases: [Nimzo-Larsen Attack]
+  canonical: "Nimzo-Larsen Attack"
+  prefixes: ["Nimzo-Larsen Attack"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.b3 and Bb2 — White fights for e5 and d4 from the flank.
+  main: 1. b3 e5 2. Bb2 Nc6 3. e3 d5 4. Bb5 Bd6 5. Nf3 Qe7 6. c4 Nf6 7. cxd5 Nxd5
+  notes:
+    "1.b3": Larsen.
+    "4.Bb5": Pressure on e5.
+  ideas:
+    - Pressure on e5.
+  tactics:
+    - Bxc6 and Nxe5 tactics.
+  whitePlans:
+    - Pressure on e5.
+  blackPlans:
+    - Big center.
+  mistakes:
+    - Black overextending.
+  keyPositions:
+    - after: "2.Bb2"
+      title: Larsen
+      text: The bishop eyes e5.
+  variations: []
+
+- id: polish-opening
+  name: Polish Opening
+  aliases: [Sokolsky Opening, Orangutan]
+  canonical: "Polish Opening"
+  prefixes: ["Polish Opening"]
+  side: white
+  difficulty: beginner
+  summary: >
+    1.b4 — an offbeat flank opening aiming for Bb2 pressure on e5.
+  main: 1. b4 e5 2. Bb2 Bxb4 3. Bxe5 Nf6 4. c4 O-O 5. Nf3 Nc6 6. Bb2 d5
+  notes:
+    "1.b4": Polish.
+    "2...Bxb4": Black takes.
+  ideas:
+    - Queenside space, long-diagonal pressure.
+  tactics:
+    - Bxe5 trades.
+  whitePlans:
+    - Bb2 and c4.
+  blackPlans:
+    - Central development.
+  mistakes:
+    - White falling behind.
+  keyPositions:
+    - after: "1.b4"
+      title: Polish
+      text: Unusual but playable.
+  variations: []
+
+- id: grob-opening
+  name: Grob Opening
+  canonical: "Grob Opening"
+  prefixes: ["Grob Opening"]
+  side: white
+  difficulty: beginner
+  summary: >
+    1.g4?! — a provocative flank opening. Good for learning how to punish premature
+    pawn moves.
+  main: 1. g4 d5 2. Bg2 c6 3. h3 h5 4. g5 e5 5. d4 e4
+  notes:
+    "1.g4": The Grob.
+    "2.Bg2": Pressure on d5 and b7.
+    "2...c6": Solidly protects d5 and blunts the g2 bishop.
+    "3...h5": Black immediately challenges the advanced g-pawn.
+    "5...e4": Black gains space and shuts the long diagonal — a model reaction.
+  ideas:
+    - Long-diagonal tricks.
+  tactics:
+    - Qb3 attacks on b7.
+  whitePlans:
+    - Pressure the long diagonal.
+  blackPlans:
+    - Central development.
+  mistakes:
+    - White's weak kingside.
+  keyPositions:
+    - after: "1.g4"
+      title: Grob
+      text: Weakens f3 and h3 immediately.
+  variations: []
+  traps:
+    - name: Fool's mate pattern
+      trapper: black
+      moves: 1. g4 e5 2. f3 Qh4#
+      description: The fastest mate in chess — two careless pawn moves open the king.

@@ -1,0 +1,1161 @@
+family: Closed Games
+openings:
+
+- id: qgd-orthodox
+  name: Queen's Gambit Declined – Orthodox
+  aliases: [QGD]
+  canonical: "Queen's Gambit Declined: Orthodox Defense"
+  prefixes: ["Queen's Gambit Declined: Orthodox Defense", "Queen's Gambit Declined", "Queen's Gambit"]
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    The classical answer to the Queen's Gambit: 2...e6 keeps a strong pawn on d5.
+    Black is solid but must solve the problem of the c8 bishop, often with
+    Capablanca's freeing maneuver ...dxc4, ...Nd5 and ...e5.
+  main: 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. Rc1 c6 8. Bd3 dxc4 9. Bxc4 Nd5 10. Bxe7 Qxe7 11. O-O Nxc3 12. Rxc3 e5
+  notes:
+    "2.c4": The Queen's Gambit — not a real gambit, since Black cannot keep the pawn safely.
+    "2...e6": Declines and supports d5 — but blocks the c8 bishop.
+    "4.Bg5": Pins the f6 knight, increasing pressure on d5.
+    "7.Rc1": The rook prepares for an opening of the c-file.
+    "8...dxc4": Black gives up the center at the moment White has spent a tempo on Bd3.
+    "9...Nd5": Capablanca's freeing maneuver — trade pieces to relieve the cramp.
+    "12...e5": The freeing break; the c8 bishop finally breathes.
+  ideas:
+    - Black's central d5 point is solid; the light-squared bishop is the problem piece.
+    - Freeing breaks ...c5 or ...e5 are essential.
+  tactics:
+    - The Elephant Trap — Nxd5?? loses a piece to a pin trick.
+    - Pins on the f6 knight and on the c-file.
+  whitePlans:
+    - Minority attack (b4–b5) in Exchange structures, or central e4 expansion.
+  blackPlans:
+    - Free the position with ...dxc4 + ...Nd5 + ...e5 or ...c5.
+  mistakes:
+    - Black never activating the c8 bishop.
+    - White grabbing d5 with Nxd5 when the Elephant Trap applies.
+  keyPositions:
+    - after: "4.Bg5"
+      title: Classical pin
+      text: The pin on f6 increases pressure on d5 and is the hallmark of the Orthodox lines.
+  variations:
+    - name: Tartakower 7...b6
+      kind: key
+      moves: 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 h6 7. Bh4 b6 8. Be2 Bb7 9. Bxf6 Bxf6 10. cxd5 exd5 11. b4
+      description: Black fianchettoes the problem bishop — a reliable modern system.
+  traps:
+    - name: Elephant Trap
+      trapper: black
+      moves: 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. cxd5 exd5 6. Nxd5 Nxd5 7. Bxd8 Bb4+ 8. Qd2 Bxd2+ 9. Kxd2 Kxd8
+      description: The d5 pawn looks loose, but taking it allows ...Nxd5! — the queen sacrifice is only temporary and Black wins a piece.
+
+- id: qgd-exchange
+  name: Queen's Gambit Declined – Exchange (Carlsbad)
+  aliases: [Carlsbad Structure]
+  canonical: "Queen's Gambit Declined: Exchange Variation"
+  group: Queen's Gambit
+  side: white
+  difficulty: intermediate
+  summary: >
+    White exchanges on d5 to create the Carlsbad structure and plans the famous
+    minority attack — b4–b5 to give Black a weak pawn on c6 or d5.
+  main: 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 exd5 5. Bg5 c6 6. e3 Be7 7. Bd3 Nbd7 8. Qc2 O-O 9. Nge2 Re8 10. O-O Nf8 11. Rab1
+  notes:
+    "4.cxd5": The Exchange — fixing the structure.
+    "5.Bg5": Pins and pressures d5.
+    "9.Nge2": Flexible; keeps f3 for the f-pawn (f3 and e4 plan).
+    "11.Rab1": Prepares b4–b5 — the minority attack.
+  ideas:
+    - Carlsbad structure — White's minority attack vs Black's kingside play.
+  tactics:
+    - b5 breaks, Bxf6 trades to win d5.
+  whitePlans:
+    - Minority attack with b4–b5, or central f3 and e4.
+  blackPlans:
+    - Kingside attack with ...Ne4, ...f5, ...Ng6; or ...a5 against b4.
+  mistakes:
+    - Black waiting passively for the minority attack.
+  keyPositions:
+    - after: "4...exd5"
+      title: Carlsbad structure
+      text: One of the most important pawn structures to understand in chess.
+  variations: []
+
+- id: qgd-cambridge-springs
+  name: Cambridge Springs Defense
+  canonical: "Queen's Gambit Declined: Cambridge Springs Defense"
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    A tricky QGD system. Black pins the c3 knight with ...Qa5, exploiting the absent
+    bishop from c1, and creates tactical threats against g5 and c3.
+  main: 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5 7. Nd2 Bb4 8. Qc2 O-O 9. Be2 e5
+  notes:
+    "4...Nbd7": Sets the Elephant Trap and keeps options.
+    "6...Qa5": The Cambridge Springs — pin on c3 and pressure on g5.
+    "7.Nd2": Protects against ...Ne4 and ...dxc4 tricks.
+    "9...e5": A central break.
+  ideas:
+    - Double pressure on c3 and g5.
+  tactics:
+    - ...Ne4 hitting g5 and c3; ...dxc4 opening the a5–e1 diagonal.
+  whitePlans:
+    - Unpin carefully with Nd2 and Qc2.
+  blackPlans:
+    - Exploit pins, break with ...e5 or ...c5.
+  mistakes:
+    - White ignoring the pin on c3.
+  keyPositions:
+    - after: "6...Qa5"
+      title: The pin
+      text: Black's queen pins c3 and eyes g5.
+  variations: []
+
+- id: tarrasch-defense
+  name: Tarrasch Defense
+  canonical: "Tarrasch Defense"
+  prefixes: ["Tarrasch Defense"]
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...c5 — Black accepts an isolated queen's pawn in return for free piece play.
+    White's fianchetto setup puts pressure on d5.
+  main: 1. d4 d5 2. c4 e6 3. Nc3 c5 4. cxd5 exd5 5. Nf3 Nc6 6. g3 Nf6 7. Bg2 Be7 8. O-O O-O 9. Bg5 cxd4 10. Nxd4 h6 11. Be3 Re8
+  notes:
+    "3...c5": Active counter in the center.
+    "6.g3": The bishop on g2 targets d5.
+    "9...cxd4": Black creates an isolated d5 pawn.
+  ideas:
+    - Activity vs structure.
+  tactics:
+    - d5–d4 breaks, pins on the d-file.
+  whitePlans:
+    - Blockade and pressure the isolated pawn.
+  blackPlans:
+    - Use active pieces and the d4 push.
+  mistakes:
+    - Black trading active pieces and leaving d5 weak.
+  keyPositions:
+    - after: "4...exd5"
+      title: Tarrasch structure
+      text: Black accepts possible isolated-pawn positions.
+  variations: []
+
+- id: queens-gambit-accepted
+  name: Queen's Gambit Accepted
+  canonical: "Queen's Gambit Accepted"
+  prefixes: ["Queen's Gambit Accepted"]
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    Black takes c4 and returns it later in exchange for free development and a
+    timely ...c5. Trying to keep the pawn is the classic beginner's mistake.
+  main: 1. d4 d5 2. c4 dxc4 3. Nf3 Nf6 4. e3 e6 5. Bxc4 c5 6. O-O a6 7. dxc5 Qxd1 8. Rxd1 Bxc5 9. Kf1 b5 10. Be2 Bb7
+  notes:
+    "2...dxc4": Black takes but will not try to keep the pawn.
+    "3.Nf3": Prevents ...e5.
+    "5...c5": The thematic strike at d4.
+    "7.dxc5": Trades queens into a slightly better ending for White.
+  ideas:
+    - Black gives back the pawn for development and a ...c5 break.
+  tactics:
+    - Trapping attempts with a4 and Qf3 if Black holds the pawn with ...b5.
+  whitePlans:
+    - Regain c4, build e4 or play an isolated d-pawn game.
+  blackPlans:
+    - Develop quickly and challenge d4 with ...c5.
+  mistakes:
+    - Holding the c4 pawn with ...b5 and getting the rook trapped.
+  keyPositions:
+    - after: "2...dxc4"
+      title: Gambit accepted
+      text: Black must not try to keep the pawn.
+  variations:
+    - name: Central 3.e4
+      kind: key
+      moves: 1. d4 d5 2. c4 dxc4 3. e4 e5 4. Nf3 exd4 5. Bxc4 Nc6 6. O-O Be6 7. Bxe6 fxe6 8. Qb3 Qd7
+      description: White grabs the center immediately.
+  traps:
+    - name: Holding the pawn with ...b5
+      trapper: white
+      moves: 1. d4 d5 2. c4 dxc4 3. e3 b5 4. a4 c6 5. axb5 cxb5 6. Qf3
+      description: Defending the extra pawn with ...b5 and ...c6 allows Qf3, forking a8 and the queenside.
+
+- id: slav-defense
+  name: Slav Defense
+  canonical: "Slav Defense"
+  prefixes: ["Slav Defense"]
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    2...c6 supports d5 without blocking the c8 bishop. In the main line Black takes
+    on c4 and develops the bishop to f5 before playing ...e6.
+  main: 1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 dxc4 5. a4 Bf5 6. e3 e6 7. Bxc4 Bb4 8. O-O O-O 9. Qe2 Nbd7 10. e4 Bg6
+  notes:
+    "2...c6": Supports d5 and keeps the c8 bishop free.
+    "4...dxc4": Takes the pawn when White can no longer win it back with e3 and Bxc4 at once.
+    "5.a4": Stops ...b5 holding the pawn.
+    "5...Bf5": The bishop gets out before ...e6.
+    "10.e4": White gains the center.
+  ideas:
+    - Solid structure with a good light-squared bishop.
+  tactics:
+    - e4–e5 pushes, pins on b4.
+  whitePlans:
+    - Regain c4 and build e4.
+  blackPlans:
+    - Develop smoothly; ...c5 or ...e5 breaks.
+  mistakes:
+    - Black holding c4 too long.
+  keyPositions:
+    - after: "5...Bf5"
+      title: Good bishop
+      text: The Slav's advantage over the QGD.
+  variations:
+    - name: Exchange Slav
+      kind: key
+      moves: 1. d4 d5 2. c4 c6 3. cxd5 cxd5 4. Nc3 Nf6 5. Bf4 Nc6 6. e3 Bf5 7. Nf3 e6 8. Bb5 Nd7
+      description: Symmetrical and solid.
+
+- id: semi-slav-meran
+  name: Semi-Slav – Meran Variation
+  canonical: "Semi-Slav Defense: Meran Variation"
+  prefixes: ["Semi-Slav Defense: Meran Variation", "Semi-Slav Defense"]
+  group: Queen's Gambit
+  side: black
+  difficulty: advanced
+  summary: >
+    Black combines ...c6 and ...e6, takes on c4 and expands with ...b5, developing
+    the bishop on b7. Rich, sharp play with central breaks on both sides.
+  main: 1. d4 d5 2. c4 c6 3. Nc3 Nf6 4. Nf3 e6 5. e3 Nbd7 6. Bd3 dxc4 7. Bxc4 b5 8. Bd3 Bb7 9. O-O a6 10. e4 c5 11. d5 c4 12. Bc2 Qc7
+  notes:
+    "6...dxc4": Takes when White has spent a tempo on Bd3.
+    "7...b5": Queenside expansion with tempo.
+    "10.e4": White's central break.
+    "10...c5": Black's counter-break.
+  ideas:
+    - Dynamic central tension; queenside expansion.
+  tactics:
+    - e5 pushes, d5 sacrifices.
+  whitePlans:
+    - e4–e5 and kingside attack.
+  blackPlans:
+    - ...c5, ...b4 and the long diagonal for Bb7.
+  mistakes:
+    - Black delaying ...c5 too long.
+  keyPositions:
+    - after: "7...b5"
+      title: Meran expansion
+      text: Black gains queenside space with tempo.
+  variations: []
+
+- id: semi-slav-botvinnik
+  name: Semi-Slav – Botvinnik System
+  canonical: "Semi-Slav Defense: Botvinnik Variation"
+  group: Queen's Gambit
+  side: black
+  difficulty: advanced
+  summary: >
+    One of the sharpest opening lines in chess. After 5.Bg5 dxc4 6.e4 b5 Black gives
+    up the kingside for queenside pawns; both sides must know concrete theory.
+  main: 1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 dxc4 6. e4 b5 7. e5 h6 8. Bh4 g5 9. Nxg5 hxg5 10. Bxg5 Nbd7 11. exf6 Bb7 12. g3 c5 13. d5 Qb6
+  notes:
+    "5...dxc4": Black accepts the challenge.
+    "6...b5": Holds the pawn.
+    "9.Nxg5": The famous piece sacrifice.
+    "11...Bb7": Black develops, aiming at the long diagonal.
+  ideas:
+    - Material imbalance and mutual attacks.
+  tactics:
+    - Countless forcing lines; checks on the long diagonal.
+  whitePlans:
+    - Use the f6 pawn and the exposed black king.
+  blackPlans:
+    - Queenside pawns and the long diagonal attack.
+  mistakes:
+    - Playing it without preparation.
+  keyPositions:
+    - after: "9.Nxg5"
+      title: Sacrifice
+      text: The defining moment of the Botvinnik.
+  variations:
+    - name: Moscow 5...h6
+      kind: key
+      moves: 1. d4 d5 2. c4 c6 3. Nf3 Nf6 4. Nc3 e6 5. Bg5 h6 6. Bxf6 Qxf6 7. e3 Nd7 8. Bd3 dxc4 9. Bxc4 g6 10. O-O Bg7
+      description: The calm alternative — Black takes the bishop pair.
+
+- id: albin-countergambit
+  name: Albin Countergambit
+  canonical: "Queen's Gambit Declined: Albin Countergambit"
+  group: Queen's Gambit
+  side: black
+  difficulty: intermediate
+  summary: >
+    2...e5 — an aggressive counter-gambit. The d4 pawn becomes a bone in White's
+    throat, and the Lasker Trap is a famous pitfall.
+  main: 1. d4 d5 2. c4 e5 3. dxe5 d4 4. Nf3 Nc6 5. g3 Be6 6. Nbd2 Qd7 7. Bg2 O-O-O 8. O-O
+  notes:
+    "2...e5": The counter-gambit.
+    "3...d4": The cramping pawn.
+    "7...O-O-O": Black castles long and attacks with ...h5–h4.
+  ideas:
+    - Space with ...d4; opposite castling attacks.
+  tactics:
+    - The Lasker Trap underpromotion.
+  whitePlans:
+    - Fianchetto, win the e5 pawn safely, queenside attack.
+  blackPlans:
+    - Kingside attack with ...h5–h4 and ...Bh3.
+  mistakes:
+    - White playing e3 too early.
+  keyPositions:
+    - after: "3...d4"
+      title: Cramping pawn
+      text: The d4 pawn restricts White's development.
+  variations: []
+  traps:
+    - name: Lasker Trap
+      trapper: black
+      moves: 1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3 6. Bxb4 exf2+ 7. Ke2 fxg1=N+
+      description: Underpromotion to a knight with check wins material — one of the rare practical underpromotions.
+
+- id: chigorin-defense
+  name: Chigorin Defense
+  canonical: "Queen's Gambit Declined: Chigorin Defense"
+  group: Queen's Gambit
+  side: black
+  difficulty: advanced
+  summary: >
+    2...Nc6 develops a piece and attacks d4, giving up the bishop pair for active
+    play. Unorthodox and principled.
+  main: 1. d4 d5 2. c4 Nc6 3. Nf3 Bg4 4. cxd5 Bxf3 5. gxf3 Qxd5 6. e3 e5 7. Nc3 Bb4 8. Bd2 Bxc3 9. bxc3
+  notes:
+    "2...Nc6": Pressure on d4 instead of supporting d5.
+    "4...Bxf3": Gives the bishop pair for damaging White's structure.
+  ideas:
+    - Knights vs bishops; pressure on d4.
+  tactics:
+    - ...e5 breaks, queen attacks on d4.
+  whitePlans:
+    - Open the position for the bishops.
+  blackPlans:
+    - Keep the position closed, use knights.
+  mistakes:
+    - Black opening the game for White's bishops.
+  keyPositions:
+    - after: "2...Nc6"
+      title: Unorthodox
+      text: Black challenges d4 with a piece.
+  variations: []
+
+- id: grunfeld-exchange
+  name: Grünfeld Defense – Exchange Variation
+  canonical: "Grünfeld Defense: Exchange Variation"
+  prefixes: ["Grünfeld Defense: Exchange Variation", "Grünfeld Defense"]
+  group: Grünfeld Defense
+  side: black
+  difficulty: advanced
+  summary: >
+    Black allows White a big center and then attacks it with ...c5, ...Bg7 and
+    ...Nc6. The Exchange Variation is the most direct test.
+  main: 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. e4 Nxc3 6. bxc3 Bg7 7. Bc4 c5 8. Ne2 Nc6 9. Be3 O-O 10. O-O Bg4 11. f3 Na5
+  notes:
+    "3...d5": The Grünfeld — challenging the center at once.
+    "5.e4": White builds a big center.
+    "7...c5": Attacks d4 — the Grünfeld idea.
+    "10...Bg4": Pins and pressures.
+  ideas:
+    - Hypermodern pressure on d4.
+  tactics:
+    - Long-diagonal pressure, ...Na5 hitting c4.
+  whitePlans:
+    - Keep the center, attack on the kingside, d5 push.
+  blackPlans:
+    - Pressure d4 with ...c5, ...Nc6, ...Bg4, ...Qb6.
+  mistakes:
+    - Black failing to pressure the center fast enough.
+  keyPositions:
+    - after: "6...Bg7"
+      title: Center vs pressure
+      text: White's big center is the target of the g7 bishop.
+  variations: []
+
+- id: grunfeld-russian
+  name: Grünfeld Defense – Russian System
+  canonical: "Grünfeld Defense: Russian Variation"
+  group: Grünfeld Defense
+  side: black
+  difficulty: advanced
+  summary: >
+    5.Qb3 attacks d5 and later regains c4 with tempo. Black chooses between the
+    Hungarian (...a6) and Smyslov (...Bg4) systems.
+  main: 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qb3 dxc4 6. Qxc4 O-O 7. e4 a6 8. Be2 b5 9. Qb3 c5 10. dxc5 Bb7
+  notes:
+    "5.Qb3": Pressure on d5.
+    "7...a6": The Hungarian — preparing ...b5.
+  ideas:
+    - Black gains queenside space; White has the center.
+  tactics:
+    - ...b5–b4 hitting c3, long diagonal tactics.
+  whitePlans:
+    - Center and development.
+  blackPlans:
+    - Queenside expansion and diagonal pressure.
+  mistakes:
+    - Black allowing e5 and d5 with tempo.
+  keyPositions:
+    - after: "7.e4"
+      title: Russian center
+      text: White has a full center; Black picks a system.
+  variations: []
+
+- id: kid-classical
+  name: King's Indian – Classical (Mar del Plata)
+  canonical: "King's Indian Defense: Orthodox Variation"
+  prefixes: ["King's Indian Defense: Orthodox Variation", "King's Indian Defense"]
+  group: King's Indian Defense
+  side: black
+  difficulty: advanced
+  summary: >
+    The King's Indian lets White build a center and then strikes with ...e5. After
+    d5 the center locks and both sides race: White on the queenside, Black with
+    ...f5–f4–g5 on the kingside.
+  main: 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. Nf3 O-O 6. Be2 e5 7. O-O Nc6 8. d5 Ne7 9. Ne1 Nd7 10. Be3 f5 11. f3 f4 12. Bf2 g5
+  notes:
+    "2...g6": Fianchetto — the King's Indian setup.
+    "6...e5": Black strikes the center.
+    "8.d5": Closes the center.
+    "9...Nd7": Prepares ...f5.
+    "10...f5": The thematic kingside pawn storm begins.
+    "12...g5": Black's attack rolls.
+  ideas:
+    - Closed center, races on opposite wings.
+  tactics:
+    - ...g4 sacrifices, Bxh3 ideas, c5 breaks.
+  whitePlans:
+    - Queenside attack with c5, Nd3 and the c-file.
+  blackPlans:
+    - Kingside storm with ...f5–f4, ...g5–g4.
+  mistakes:
+    - Playing slowly in a race.
+  keyPositions:
+    - after: "8.d5"
+      title: Closed center
+      text: The race begins.
+  variations:
+    - name: Fianchetto Variation
+      kind: key
+      moves: 1. d4 Nf6 2. c4 g6 3. Nf3 Bg7 4. g3 O-O 5. Bg2 d6 6. O-O Nc6 7. Nc3 a6 8. d5 Na5 9. Nd2 c5
+      description: A positional approach for White with the g2 bishop.
+
+- id: kid-samisch
+  name: King's Indian – Sämisch Variation
+  canonical: "King's Indian Defense: Sämisch Variation"
+  group: King's Indian Defense
+  side: white
+  difficulty: advanced
+  summary: >
+    5.f3 supports e4 and prepares Be3, Qd2 and a kingside pawn storm with g4 and h4.
+  main: 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3 e5 7. Nge2 c6 8. Qd2 Nbd7 9. d5 cxd5 10. cxd5 a6
+  notes:
+    "5.f3": The Sämisch — solid support for e4.
+    "6.Be3": Prepares Qd2 and Bh6.
+    "9.d5": Closes the center.
+  ideas:
+    - Opposite castling and pawn storms.
+  tactics:
+    - Bh6 trades, g4–h4–h5 storms.
+  whitePlans:
+    - Long castling, kingside storm.
+  blackPlans:
+    - Queenside counterplay with ...b5 and ...c5.
+  mistakes:
+    - Black being too slow on the queenside.
+  keyPositions:
+    - after: "5.f3"
+      title: Sämisch
+      text: White's center is rock-solid.
+  variations: []
+
+- id: kid-four-pawns
+  name: King's Indian – Four Pawns Attack
+  canonical: "King's Indian Defense: Four Pawns Attack"
+  group: King's Indian Defense
+  side: white
+  difficulty: advanced
+  summary: >
+    5.f4 grabs maximum space. Black must break with ...c5 and ...e6 immediately to
+    open lines before White consolidates.
+  main: 1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f4 O-O 6. Nf3 c5 7. d5 e6 8. Be2 exd5 9. cxd5 Bg4 10. O-O Nbd7
+  notes:
+    "5.f4": Four pawns — huge space.
+    "6...c5": Immediate counter.
+    "7...e6": Opens the e-file.
+  ideas:
+    - Space vs counterattack.
+  tactics:
+    - e5 pushes, ...b5 sacrifices.
+  whitePlans:
+    - e5 breakthrough.
+  blackPlans:
+    - Open lines with ...e6 and ...b5.
+  mistakes:
+    - Black allowing e5 unopposed.
+  keyPositions:
+    - after: "5.f4"
+      title: Four pawns
+      text: Maximum space; Black must counter at once.
+  variations: []
+
+- id: nimzo-rubinstein
+  name: Nimzo-Indian – Rubinstein System
+  canonical: "Nimzo-Indian Defense: Rubinstein System"
+  prefixes: ["Nimzo-Indian Defense: Rubinstein System", "Nimzo-Indian Defense: Normal Variation", "Nimzo-Indian Defense"]
+  group: Nimzo-Indian Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...Bb4 pins the c3 knight and controls e4. The Nimzo-Indian is one of the most
+    respected defences; the Rubinstein 4.e3 is White's most solid answer.
+  main: 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 O-O 5. Bd3 d5 6. Nf3 c5 7. O-O Nc6 8. a3 Bxc3 9. bxc3 dxc4 10. Bxc4 Qc7
+  notes:
+    "3...Bb4": The Nimzo pin — e4 is under control.
+    "4.e3": Rubinstein — solid development.
+    "8...Bxc3": Black doubles White's pawns.
+    "10...Qc7": Prepares ...e5.
+  ideas:
+    - Bishop vs knight; doubled c-pawns.
+  tactics:
+    - ...Ne4 jumps, e4 breaks by White.
+  whitePlans:
+    - Use the bishop pair, play e4.
+  blackPlans:
+    - Blockade, ...e5, pressure on c4.
+  mistakes:
+    - Black allowing e4–e5 with a big center.
+  keyPositions:
+    - after: "3...Bb4"
+      title: Nimzo pin
+      text: The pin controls e4 and threatens to double White's pawns.
+  variations: []
+
+- id: nimzo-classical
+  name: Nimzo-Indian – Classical (4.Qc2)
+  canonical: "Nimzo-Indian Defense: Classical Variation"
+  group: Nimzo-Indian Defense
+  side: white
+  difficulty: intermediate
+  summary: >
+    4.Qc2 avoids doubled pawns by recapturing on c3 with the queen. White gets the
+    bishop pair; Black gains development time.
+  main: 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. Qc2 O-O 5. a3 Bxc3+ 6. Qxc3 b6 7. Bg5 Bb7 8. f3 h6 9. Bh4 d5 10. e3
+  notes:
+    "4.Qc2": Avoids doubled pawns.
+    "6.Qxc3": Bishop pair without structural damage.
+    "6...b6": Fianchetto pressure on e4.
+  ideas:
+    - Bishop pair vs development lead.
+  tactics:
+    - Pins on f6, ...Ne4 jumps.
+  whitePlans:
+    - Consolidate and use the bishops.
+  blackPlans:
+    - Fast development and central breaks.
+  mistakes:
+    - White falling too far behind in development.
+  keyPositions:
+    - after: "4.Qc2"
+      title: Classical
+      text: White prepares to recapture with the queen.
+  variations: []
+
+- id: queens-indian
+  name: Queen's Indian Defense
+  canonical: "Queen's Indian Defense"
+  prefixes: ["Queen's Indian Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...b6 fights for e4 with the bishop on b7 or a6. Solid and flexible; the
+    Petrosian 4.a3 and fianchetto 4.g3 are White's main tries.
+  main: 1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Ba6 5. b3 Bb4+ 6. Bd2 Be7 7. Bg2 c6 8. Bc3 d5 9. Ne5 Nfd7 10. Nxd7 Nxd7 11. Nd2 O-O 12. O-O
+  notes:
+    "3...b6": Fianchetto preparation.
+    "4...Ba6": Hits c4.
+    "8...d5": Central claim.
+  ideas:
+    - Light-square control.
+  tactics:
+    - Pins and long diagonal tactics.
+  whitePlans:
+    - Small center pressure.
+  blackPlans:
+    - Solid development, ...c5 break.
+  mistakes:
+    - Passive play.
+  keyPositions:
+    - after: "4...Ba6"
+      title: Pressure on c4
+      text: A modern idea to annoy White's queenside.
+  variations: []
+
+- id: bogo-indian
+  name: Bogo-Indian Defense
+  canonical: "Bogo-Indian Defense"
+  prefixes: ["Bogo-Indian Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...Bb4+ is a solid alternative to the Queen's Indian. Black often trades the
+    bishop and plays for a solid position with pawns on dark squares.
+  main: 1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Qe7 5. g3 Nc6 6. Bg2 Bxd2+ 7. Nbxd2 d6 8. O-O O-O 9. e4 e5 10. d5 Nb8
+  notes:
+    "3...Bb4+": Check before White can play Nc3.
+    "4...Qe7": Supports the bishop.
+    "9...e5": Dark-square strategy.
+  ideas:
+    - Exchange of the dark-squared bishop; pawns on dark squares.
+  tactics:
+    - ...Nxe4 tricks if White over-presses.
+  whitePlans:
+    - Queenside expansion with c5 or b4.
+  blackPlans:
+    - Kingside play with ...Nh5, ...f5.
+  mistakes:
+    - Black opening the position.
+  keyPositions:
+    - after: "3...Bb4+"
+      title: Check
+      text: Black annoys White before development.
+  variations: []
+
+- id: catalan-open
+  name: Catalan – Open
+  canonical: "Catalan Opening: Open Defense"
+  prefixes: ["Catalan Opening: Open Defense", "Catalan Opening"]
+  group: Catalan Opening
+  side: white
+  difficulty: advanced
+  summary: >
+    The Catalan combines the Queen's Gambit with a g2 fianchetto. In the Open
+    variation Black takes on c4; White regains it with long-term pressure on the
+    long diagonal.
+  main: 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. Nf3 Be7 6. O-O O-O 7. Qc2 a6 8. a4 Bd7 9. Qxc4 Bc6 10. Bg5 a5
+  notes:
+    "3.g3": The Catalan fianchetto.
+    "4...dxc4": Open Catalan.
+    "9.Qxc4": White regains the pawn.
+    "9...Bc6": Neutralises the g2 bishop.
+  ideas:
+    - Long-diagonal pressure.
+  tactics:
+    - Pressure on b7, a8.
+  whitePlans:
+    - Regain c4, pressure on the queenside.
+  blackPlans:
+    - Neutralise g2 with ...Bc6/...Bd5.
+  mistakes:
+    - Black keeping the pawn too long.
+  keyPositions:
+    - after: "4...dxc4"
+      title: Open Catalan
+      text: White will regain the pawn.
+  variations: []
+
+- id: catalan-closed
+  name: Catalan – Closed
+  canonical: "Catalan Opening: Closed"
+  group: Catalan Opening
+  side: white
+  difficulty: intermediate
+  summary: >
+    Black keeps the pawn on d5 and builds a solid QGD-like setup. Play is slow and
+    strategic.
+  main: 1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 Be7 5. Nf3 O-O 6. O-O c6 7. Qc2 Nbd7 8. Nbd2 b6 9. e4 Bb7 10. b3 Rc8
+  notes:
+    "4...Be7": Closed Catalan.
+    "9.e4": Central expansion.
+  ideas:
+    - Slow maneuvering.
+  tactics:
+    - e5 pushes, central breaks.
+  whitePlans:
+    - e4 expansion.
+  blackPlans:
+    - ...c5 break.
+  mistakes:
+    - Passive play.
+  keyPositions:
+    - after: "6...c6"
+      title: Solid setup
+      text: Black's d5 point is strong.
+  variations: []
+
+- id: london-system
+  name: London System
+  canonical: "Queen's Pawn Game: Accelerated London System"
+  prefixes: ["Queen's Pawn Game: Accelerated London System", "London System", "Indian Defense: London System", "Indian Defense: Accelerated London System"]
+  side: white
+  difficulty: beginner
+  summary: >
+    A reliable system: d4, Bf4, e3, c3, Nf3, Nbd2, Bd3. White plays the same setup
+    against almost anything, aiming for a solid center and kingside chances with Ne5.
+  main: 1. d4 d5 2. Bf4 Nf6 3. e3 c5 4. c3 Nc6 5. Nd2 e6 6. Ngf3 Bd6 7. Bg3 O-O 8. Bd3 b6 9. Ne5
+  notes:
+    "2.Bf4": The London bishop develops outside the pawn chain.
+    "3.e3": Solid pyramid with c3 and d4.
+    "7.Bg3": Keeps the bishop when attacked.
+    "9.Ne5": The typical outpost.
+  ideas:
+    - System-based play; solid structure and kingside chances.
+  tactics:
+    - Bxh7+ ideas, Ne5 jumps, Qb6 attacks on b2.
+  whitePlans:
+    - Ne5, f4, Qf3 and kingside attack.
+  blackPlans:
+    - ...c5 with ...Qb6 against b2; ...Nh5 against Bf4.
+  mistakes:
+    - Forgetting about ...Qb6 hitting b2.
+  keyPositions:
+    - after: "4.c3"
+      title: The London pyramid
+      text: c3–d4–e3 is solid; the bishop is already outside.
+  variations:
+    - name: Against the King's Indian setup
+      kind: key
+      moves: 1. d4 Nf6 2. Nf3 g6 3. Bf4 Bg7 4. e3 d6 5. h3 O-O 6. Be2 c5 7. c3 Nc6 8. O-O
+      description: The same setup works against ...g6.
+
+- id: jobava-london
+  name: Jobava London
+  canonical: "Rapport-Jobava System"
+  prefixes: ["Rapport-Jobava System"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    Nc3 and Bf4 — an aggressive London with ideas like Nb5 hitting c7 and long
+    castling.
+  main: 1. d4 d5 2. Nc3 Nf6 3. Bf4 e6 4. e3 Bd6 5. Nb5 Bxf4 6. exf4 O-O 7. Nf3 a6 8. Nc3 c5
+  notes:
+    "2.Nc3": Blocks c2 but aims for Nb5 and e4.
+    "5.Nb5": Hits c7 and the d6 bishop.
+  ideas:
+    - Aggression and surprise.
+  tactics:
+    - Nb5 forks, Nxc7 tricks.
+  whitePlans:
+    - Nb5, long castling and kingside attack.
+  blackPlans:
+    - ...c5 and ...a6 to neutralise Nb5.
+  mistakes:
+    - Black neglecting c7.
+  keyPositions:
+    - after: "3.Bf4"
+      title: Jobava setup
+      text: Bf4 and Nc3 together.
+  variations: []
+
+- id: colle-system
+  name: Colle System
+  canonical: "Queen's Pawn Game: Colle System"
+  prefixes: ["Queen's Pawn Game: Colle System"]
+  side: white
+  difficulty: beginner
+  summary: >
+    d4, Nf3, e3, Bd3, Nbd2 and the e4 break. Simple and attack-minded — the bishop on
+    d3 points at h7.
+  main: 1. d4 d5 2. Nf3 Nf6 3. e3 e6 4. Bd3 c5 5. c3 Nc6 6. Nbd2 Bd6 7. O-O O-O 8. dxc5 Bxc5 9. e4 Qc7 10. Qe2
+  notes:
+    "3.e3": The Colle — solid.
+    "9.e4": The key Colle break.
+  ideas:
+    - Prepare e4 and attack h7.
+  tactics:
+    - Greek gift Bxh7+.
+  whitePlans:
+    - e4 break and kingside attack.
+  blackPlans:
+    - ...c5 and queenside play; ...b6/...Bb7 to fight e4.
+  mistakes:
+    - Black castling into Bxh7+ tactics.
+  keyPositions:
+    - after: "9.e4"
+      title: Colle break
+      text: White opens the center for the d3 bishop.
+  variations: []
+
+- id: trompowsky-attack
+  name: Trompowsky Attack
+  canonical: "Trompowsky Attack"
+  prefixes: ["Trompowsky Attack"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    2.Bg5 threatens to double Black's pawns. Unbalanced and practical, it avoids
+    mainstream Indian theory.
+  main: 1. d4 Nf6 2. Bg5 Ne4 3. Bf4 c5 4. f3 Qa5+ 5. c3 Nf6 6. Nd2 cxd4 7. Nb3 Qb6 8. Qxd4 Nc6 9. Qxb6 axb6
+  notes:
+    "2.Bg5": The Trompowsky.
+    "2...Ne4": Hits the bishop.
+    "4...Qa5+": Annoying check.
+  ideas:
+    - Imbalance and practical chances.
+  tactics:
+    - Qb6 vs b2, knight chases.
+  whitePlans:
+    - Gain center with f3/e4.
+  blackPlans:
+    - Hit b2, ...c5 counter.
+  mistakes:
+    - Overlooking b2 tactics.
+  keyPositions:
+    - after: "2.Bg5"
+      title: Trompowsky
+      text: White threatens Bxf6.
+  variations:
+    - name: 2...e6 3.e4
+      kind: key
+      moves: 1. d4 Nf6 2. Bg5 e6 3. e4 h6 4. Bxf6 Qxf6 5. Nc3 d6 6. Qd2 g5
+      description: Black accepts a big White center for the bishop pair.
+
+- id: torre-attack
+  name: Torre Attack
+  canonical: "Torre Attack: Classical Defense"
+  prefixes: ["Torre Attack", "Queen's Pawn Game: Torre Attack"]
+  side: white
+  difficulty: beginner
+  summary: >
+    d4, Nf3 and Bg5 — a solid system with the pin on f6, often followed by e3, c3 and
+    Nbd2.
+  main: 1. d4 Nf6 2. Nf3 e6 3. Bg5 c5 4. e3 h6 5. Bh4 cxd4 6. exd4 Be7 7. Nbd2 d6 8. c3 Nc6 9. Bd3
+  notes:
+    "3.Bg5": The Torre pin.
+    "4...h6": Questions the bishop.
+  ideas:
+    - Solid system with a pin.
+  tactics:
+    - e4–e5 pushes vs pinned knight.
+  whitePlans:
+    - e4 break, kingside attack.
+  blackPlans:
+    - ...c5, ...Qb6 pressure.
+  mistakes:
+    - Ignoring ...Qb6.
+  keyPositions:
+    - after: "3.Bg5"
+      title: Torre pin
+      text: The pin on f6 is the basis.
+  variations: []
+
+- id: modern-benoni
+  name: Modern Benoni
+  canonical: "Benoni Defense: Modern Variation"
+  prefixes: ["Benoni Defense"]
+  side: black
+  difficulty: advanced
+  summary: >
+    Black creates an asymmetrical structure with ...c5 and ...e6xd5. White has a
+    central majority; Black a queenside majority and active pieces.
+  main: 1. d4 Nf6 2. c4 c5 3. d5 e6 4. Nc3 exd5 5. cxd5 d6 6. e4 g6 7. Nf3 Bg7 8. Be2 O-O 9. O-O Re8 10. Nd2 Na6 11. f3 Nc7 12. a4
+  notes:
+    "3.d5": White gains space.
+    "4...exd5": Creates the Benoni structure.
+    "6...g6": The bishop goes to g7.
+  ideas:
+    - Queenside majority vs central majority.
+  tactics:
+    - e5 pushes by White, ...b5 sacrifices by Black.
+  whitePlans:
+    - e5 break.
+  blackPlans:
+    - ...b5 expansion.
+  mistakes:
+    - Allowing e5 at a bad moment.
+  keyPositions:
+    - after: "5...d6"
+      title: Benoni structure
+      text: Asymmetrical and dynamic.
+  variations: []
+
+- id: benko-gambit
+  name: Benko Gambit
+  canonical: "Benko Gambit"
+  prefixes: ["Benko Gambit"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    Black sacrifices the b-pawn for open a- and b-files and long-term queenside
+    pressure — a positional gambit.
+  main: 1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Bxa6 6. Nc3 d6 7. e4 Bxf1 8. Kxf1 g6 9. g3 Bg7 10. Kg2 O-O 11. Nf3 Nbd7
+  notes:
+    "3...b5": The gambit.
+    "5...Bxa6": Open files for rooks.
+    "7...Bxf1": White cannot castle.
+  ideas:
+    - Long-term queenside pressure.
+  tactics:
+    - Pressure on a2, b2.
+  whitePlans:
+    - Consolidate the extra pawn.
+  blackPlans:
+    - Rooks on a- and b-files.
+  mistakes:
+    - Black trading the wrong pieces.
+  keyPositions:
+    - after: "5...Bxa6"
+      title: Open files
+      text: Black's compensation is positional.
+  variations: []
+
+- id: dutch-leningrad
+  name: Dutch Defense – Leningrad
+  canonical: "Dutch Defense: Leningrad Variation"
+  group: Dutch Defense
+  side: black
+  difficulty: advanced
+  summary: >
+    ...f5 plus a King's-Indian fianchetto. Black fights for e4 and aims for ...e5.
+  main: 1. d4 f5 2. c4 Nf6 3. g3 g6 4. Bg2 Bg7 5. Nf3 O-O 6. O-O d6 7. Nc3 Qe8 8. d5 a5
+  notes:
+    "1...f5": Dutch — control of e4.
+    "3...g6": Leningrad fianchetto.
+    "7...Qe8": Prepares ...e5.
+  ideas:
+    - Kingside attack, ...e5 break.
+  tactics:
+    - ...Ng4, ...e5 tricks.
+  whitePlans:
+    - d5, central control.
+  blackPlans:
+    - ...e5 and kingside play.
+  mistakes:
+    - Weakening e6.
+  keyPositions:
+    - after: "3...g6"
+      title: Leningrad
+      text: Dutch with a fianchetto.
+  variations: []
+
+- id: dutch-stonewall
+  name: Dutch Defense – Stonewall
+  canonical: "Dutch Defense: Stonewall Variation"
+  group: Dutch Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    Pawns on c6, d5, e6 and f5 form a 'stone wall' controlling e4. The e5 square is a
+    weakness, but Black gets kingside attacking chances.
+  main: 1. d4 f5 2. c4 Nf6 3. g3 e6 4. Bg2 Be7 5. Nf3 O-O 6. O-O d5 7. Nc3 c6 8. Qc2 Qe8 9. Bg5 Qh5 10. Bxf6 Bxf6 11. cxd5 exd5
+  notes:
+    "6...d5": The Stonewall.
+    "8...Qe8": Heading for h5.
+  ideas:
+    - e4 control, kingside attack.
+  tactics:
+    - ...Ne4 outposts, ...g5 storms.
+  whitePlans:
+    - Exploit e5, trade dark bishops.
+  blackPlans:
+    - Kingside attack.
+  mistakes:
+    - Bad light-squared bishop.
+  keyPositions:
+    - after: "7.Nc3"
+      title: Stone wall
+      text: Black's pawn chain controls e4.
+  variations: []
+
+- id: dutch-classical
+  name: Dutch Defense – Classical
+  canonical: "Dutch Defense: Classical Variation"
+  group: Dutch Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    Black combines ...f5 and ...e6 with ...d6, keeping options for ...e5 and a
+    queen maneuver ...Qe8–g6/h5.
+  main: 1. d4 f5 2. c4 e6 3. g3 Nf6 4. Bg2 Be7 5. Nf3 O-O 6. O-O d6 7. Nc3 Qe8 8. Re1 Qg6 9. e4 fxe4 10. Nxe4
+  notes:
+    "2...e6": Classical Dutch.
+    "8...Qg6": Queen swings to the kingside.
+  ideas:
+    - Flexible structure.
+  tactics:
+    - ...e5 breaks, queen attacks.
+  whitePlans:
+    - e4 break.
+  blackPlans:
+    - Kingside attack.
+  mistakes:
+    - Allowing e4 cheaply.
+  keyPositions:
+    - after: "2...e6"
+      title: Classical Dutch
+      text: Black keeps options for ...d5 or ...d6.
+  variations: []
+  traps:
+    - name: Weakened e8–h5 diagonal
+      trapper: white
+      moves: 1. d4 f5 2. Bg5 h6 3. Bh4 g5 4. Bg3 f4 5. e3 h5 6. Bd3 Rh6 7. Qxh5+ Rxh5 8. Bg6#
+      description: Every Dutch player must respect the e8–h5 diagonal. Over-pushing kingside pawns allows a queen sacrifice and a bishop mate.
+
+- id: budapest-gambit
+  name: Budapest Gambit
+  canonical: "Indian Defense: Budapest Gambit"
+  prefixes: ["Indian Defense: Budapest Gambit"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    2...e5 sacrifices a pawn to activate pieces quickly. Black usually regains it on
+    e5 with good development.
+  main: 1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Bf4 Nc6 5. Nf3 Bb4+ 6. Nbd2 Qe7 7. e3 Ngxe5 8. Nxe5 Nxe5 9. Be2 O-O 10. O-O
+  notes:
+    "2...e5": The gambit.
+    "3...Ng4": Black regains e5.
+    "5...Bb4+": Develops with tempo.
+  ideas:
+    - Fast development.
+  tactics:
+    - The Budapest trap Nd3#.
+  whitePlans:
+    - Keep the pawn and develop calmly.
+  blackPlans:
+    - Regain e5 with active pieces.
+  mistakes:
+    - White grabbing the bishop with axb4.
+  keyPositions:
+    - after: "3...Ng4"
+      title: Regaining e5
+      text: Black pressures e5 with knights.
+  variations: []
+  traps:
+    - name: Budapest Trap
+      trapper: black
+      moves: 1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Bf4 Nc6 5. Nf3 Bb4+ 6. Nbd2 Qe7 7. a3 Ngxe5 8. axb4 Nd3#
+      description: Taking the bishop allows a smothered mate on d3.
+
+- id: old-indian
+  name: Old Indian Defense
+  canonical: "Old Indian Defense: Ukrainian Variation"
+  prefixes: ["Old Indian Defense"]
+  side: black
+  difficulty: beginner
+  summary: >
+    ...d6 and ...e5 with the bishop on e7. Solid but passive; good for players who
+    like KID structures without theory.
+  main: 1. d4 Nf6 2. c4 d6 3. Nc3 e5 4. Nf3 Nbd7 5. e4 Be7 6. Be2 O-O 7. O-O c6 8. h3
+  notes:
+    "2...d6": Prepares ...e5.
+    "3...e5": Central challenge.
+  ideas:
+    - Solid e5 strongpoint.
+  tactics:
+    - dxe5 exchanges, d5 squeezes.
+  whitePlans:
+    - Space with d5.
+  blackPlans:
+    - ...exd4 or hold e5; ...Re8, ...Bf8.
+  mistakes:
+    - Passivity.
+  keyPositions:
+    - after: "3...e5"
+      title: Strongpoint
+      text: Black holds e5.
+  variations: []
+
+- id: blackmar-diemer
+  name: Blackmar-Diemer Gambit
+  canonical: "Blackmar-Diemer Gambit"
+  prefixes: ["Blackmar-Diemer Gambit"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.d4 d5 2.e4!? sacrifices a pawn for rapid development and the f-file. Dangerous
+    in club games.
+  main: 1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4 6. h3 Bxf3 7. Qxf3 c6 8. Be3 e6 9. Bd3 Nbd7 10. O-O
+  notes:
+    "2.e4": The gambit.
+    "4.f3": Offers a second pawn.
+    "10.O-O": White's pieces are active for the pawn.
+  ideas:
+    - Development and f-file for a pawn.
+  tactics:
+    - Bxf7 sacrifices, Qxb7 tricks.
+  whitePlans:
+    - Attack on the kingside.
+  blackPlans:
+    - Consolidate, return material if needed.
+  mistakes:
+    - Black being greedy.
+  keyPositions:
+    - after: "5.Nxf3"
+      title: Gambit
+      text: White has a lead in development.
+  variations: []
+
+- id: englund-gambit
+  name: Englund Gambit
+  canonical: "Englund Gambit"
+  prefixes: ["Englund Gambit"]
+  side: black
+  difficulty: beginner
+  summary: >
+    1...e5?! — a dubious gambit with a famous trap. Learning it teaches how to punish
+    early queen raids.
+  main: 1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Bf4 Qb4+ 5. Bd2 Qxb2 6. Nc3 Bb4 7. Rb1 Qa3 8. Rb3 Qa5
+  notes:
+    "1...e5": The Englund.
+    "3...Qe7": Attacks e5 and sets the trap.
+    "6.Nc3": The correct defence.
+  ideas:
+    - Traps over soundness.
+  tactics:
+    - Qc1# trap on the queenside.
+  whitePlans:
+    - Develop with tempo; don't fall for Qxb2 traps.
+  blackPlans:
+    - Regain e5, set traps.
+  mistakes:
+    - White playing 6.Bc3?? and getting mated.
+  keyPositions:
+    - after: "3...Qe7"
+      title: Trap set
+      text: Black hits e5 and prepares ...Qb4+.
+  variations: []
+  traps:
+    - name: Englund Gambit Trap
+      trapper: black
+      moves: 1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Bf4 Qb4+ 5. Bd2 Qxb2 6. Bc3 Bb4 7. Qd2 Bxc3 8. Qxc3 Qc1#
+      description: The natural 6.Bc3 walks into a back-rank mate on c1.
+
+- id: richter-veresov
+  name: Richter-Veresov Attack
+  canonical: "Richter-Veresov Attack"
+  prefixes: ["Richter-Veresov Attack"]
+  side: white
+  difficulty: intermediate
+  summary: >
+    1.d4 Nf6 2.Nc3 d5 3.Bg5 — an aggressive system with f3 and e4 ideas.
+  main: 1. d4 Nf6 2. Nc3 d5 3. Bg5 Nbd7 4. Nf3 g6 5. e3 Bg7 6. Bd3 c6 7. O-O O-O 8. Qe2
+  notes:
+    "3.Bg5": Pins and prepares f3/e4.
+  ideas:
+    - e4 break with active pieces.
+  tactics:
+    - Bxf6 to win d5, e4 pushes.
+  whitePlans:
+    - f3, e4 and long castling.
+  blackPlans:
+    - ...c5 or ...Bf5.
+  mistakes:
+    - Black ignoring e4.
+  keyPositions:
+    - after: "3.Bg5"
+      title: Veresov
+      text: White's setup targets e4.
+  variations: []

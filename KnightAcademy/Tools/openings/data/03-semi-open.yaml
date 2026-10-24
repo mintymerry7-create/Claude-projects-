@@ -1,0 +1,693 @@
+family: Semi-Open Games
+openings:
+
+- id: french-advance
+  name: French Defense – Advance Variation
+  canonical: "French Defense: Advance Variation"
+  group: French Defense
+  side: black
+  difficulty: beginner
+  summary: >
+    White locks the center with 3.e5 and gains space. Black attacks the base of
+    White's pawn chain with ...c5 and piles up on d4 with ...Nc6 and ...Qb6.
+  main: 1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. a3 c4 7. Nbd2 Na5 8. Rb1 Bd7 9. Be2 Ne7 10. O-O
+  notes:
+    "1...e6": Prepares ...d5 with pawn support.
+    "3.e5": The Advance — a space-gaining pawn chain d4/e5.
+    "3...c5": Strikes at the base of the chain — the typical French plan.
+    "5...Qb6": Piles up on d4 and b2.
+    "6.a3": Prepares b4 to gain queenside space.
+    "6...c4": Black closes the queenside and gains space there.
+    "7...Na5": The knight eyes b3, fixing White's queenside.
+    "8.Rb1": Prepares b3 to challenge the c4 pawn.
+  ideas:
+    - Attack the base of the pawn chain (d4) with ...c5, ...Nc6, ...Qb6.
+    - Black's light-squared bishop is often bad; trading it is a goal.
+  tactics:
+    - The Milner-Barry Gambit and Bxh7+ ideas against careless Black kingside play.
+    - Pins on the c-file and pressure on b2.
+  whitePlans:
+    - Hold d4, gain queenside space with a3–b4, and attack on the kingside.
+  blackPlans:
+    - Undermine d4 and e5 with ...c5 and ...f6.
+  mistakes:
+    - Black forgetting the bad c8 bishop.
+    - White grabbing the c5 pawn and losing control of d4.
+  keyPositions:
+    - after: "3...c5"
+      title: Attacking the chain
+      text: The classic French idea — strike the base of the chain at d4.
+  variations:
+    - name: Milner-Barry Gambit
+      kind: key
+      gambit: true
+      moves: 1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3 cxd4 7. cxd4 Bd7 8. O-O Nxd4 9. Nxd4 Qxd4 10. Nc3
+      description: White gives the d4 pawn for rapid development.
+  traps:
+    - name: Queen trap on the b-file
+      trapper: white
+      moves: 1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3 cxd4 7. cxd4 Nxd4 8. Nxd4 Qxd4 9. Bb5+
+      description: In the Milner-Barry, taking on d4 too early allows a discovered attack on the queen.
+
+- id: french-winawer
+  name: French Defense – Winawer Variation
+  canonical: "French Defense: Winawer Variation"
+  group: French Defense
+  side: black
+  difficulty: advanced
+  summary: >
+    3...Bb4 pins the c3 knight and pressures e4. After 4.e5 c5 5.a3 Bxc3+ 6.bxc3 the
+    position is unbalanced — White has the bishop pair and kingside chances, Black
+    targets the doubled c-pawns.
+  main: 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5 c5 5. a3 Bxc3+ 6. bxc3 Ne7 7. Qg4 Qc7 8. Qxg7 Rg8 9. Qxh7 cxd4 10. Ne2 Nbc6
+  notes:
+    "3...Bb4": Pins the knight and attacks e4 indirectly.
+    "5.a3": Forces Black to decide about the bishop.
+    "6.bxc3": Doubled pawns but the bishop pair for White.
+    "7.Qg4": Attacks g7 — Black's dark squares are weak without the bishop.
+    "8...Rg8": Black gives the kingside pawns for central counterplay.
+  ideas:
+    - Imbalance — White's dark-squared bishop vs Black's pressure on c3.
+  tactics:
+    - Qg4 attacks on g7, central breaks with ...cxd4 and ...Qxc3+.
+  whitePlans:
+    - Use the bishop pair and dark squares; attack on the kingside.
+  blackPlans:
+    - Attack the c3 pawn and the center; play on the queenside.
+  mistakes:
+    - Black weakening the dark squares further without counterplay.
+  keyPositions:
+    - after: "6.bxc3"
+      title: Imbalance
+      text: White has the bishops and kingside space; Black the better structure.
+  variations:
+    - name: Positional 7.Nf3
+      kind: key
+      moves: 1. e4 e6 2. d4 d5 3. Nc3 Bb4 4. e5 c5 5. a3 Bxc3+ 6. bxc3 Ne7 7. Nf3 Nbc6 8. a4 Qa5 9. Qd2 Bd7 10. Be2
+      description: White develops calmly and keeps the structure.
+
+- id: french-classical
+  name: French Defense – Classical Variation
+  canonical: "French Defense: Classical Variation"
+  group: French Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...Nf6 develops and attacks e4. White chooses between 4.e5 (Steinitz) and
+    4.Bg5, which leads to the MacCutcheon or the Burn variation.
+  main: 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 a6 8. Qd2 b5 9. a3
+  notes:
+    "3...Nf6": Classical development, pressure on e4.
+    "4.e5": Steinitz Variation, gaining space.
+    "5.f4": Supports e5 firmly.
+    "5...c5": Hits the base of the chain.
+    "8...b5": Queenside expansion.
+  ideas:
+    - Pawn chain fights — Black attacks d4, White the kingside.
+  tactics:
+    - f5 breaks and sacrifices on e6.
+  whitePlans:
+    - Hold d4/e5, castle long and attack with f5.
+  blackPlans:
+    - Pressure d4, expand with ...b5–b4.
+  mistakes:
+    - Black allowing f5 with e6 collapsing.
+  keyPositions:
+    - after: "5.f4"
+      title: Steinitz
+      text: White supports e5 with f4; Black counters with ...c5.
+  variations:
+    - name: Burn Variation
+      kind: key
+      moves: 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 dxe4 5. Nxe4 Be7 6. Bxf6 Bxf6 7. Nf3 O-O 8. Qd2 Nd7
+      description: Black gives up the center but gets the bishop pair.
+    - name: MacCutcheon
+      kind: key
+      moves: 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Bb4 5. e5 h6 6. Bd2 Bxc3 7. bxc3 Ne4 8. Qg4 g6
+      description: A sharp counter-pin.
+
+- id: french-tarrasch
+  name: French Defense – Tarrasch Variation
+  canonical: "French Defense: Tarrasch Variation"
+  group: French Defense
+  side: white
+  difficulty: intermediate
+  summary: >
+    3.Nd2 avoids the Winawer pin. A common reply is 3...c5, often leading to an
+    isolated queen's pawn for Black.
+  main: 1. e4 e6 2. d4 d5 3. Nd2 c5 4. exd5 Qxd5 5. Ngf3 cxd4 6. Bc4 Qd6 7. O-O Nf6 8. Nb3 Nc6 9. Nbxd4 Nxd4 10. Nxd4 a6
+  notes:
+    "3.Nd2": Keeps c3 free for a pawn and avoids ...Bb4 pins.
+    "3...c5": Immediate central counter.
+    "4...Qxd5": Black recaptures with the queen.
+    "6.Bc4": Gains time on the queen.
+  ideas:
+    - White uses development lead against the black queen.
+  tactics:
+    - Tempo gains on the queen, Nb5 jumps.
+  whitePlans:
+    - Quick development; play against Black's queen and isolated pawns.
+  blackPlans:
+    - Free development and pressure on the d-file.
+  mistakes:
+    - Black losing time with the queen.
+  keyPositions:
+    - after: "3.Nd2"
+      title: Avoiding the pin
+      text: Black chooses 3...c5, 3...Nf6 or 3...Be7.
+  variations:
+    - name: 3...Nf6
+      kind: key
+      moves: 1. e4 e6 2. d4 d5 3. Nd2 Nf6 4. e5 Nfd7 5. Bd3 c5 6. c3 Nc6 7. Ne2 cxd4 8. cxd4 f6 9. exf6 Nxf6
+      description: Leads to closed positions with the e5 pawn.
+
+- id: french-exchange
+  name: French Defense – Exchange Variation
+  canonical: "French Defense: Exchange Variation"
+  group: French Defense
+  side: white
+  difficulty: beginner
+  summary: >
+    3.exd5 exd5 creates a symmetrical structure. It is solid and simple — the side
+    that develops better and controls the open e-file gets the edge.
+  main: 1. e4 e6 2. d4 d5 3. exd5 exd5 4. Nf3 Nf6 5. Bd3 Bd6 6. O-O O-O 7. Bg5 Bg4 8. Nbd2 Nbd7 9. c3 c6 10. Qc2
+  notes:
+    "3.exd5": Opens the position and frees Black's light-squared bishop.
+    "7.Bg5": Pins the f6 knight.
+  ideas:
+    - Symmetry; fight for the e-file and for small advantages.
+  tactics:
+    - Pins on f6, checks on the e-file.
+  whitePlans:
+    - Control the e-file, play c4 to create imbalance.
+  blackPlans:
+    - Mirror development, use the freed c8 bishop.
+  mistakes:
+    - Passive play — symmetry favours the more active side.
+  keyPositions:
+    - after: "3...exd5"
+      title: Symmetry
+      text: Black's light-squared bishop is now free.
+  variations: []
+
+- id: french-rubinstein
+  name: French Defense – Rubinstein Variation
+  canonical: "French Defense: Rubinstein Variation"
+  group: French Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    3...dxe4 gives up the center for easy development. Solid but slightly passive;
+    Black aims for ...c5 or ...e5 breaks.
+  main: 1. e4 e6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Nf3 Ngf6 6. Nxf6+ Nxf6 7. c3 c5 8. Ne5 a6 9. Be3 Qc7
+  notes:
+    "3...dxe4": Black surrenders the center for solidity.
+    "4...Nd7": Prepares ...Ngf6 so Black can recapture with a knight.
+    "7...c5": The freeing break.
+  ideas:
+    - Solid structure; Black needs a pawn break to equalise.
+  tactics:
+    - Ne5 jumps and pins on the h4–d8 diagonal.
+  whitePlans:
+    - Use the space advantage and kingside attack.
+  blackPlans:
+    - ...c5 break, development of the c8 bishop via b7.
+  mistakes:
+    - Black never playing ...c5 and suffocating.
+  keyPositions:
+    - after: "3...dxe4"
+      title: Surrendered center
+      text: Black chooses solidity over central space.
+  variations: []
+
+- id: caro-kann-classical
+  name: Caro-Kann – Classical Variation
+  canonical: "Caro-Kann Defense: Classical Variation"
+  group: Caro-Kann Defense
+  side: black
+  difficulty: beginner
+  summary: >
+    The Caro-Kann prepares ...d5 with ...c6 so the light-squared bishop can come out
+    before ...e6. In the Classical line it goes to f5 and later h7 — solid and
+    reliable.
+  main: 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Bf5 5. Ng3 Bg6 6. h4 h6 7. Nf3 Nd7 8. h5 Bh7 9. Bd3 Bxd3 10. Qxd3 e6 11. Bd2 Ngf6 12. O-O-O Be7
+  notes:
+    "1...c6": Prepares ...d5 without blocking the c8 bishop.
+    "4...Bf5": The bishop gets out before ...e6.
+    "5.Ng3": Gains time on the bishop.
+    "6.h4": Threatens h5 to trap the bishop.
+    "8.h5": Gains kingside space.
+    "9...Bxd3": Trades White's best minor piece.
+    "12.O-O-O": Opposite castling is possible but Black's structure is very solid.
+  ideas:
+    - Solid pawn structure (c6, e6) with a good light-squared bishop.
+    - White gains space with h4–h5.
+  tactics:
+    - Nf5/Ne5 jumps and sacrifices on e6 against careless play.
+  whitePlans:
+    - Space on the kingside, long castling and central pressure.
+  blackPlans:
+    - Solid development, ...c5 break, queenside castling or short castling depending on White.
+  mistakes:
+    - Black forgetting about h5 trapping the bishop.
+  keyPositions:
+    - after: "4...Bf5"
+      title: The good bishop
+      text: The defining idea of the Caro-Kann — the bishop develops before ...e6.
+  variations: []
+  traps:
+    - name: Smothered mate on d6
+      trapper: white
+      moves: 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Qe2 Ngf6 6. Nd6#
+      description: A careless ...Ngf6 with the queen on e2 allows a smothered mate.
+
+- id: caro-kann-advance
+  name: Caro-Kann – Advance Variation
+  canonical: "Caro-Kann Defense: Advance Variation"
+  group: Caro-Kann Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    3.e5 gains space. Black develops the bishop to f5 before ...e6 and later attacks
+    the chain with ...c5. White's modern Short Variation aims for a quiet space edge.
+  main: 1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 c5 6. Be3 Nd7 7. O-O Ne7 8. c4 dxc4 9. Na3 Nd5 10. Nxc4
+  notes:
+    "3.e5": The Advance, gaining space.
+    "3...Bf5": The bishop gets outside the pawn chain.
+    "5...c5": Typical attack on d4.
+    "8.c4": Opens the position while White is better developed.
+  ideas:
+    - Black's bishop on f5 is active; the e6/d5 chain is solid.
+  tactics:
+    - g4 chasing the bishop, Nh4 trades.
+  whitePlans:
+    - Space; g4 and Nh4 against the bishop, or quiet Short Variation.
+  blackPlans:
+    - Attack d4 with ...c5, ...Nc6, ...Qb6.
+  mistakes:
+    - Black's bishop getting trapped by g4 and h4.
+  keyPositions:
+    - after: "3...Bf5"
+      title: Bishop outside
+      text: Unlike the French, Black's light-squared bishop is not locked in.
+  variations:
+    - name: Bayonet 4.Nc3 e6 5.g4
+      kind: key
+      moves: 1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 e6 5. g4 Bg6 6. Nge2 c5 7. h4 h5 8. Nf4 Bh7 9. Nxh5
+      description: Aggressive pawn storm against the bishop.
+
+- id: caro-kann-exchange
+  name: Caro-Kann – Exchange Variation
+  canonical: "Caro-Kann Defense: Exchange Variation"
+  group: Caro-Kann Defense
+  side: white
+  difficulty: beginner
+  summary: >
+    3.exd5 cxd5 creates a Carlsbad-like structure. White plays Bd3, c3 and Bf4 for
+    a comfortable development; Black often fights for e4.
+  main: 1. e4 c6 2. d4 d5 3. exd5 cxd5 4. Bd3 Nc6 5. c3 Nf6 6. Bf4 Bg4 7. Qb3 Qd7 8. Nd2 e6 9. Ngf3 Bd6 10. Bxd6 Qxd6
+  notes:
+    "3.exd5": Symmetrical structure.
+    "4.Bd3": Controls f5 and e4.
+    "7.Qb3": Hits b7.
+  ideas:
+    - Minority-attack structures with colours reversed.
+  tactics:
+    - Qb3 attacks on b7, pins on the e-file.
+  whitePlans:
+    - Kingside play with the d3 bishop and Ne5.
+  blackPlans:
+    - Minority attack on the queenside with ...b5–b4.
+  mistakes:
+    - Black leaving b7 hanging to Qb3.
+  keyPositions:
+    - after: "3...cxd5"
+      title: Carlsbad reversed
+      text: Black aims for a queenside minority attack.
+  variations: []
+
+- id: caro-kann-panov
+  name: Caro-Kann – Panov-Botvinnik Attack
+  canonical: "Caro-Kann Defense: Panov Attack"
+  prefixes: ["Caro-Kann Defense: Panov Attack", "Caro-Kann Defense: Panov-Botvinnik"]
+  group: Caro-Kann Defense
+  side: white
+  difficulty: intermediate
+  summary: >
+    4.c4 turns the game into an isolated queen's pawn position. White gets activity
+    and kingside chances; Black targets the d4 pawn.
+  main: 1. e4 c6 2. d4 d5 3. exd5 cxd5 4. c4 Nf6 5. Nc3 e6 6. Nf3 Be7 7. cxd5 Nxd5 8. Bd3 Nc6 9. O-O O-O 10. Re1 Bf6 11. Be4
+  notes:
+    "4.c4": The Panov — White accepts an isolated pawn for active pieces.
+    "7...Nxd5": The blockading knight on d5.
+    "10.Re1": Prepares d4–d5 or Ne5.
+  ideas:
+    - Isolated queen's pawn — dynamic vs static.
+  tactics:
+    - d4–d5 breaks, Ne5 jumps, sacrifices on f7/e6.
+  whitePlans:
+    - Attack with active pieces, d4–d5 break.
+  blackPlans:
+    - Blockade d5, trade pieces, attack d4.
+  mistakes:
+    - White trading too many pieces; Black ignoring d5 break.
+  keyPositions:
+    - after: "7...Nxd5"
+      title: IQP
+      text: White has an isolated d4 pawn and active pieces.
+  variations: []
+
+- id: caro-kann-two-knights
+  name: Caro-Kann – Two Knights Attack
+  canonical: "Caro-Kann Defense: Two Knights Attack"
+  group: Caro-Kann Defense
+  side: white
+  difficulty: beginner
+  summary: >
+    2.Nc3 and 3.Nf3 develop knights quickly. Black usually pins with ...Bg4 or takes
+    on e4.
+  main: 1. e4 c6 2. Nc3 d5 3. Nf3 Bg4 4. h3 Bxf3 5. Qxf3 e6 6. d4 Nf6 7. Bd3 dxe4 8. Nxe4 Qxd4 9. c3 Qd8
+  notes:
+    "3.Nf3": Flexible development.
+    "3...Bg4": Pins the knight.
+    "5.Qxf3": White gets the bishop pair.
+  ideas:
+    - White gets the bishops; Black a solid structure.
+  tactics:
+    - Queen attacks on f7 and b7.
+  whitePlans:
+    - Use the bishop pair, open the position.
+  blackPlans:
+    - Solid development, maybe grab d4.
+  mistakes:
+    - Black allowing Qxf7 tricks.
+  keyPositions:
+    - after: "5.Qxf3"
+      title: Bishop pair
+      text: White's queen and bishops eye the kingside.
+  variations: []
+
+- id: caro-kann-karpov
+  name: Caro-Kann – Karpov Variation
+  canonical: "Caro-Kann Defense: Karpov Variation"
+  group: Caro-Kann Defense
+  side: black
+  difficulty: intermediate
+  summary: >
+    4...Nd7 prepares ...Ngf6 without allowing doubled pawns. A favourite of Karpov —
+    solid, flexible and resilient.
+  main: 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Ng5 Ngf6 6. Bd3 e6 7. N1f3 Bd6 8. Qe2 h6 9. Ne4 Nxe4 10. Qxe4 Nf6
+  notes:
+    "4...Nd7": Prepares ...Ngf6 so that Nxf6 is met by ...Nxf6.
+    "5.Ng5": Eyes f7 and e6.
+    "8...h6": Kicks the knight.
+  ideas:
+    - Solid development; Black avoids pawn weaknesses.
+  tactics:
+    - Sacrifices on e6 and f7; the famous Nd6 smothered mate if Black blunders.
+  whitePlans:
+    - Space and kingside initiative.
+  blackPlans:
+    - Solid development and ...c5 break.
+  mistakes:
+    - Playing ...h6 too early allowing Nxe6 sacrifices.
+  keyPositions:
+    - after: "5.Ng5"
+      title: Pressure on f7
+      text: Black must defend calmly with ...Ngf6 and ...e6.
+  variations: []
+
+- id: scandinavian-main
+  name: Scandinavian Defense – Main Line
+  aliases: [Center Counter]
+  canonical: "Scandinavian Defense"
+  prefixes: ["Scandinavian Defense"]
+  side: black
+  difficulty: beginner
+  summary: >
+    1...d5 immediately challenges e4. After 2.exd5 Qxd5 3.Nc3 Qa5 the queen is
+    surprisingly safe, and Black gets an easy, solid position.
+  main: 1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. d4 Nf6 5. Nf3 c6 6. Bc4 Bf5 7. Bd2 e6 8. Qe2 Bb4 9. O-O-O Nbd7
+  notes:
+    "1...d5": Direct challenge to e4.
+    "2...Qxd5": Black accepts losing a tempo with the queen.
+    "3...Qa5": The safest square — pins the c3 knight if d2 is empty.
+    "5...c6": Gives the queen a retreat on c7 and supports a solid structure.
+    "6...Bf5": The bishop develops outside the pawn chain.
+  ideas:
+    - Solid Caro-Kann-like structure with fast development.
+  tactics:
+    - Nd5 and Bb5 tricks against the queen, pins on the a5–e1 diagonal.
+  whitePlans:
+    - Gain tempi on the queen, castle long and attack.
+  blackPlans:
+    - Solid development, ...c6, ...Bf5, ...e6.
+  mistakes:
+    - Black's queen getting trapped on the queenside.
+  keyPositions:
+    - after: "3...Qa5"
+      title: Queen on a5
+      text: The queen pins the knight if White's bishop leaves d2 open.
+  variations:
+    - name: 3...Qd6
+      kind: key
+      moves: 1. e4 d5 2. exd5 Qxd5 3. Nc3 Qd6 4. d4 Nf6 5. Nf3 a6 6. g3 Bg4 7. Bg2 Nc6 8. O-O O-O-O
+      description: A modern queen placement with long castling.
+
+- id: scandinavian-modern
+  name: Scandinavian Defense – Modern Variation
+  canonical: "Scandinavian Defense: Modern Variation"
+  side: black
+  difficulty: intermediate
+  summary: >
+    2...Nf6 delays the recapture and develops. White can hold the pawn with c4 at
+    the risk of gambits, or play d4 and Nf3.
+  main: 1. e4 d5 2. exd5 Nf6 3. d4 Nxd5 4. Nf3 g6 5. c4 Nb6 6. Nc3 Bg7 7. h3 O-O 8. Be3 Nc6
+  notes:
+    "2...Nf6": Develops first and recaptures later.
+    "4...g6": Fianchetto pressure on d4.
+    "5...Nb6": The knight retreats; Black will pressure the white center.
+  ideas:
+    - Black allows White a center and attacks it with pieces.
+  tactics:
+    - Long-diagonal pressure against d4.
+  whitePlans:
+    - Big center with c4/d4.
+  blackPlans:
+    - Attack d4 with ...Bg7, ...Nc6, ...Bg4.
+  mistakes:
+    - White overextending.
+  keyPositions:
+    - after: "2...Nf6"
+      title: Delayed recapture
+      text: White chooses between d4 and holding the pawn.
+  variations: []
+
+- id: alekhine-modern
+  name: Alekhine Defense – Modern Variation
+  canonical: "Alekhine Defense: Modern Variation"
+  prefixes: ["Alekhine Defense: Modern Variation", "Alekhine Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    1...Nf6 provokes White's pawns forward so Black can attack them later.
+    Hypermodern: the center is a target, not a must-have.
+  main: 1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. Nf3 Bg4 5. Be2 e6 6. O-O Be7 7. h3 Bh5 8. c4 Nb6 9. Nc3 O-O 10. Be3 d5
+  notes:
+    "1...Nf6": Invites e5.
+    "2...Nd5": The knight sits in the center.
+    "3...d6": Attacks e5 immediately.
+    "4...Bg4": Pins the defender of e5.
+    "10...d5": Locks the center; Black targets c4.
+  ideas:
+    - Provoke pawn advances and attack them.
+  tactics:
+    - Pins on f3, ...dxe5 pressures.
+  whitePlans:
+    - Keep a space advantage without overextending.
+  blackPlans:
+    - Undermine the center with ...d6, ...c5, ...f6.
+  mistakes:
+    - Black being too passive and getting squeezed.
+  keyPositions:
+    - after: "4...Bg4"
+      title: Modern pin
+      text: The bishop pins the knight that defends e5.
+  variations: []
+
+- id: alekhine-four-pawns
+  name: Alekhine Defense – Four Pawns Attack
+  canonical: "Alekhine Defense: Four Pawns Attack"
+  side: white
+  difficulty: advanced
+  summary: >
+    White accepts the challenge and builds a huge center with c4, d4, e5 and f4.
+    Black must undermine it quickly or be crushed.
+  main: 1. e4 Nf6 2. e5 Nd5 3. d4 d6 4. c4 Nb6 5. f4 dxe5 6. fxe5 Nc6 7. Be3 Bf5 8. Nc3 e6 9. Nf3 Be7 10. d5
+  notes:
+    "5.f4": The Four Pawns Attack.
+    "6...Nc6": Pressures d4 and e5.
+    "10.d5": White gains space and attacks the knight.
+  ideas:
+    - Huge center vs piece pressure.
+  tactics:
+    - d5 pushes, ...Bb4 pins, piece sacrifices on e5.
+  whitePlans:
+    - Keep the center intact and push d5.
+  blackPlans:
+    - Attack d4 and e5 with pieces and ...f6.
+  mistakes:
+    - White advancing pawns without developing.
+  keyPositions:
+    - after: "5.f4"
+      title: Four pawns
+      text: A massive center — strong if it holds, weak if it cracks.
+  variations: []
+
+- id: pirc-classical
+  name: Pirc Defense – Classical
+  canonical: "Pirc Defense: Classical Variation"
+  prefixes: ["Pirc Defense: Classical Variation", "Pirc Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    Black lets White build a center and attacks it later with ...e5 or ...c5. The
+    Classical Variation with Nf3 and Be2 is solid for White.
+  main: 1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. Nf3 Bg7 5. Be2 O-O 6. O-O c6 7. a4 Nbd7 8. h3 e5 9. Be3
+  notes:
+    "1...d6": Prepares ...Nf6 and ...g6.
+    "3...g6": The fianchetto.
+    "8...e5": Black fights for the center.
+  ideas:
+    - Hypermodern counterattack on the center.
+  tactics:
+    - Long-diagonal tactics, e5 breaks.
+  whitePlans:
+    - Solid space advantage.
+  blackPlans:
+    - ...e5 or ...c5 break.
+  mistakes:
+    - Black delaying a central break too long.
+  keyPositions:
+    - after: "3...g6"
+      title: Pirc setup
+      text: White chooses between Classical, Austrian (f4) and 150 Attack (Be3/Qd2).
+  variations: []
+
+- id: pirc-austrian
+  name: Pirc Defense – Austrian Attack
+  canonical: "Pirc Defense: Austrian Attack"
+  side: white
+  difficulty: intermediate
+  summary: >
+    4.f4 — White grabs as much center as possible and prepares e5. Black hits back
+    with ...c5 or ...Na6/...c5.
+  main: 1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4 Bg7 5. Nf3 O-O 6. Bd3 Na6 7. O-O c5 8. d5 Rb8
+  notes:
+    "4.f4": "The Austrian: three central pawns."
+    "6...Na6": Prepares ...c5 supported.
+    "7...c5": Strikes the center.
+  ideas:
+    - Space vs counterpunch.
+  tactics:
+    - e5 pushes, ...Ng4 tricks.
+  whitePlans:
+    - e5 and kingside attack.
+  blackPlans:
+    - ...c5 and queenside play.
+  mistakes:
+    - Black being too slow to react to e5.
+  keyPositions:
+    - after: "4.f4"
+      title: Austrian
+      text: White aims for e5 with a big space plus.
+  variations: []
+
+- id: modern-defense
+  name: Modern Defense
+  aliases: [Robatsch Defense]
+  canonical: "Modern Defense"
+  prefixes: ["Modern Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    1...g6 — even more flexible than the Pirc. Black delays ...Nf6, keeping ...c6,
+    ...d6 and ...e5 or ...c5 options.
+  main: 1. e4 g6 2. d4 Bg7 3. Nc3 d6 4. Be3 a6 5. Qd2 b5 6. f3 Nd7 7. Nh3 Bb7 8. Nf2
+  notes:
+    "1...g6": Flexible fianchetto.
+    "4...a6": Prepares ...b5 expansion.
+  ideas:
+    - Flexible setup; Black reacts to White's choices.
+  tactics:
+    - Long-diagonal pressure on d4 and b2.
+  whitePlans:
+    - Big center and attack with Be3, Qd2, Bh6.
+  blackPlans:
+    - Queenside expansion and ...c5 break.
+  mistakes:
+    - Too much flexibility — no clear plan.
+  keyPositions:
+    - after: "2...Bg7"
+      title: Modern setup
+      text: Black has not committed the knight to f6 yet.
+  variations: []
+
+- id: owen-defense
+  name: Owen's Defense
+  canonical: "Owen Defense"
+  prefixes: ["Owen Defense"]
+  side: black
+  difficulty: beginner
+  summary: >
+    1...b6 fianchettoes the queen's bishop immediately to pressure e4. Uncommon but
+    instructive about hypermodern play.
+  main: 1. e4 b6 2. d4 Bb7 3. Bd3 e6 4. Nf3 c5 5. c3 Nf6 6. Qe2 Be7 7. O-O
+  notes:
+    "1...b6": Prepares ...Bb7 against e4.
+    "3.Bd3": Protects e4.
+    "4...c5": Strikes d4.
+  ideas:
+    - Long-diagonal pressure.
+  tactics:
+    - e5 pushes against the f6 knight.
+  whitePlans:
+    - Solid center and kingside space.
+  blackPlans:
+    - Pressure e4, ...c5 and ...f5 breaks.
+  mistakes:
+    - Black allowing a crushing e5–e6 attack.
+  keyPositions:
+    - after: "2...Bb7"
+      title: Fianchetto
+      text: The bishop eyes e4.
+  variations: []
+
+- id: nimzowitsch-defense
+  name: Nimzowitsch Defense
+  canonical: "Nimzowitsch Defense"
+  prefixes: ["Nimzowitsch Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    1...Nc6 develops and pressures d4. Black often follows with ...d5 or ...e5,
+    reaching unusual positions early.
+  main: 1. e4 Nc6 2. Nf3 d6 3. d4 Nf6 4. Nc3 Bg4 5. Be2 e6 6. O-O Be7 7. h3 Bh5 8. Be3 O-O
+  notes:
+    "1...Nc6": Develops and eyes d4.
+    "4...Bg4": Pins the knight.
+  ideas:
+    - Piece pressure on the center.
+  tactics:
+    - Pins and ...e5 breaks.
+  whitePlans:
+    - Big center, then expand.
+  blackPlans:
+    - Pressure d4, ...e5 or ...d5.
+  mistakes:
+    - Black being cramped without breaks.
+  keyPositions:
+    - after: "1...Nc6"
+      title: Unusual start
+      text: Black aims at d4 immediately.
+  variations: []

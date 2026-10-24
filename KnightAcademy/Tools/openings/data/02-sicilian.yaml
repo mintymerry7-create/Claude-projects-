@@ -1,0 +1,577 @@
+family: Sicilian Defense
+openings:
+
+- id: open-sicilian
+  name: Open Sicilian
+  aliases: [Sicilian Defense]
+  canonical: "Sicilian Defense"
+  prefixes: ["Sicilian Defense: Open", "Sicilian Defense: Modern Variations", "Sicilian Defense"]
+  side: black
+  difficulty: intermediate
+  summary: >
+    1...c5 fights for d4 from the side and creates an unbalanced position. After
+    2.Nf3 and 3.d4 White opens the c-file for Black but gains a lead in development.
+    This course teaches the shared structure before you pick a specific system.
+  main: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3
+  notes:
+    "1...c5": Fights for d4 without mirroring White — the start of an imbalanced game.
+    "2...d6": Controls e5 and prepares ...Nf6 without allowing e4–e5.
+    "3.d4": White opens the center; Black will get a half-open c-file.
+    "3...cxd4": A wing pawn for a center pawn — the core Sicilian trade.
+    "4...Nf6": Attacks e4 and forces Nc3 before White can play c4.
+    "5.Nc3": The Open Sicilian tabiya. Black now chooses Najdorf, Dragon, Classical or Scheveningen.
+  ideas:
+    - Black trades a c-pawn for White's d-pawn and gets a central pawn majority.
+    - The half-open c-file is Black's highway for queenside counterplay.
+    - White leads in development and often attacks on the kingside.
+  tactics:
+    - Sacrifices on e6, d5 and b5 against a black king left in the center.
+    - Exchange sacrifice ...Rxc3 destroying White's queenside structure.
+  whitePlans:
+    - Develop quickly and attack with f4, g4 or a pawn storm after long castling.
+    - Control the d5 outpost.
+  blackPlans:
+    - Counterattack on the c-file and with ...b5–b4.
+    - Prepare ...d5 or ...e5 central breaks.
+  mistakes:
+    - Black falling behind in development in the race of opposite-side attacks.
+    - White trading the d4 knight too early and losing central pressure.
+  keyPositions:
+    - after: "5.Nc3"
+      title: The Open Sicilian tabiya
+      text: Black chooses the system — 5...a6 (Najdorf), 5...g6 (Dragon), 5...Nc6 (Classical) or 5...e6 (Scheveningen).
+  variations:
+    - name: Najdorf 5...a6
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6
+      description: Flexible — controls b5 and prepares ...e5 or ...e6.
+    - name: Dragon 5...g6
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6
+      description: The bishop goes to g7, aiming down the long diagonal.
+    - name: Classical 5...Nc6
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6
+      description: Natural development, challenging the d4 knight.
+    - name: Scheveningen 5...e6
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e6
+      description: A compact 'small center' with pawns on d6 and e6.
+
+- id: sicilian-najdorf
+  name: Sicilian Najdorf
+  canonical: "Sicilian Defense: Najdorf Variation"
+  side: black
+  difficulty: advanced
+  summary: >
+    The most famous Sicilian — Fischer's and Kasparov's weapon. 5...a6 prevents
+    pieces from using b5 and keeps every option open. White's sharpest answer is the
+    English Attack with Be3, f3, Qd2, O-O-O and a kingside pawn storm.
+  main: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be3 e5 7. Nb3 Be6 8. f3 Be7 9. Qd2 O-O 10. O-O-O Nbd7 11. g4 b5 12. g5 b4
+  notes:
+    "5...a6": Takes b5 from White's pieces and prepares ...e5 or ...b5.
+    "6.Be3": The English Attack, aiming for f3, Qd2, O-O-O and g4.
+    "6...e5": Kicks the d4 knight and claims central space; d5 becomes a key square.
+    "7...Be6": Controls d5, the hole created by ...e5.
+    "8.f3": Supports e4 and prepares g4–g5.
+    "10.O-O-O": Opposite-side castling — a pawn race begins.
+    "11.g4": White storms the kingside.
+    "12...b4": Black races on the queenside, kicking the c3 knight.
+  ideas:
+    - Control of d5 is the strategic heart of the ...e5 Najdorf.
+    - Opposite castling leads to pawn storms; speed matters more than material.
+    - Black's ...b5–b4 and the c-file are the main counterplay.
+  tactics:
+    - Exchange sacrifice ...Rxc3, sacrifices on e6 and b5, Nd5 jumps.
+  whitePlans:
+    - English Attack — f3, Qd2, O-O-O, g4–g5 to drive away the f6 knight and win d5.
+    - Bg5 lines with f4 and e5 central breaks.
+  blackPlans:
+    - Expand with ...b5–b4, open the c-file and attack the white king.
+    - Keep d5 under control with ...Be6 and ...Nbd7–b6.
+  mistakes:
+    - Black allowing a knight to land on d5 without being able to exchange it.
+    - White castling long and then playing slowly.
+  keyPositions:
+    - after: "6...e5"
+      title: The d5 hole
+      text: Black accepts a backward d6 pawn and a hole on d5 for central space and activity.
+    - after: "10.O-O-O"
+      title: Pawn race
+      text: Opposite castling. Count tempi — the faster attack usually wins.
+  variations:
+    - name: Main line 6.Bg5
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Be7 8. Qf3 Qc7 9. O-O-O Nbd7 10. g4 b5
+      description: The classical main line — very sharp and theoretical.
+    - name: Poisoned Pawn
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Qb6 8. Qd2 Qxb2 9. Rb1 Qa3
+      description: Black grabs the b2 pawn with the queen — Fischer's favourite, extremely double-edged.
+    - name: Opocensky 6.Be2
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Be2 e5 7. Nb3 Be7 8. O-O O-O 9. Be3 Be6 10. Qd2
+      description: The positional approach; the fight is about d5.
+
+- id: sicilian-dragon
+  name: Sicilian Dragon
+  canonical: "Sicilian Defense: Dragon Variation"
+  side: black
+  difficulty: advanced
+  summary: >
+    Black fianchettoes the bishop on g7, aiming at White's queenside. The Yugoslav
+    Attack (Be3, f3, Qd2, O-O-O, h4–h5) leads to one of the sharpest races in chess.
+  main: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. Bc4 Bd7 10. O-O-O Rc8 11. Bb3 Ne5 12. h4 h5
+  notes:
+    "5...g6": The Dragon setup — the g7 bishop will rake the long diagonal.
+    "7.f3": Prevents ...Ng4 and prepares g4/h4.
+    "9.Bc4": Controls d5 and stops ...d5.
+    "11...Ne5": Heads for c4 to exchange White's powerful bishop.
+    "12...h5": The Soltis Variation — slowing White's h-pawn attack.
+  ideas:
+    - The g7 bishop is Black's best piece; trading it weakens the king.
+    - White aims for Bh6 and h-file attacks; Black for ...Rxc3 and the c-file.
+  tactics:
+    - Exchange sacrifice ...Rxc3, Bh6 trades, sacrifices on h5.
+  whitePlans:
+    - Yugoslav Attack — h4–h5, Bh6 to trade the dragon bishop, mate on the h-file.
+  blackPlans:
+    - Counterattack with ...Rc8, ...Ne5–c4, ...Rxc3 and ...b5.
+  mistakes:
+    - Black allowing Bh6 and h-file mate without counterplay.
+    - Playing ...d5 too early when White is ready for it.
+  keyPositions:
+    - after: "10.O-O-O"
+      title: Yugoslav Attack
+      text: Kings castle on opposite sides. Every tempo counts in the race.
+  variations:
+    - name: Yugoslav 9.O-O-O d5
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 O-O 8. Qd2 Nc6 9. O-O-O d5 10. exd5 Nxd5 11. Nxc6 bxc6 12. Bd4
+      description: Black strikes in the center immediately.
+    - name: Classical 6.Be2
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be2 Bg7 7. O-O O-O 8. Be3 Nc6 9. Nb3 Be6
+      description: A calmer approach with both kings castled short.
+
+- id: sicilian-accelerated-dragon
+  name: Accelerated Dragon
+  canonical: "Sicilian Defense: Accelerated Dragon"
+  side: black
+  difficulty: intermediate
+  summary: >
+    Black plays ...g6 before ...d6, keeping ...d5 in one move and avoiding the
+    Yugoslav Attack. White's main answer is the Maróczy Bind with c4.
+  main: 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. c4 Bg7 6. Be3 Nf6 7. Nc3 O-O 8. Be2 d6 9. O-O Bd7 10. Qd2 Nxd4 11. Bxd4 Bc6
+  notes:
+    "4...g6": The accelerated fianchetto.
+    "5.c4": The Maróczy Bind — pawns on c4 and e4 clamp d5.
+    "10...Nxd4": Trading pieces relieves Black's cramped position.
+  ideas:
+    - Against the Bind, Black trades pieces and prepares ...a5, ...b5 or ...f5.
+    - Black saves time on ...d6 to play ...d5 in one go.
+  tactics:
+    - Long-diagonal tactics against c3 and b2.
+  whitePlans:
+    - Keep the bind, gain space, and restrict Black's breaks.
+  blackPlans:
+    - Trade minor pieces, play ...a5–a4 and ...b5 or ...f5.
+  mistakes:
+    - Black sitting passively without breaks against the Bind.
+  keyPositions:
+    - after: "5.c4"
+      title: Maróczy Bind
+      text: White's c4/e4 pawns control d5; Black needs patience and well-timed breaks.
+  variations:
+    - name: Classical 5.Nc3
+      kind: key
+      moves: 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nc3 Bg7 6. Be3 Nf6 7. Bc4 O-O 8. Bb3 d6 9. f3 Bd7 10. Qd2
+      description: White allows ...d5 ideas and plays a Yugoslav-like setup.
+
+- id: sicilian-classical
+  name: Classical Sicilian
+  canonical: "Sicilian Defense: Classical Variation"
+  side: black
+  difficulty: intermediate
+  summary: >
+    5...Nc6 develops naturally and pressures d4. White's most dangerous response is
+    the Richter-Rauzer Attack (6.Bg5), threatening to double Black's pawns.
+  main: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bg5 e6 7. Qd2 a6 8. O-O-O Bd7 9. f4 b5 10. Bxf6 gxf6
+  notes:
+    "5...Nc6": Classical development and pressure on d4.
+    "6.Bg5": The Richter-Rauzer — stops ...g6 and pins against e7.
+    "8.O-O-O": White castles long; pressure on d6.
+    "10...gxf6": Black accepts doubled pawns but gains the bishop pair and the g-file.
+  ideas:
+    - Black's structure becomes unusual after ...gxf6, but the bishops are strong.
+    - White plays against d6 and the weak light squares.
+  tactics:
+    - Nd5 jumps, e5 breaks and pressure on d6.
+  whitePlans:
+    - Pressure d6, play f4–f5 or e5 to open lines.
+  blackPlans:
+    - Queenside counterplay with ...b5–b4, use of the bishop pair.
+  mistakes:
+    - Black leaving d6 without enough defenders.
+  keyPositions:
+    - after: "6.Bg5"
+      title: Richter-Rauzer
+      text: White prevents the Dragon and prepares long castling.
+  variations:
+    - name: Sozin 6.Bc4
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bc4 e6 7. Be3 Be7 8. Bb3 O-O 9. Qe2 a6 10. O-O-O Qc7
+      description: The Velimirovic Attack setup — a direct strike at e6 and f7.
+    - name: Boleslavsky 6.Be2 e5
+      kind: key
+      moves: 1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Be2 e5 7. Nb3 Be7 8. O-O O-O 9. Be3 Be6
+      description: Black grabs central space at the cost of a d5 hole.
+
+- id: sicilian-scheveningen
+  name: Sicilian Scheveningen
+  canonical: "Sicilian Defense: Scheveningen Variation"
+  side: black
+  difficulty: advanced
+  summary: >
+    Black builds a small center with pawns on d6 and e6, solid but flexible. White's
+    most aggressive try is the Keres Attack 6.g4.
+  main: 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. Be2 Be7 7. O-O O-O 8. f4 Nc6 9. Be3 a6 10. a4 Qc7
+  notes:
+    "5...d6": The Scheveningen center — d6 and e6 cover the key squares.
+    "8.f4": White prepares e5 or a kingside attack with g4.
+    "10.a4": Stops ...b5 expansion.
+  ideas:
+    - Black waits for the right moment for ...d5 or ...e5.
+    - White attacks with f4, g4 and Qe1–g3.
+  tactics:
+    - e5 central breaks, sacrifices on e6.
+  whitePlans:
+    - Kingside expansion with f4, g4–g5; or e5 to open lines.
+  blackPlans:
+    - Queenside play with ...b5, ...Rc8; well-timed ...d5 or ...e5.
+  mistakes:
+    - Black being too slow to castle against the Keres Attack.
+  keyPositions:
+    - after: "5...d6"
+      title: Small center
+      text: The d6/e6 pawns are solid; White must decide between slow play and the Keres Attack.
+  variations:
+    - name: Keres Attack
+      kind: key
+      moves: 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 6. g4 h6 7. h4 Nc6 8. Rg1 h5 9. gxh5 Nxh5 10. Bg5 Nf6
+      description: White throws the g-pawn forward immediately.
+
+- id: sicilian-sveshnikov
+  name: Sicilian Sveshnikov
+  aliases: [Lasker-Pelikan]
+  canonical: "Sicilian Defense: Lasker-Pelikan Variation, Sveshnikov Variation"
+  prefixes: ["Sicilian Defense: Lasker-Pelikan Variation"]
+  side: black
+  difficulty: advanced
+  summary: >
+    Black plays ...e5 early, accepting a hole on d5 and a backward d-pawn in return
+    for active pieces and the bishop pair. Popularised by Kramnik and Carlsen.
+  main: 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Bxf6 gxf6 10. Nd5 f5 11. Bd3 Be6 12. O-O Bxd5 13. exd5 Ne7
+  notes:
+    "5...e5": "The Sveshnikov: Black kicks the knight and grabs central space."
+    "6.Ndb5": Eyes d6 — the main line.
+    "7...a6": Chases the knight to the rim.
+    "8.Na3": The knight looks offside but heads to c2 or c4.
+    "9...gxf6": Black accepts damaged pawns for the bishop pair and dynamic play.
+    "10...f5": Breaks the center immediately.
+  ideas:
+    - The d5 square is White's target; Black relies on ...f5 and active bishops.
+  tactics:
+    - ...f5 breaks, Nd5 jumps, exchange sacrifices.
+  whitePlans:
+    - Control d5 with knights and play against Black's damaged pawns.
+  blackPlans:
+    - Play ...f5, use the bishop pair and the g-file.
+  mistakes:
+    - Black being too passive allowing a knight to sit on d5 forever.
+  keyPositions:
+    - after: "8.Na3"
+      title: Knight on the rim
+      text: Black gains space with ...b5 while White's knight looks for c2 or c4.
+  variations:
+    - name: 9.Nd5 Be7
+      kind: key
+      moves: 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 b5 9. Nd5 Be7 10. Bxf6 Bxf6 11. c3 O-O 12. Nc2 Bg5
+      description: Positional main line — the fight for d5 continues.
+
+- id: sicilian-kalashnikov
+  name: Sicilian Kalashnikov
+  canonical: "Sicilian Defense: Kalashnikov Variation"
+  side: black
+  difficulty: intermediate
+  summary: >
+    A cousin of the Sveshnikov: 4...e5 5.Nb5 d6 without ...Nf6 first. Black keeps
+    options like ...f5 and avoids some of White's sidelines.
+  main: 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e5 5. Nb5 d6 6. c4 Be7 7. N1c3 a6 8. Na3 f5 9. exf5 Bxf5 10. Bd3 Be6
+  notes:
+    "4...e5": Immediately kicks the knight.
+    "6.c4": White grabs d5 with a Maróczy-style bind.
+    "8...f5": Typical Kalashnikov break.
+  ideas:
+    - Black accepts the d5 hole for central space.
+  tactics:
+    - ...f5 breaks and Nd5 tactics.
+  whitePlans:
+    - Bind with c4, control d5 with knights.
+  blackPlans:
+    - ...f5 break, kingside activity.
+  mistakes:
+    - Passive play allowing a permanent d5 outpost.
+  keyPositions:
+    - after: "6.c4"
+      title: Bind
+      text: White controls d5 with pawns; Black seeks activity with ...f5.
+  variations: []
+
+- id: sicilian-kan
+  name: Sicilian Kan
+  aliases: [Paulsen Variation]
+  canonical: "Sicilian Defense: Kan Variation"
+  side: black
+  difficulty: intermediate
+  summary: >
+    4...a6 — a flexible system where Black delays development of the kingside
+    knight and uses the queen on c7. Hedgehog structures are typical.
+  main: 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Bd3 Nf6 6. O-O Qc7 7. Qe2 d6 8. c4 g6 9. Nc3 Bg7 10. Nf3 O-O
+  notes:
+    "4...a6": Controls b5 and keeps options open.
+    "5.Bd3": Protects e4 and prepares c4.
+    "8.c4": A Maróczy-style clamp.
+  ideas:
+    - Flexible pawn structures; Black often forms a Hedgehog (pawns on a6, b6, d6, e6).
+  tactics:
+    - ...b5 breaks and Nd5 sacrifices.
+  whitePlans:
+    - Space with c4; restrict ...b5 and ...d5.
+  blackPlans:
+    - Hedgehog patience and timely ...b5 or ...d5 breaks.
+  mistakes:
+    - Black allowing Nd5 tactics while the queen sits on c7.
+  keyPositions:
+    - after: "4...a6"
+      title: Kan flexibility
+      text: Black's setup adapts to White's choice of structure.
+  variations: []
+
+- id: sicilian-taimanov
+  name: Sicilian Taimanov
+  canonical: "Sicilian Defense: Taimanov Variation"
+  side: black
+  difficulty: intermediate
+  summary: >
+    4...Nc6 with ...e6, ...a6 and ...Qc7. Flexible and active, Black often uses the
+    Bb4 pin and central breaks.
+  main: 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 Qc7 6. Be3 a6 7. Qd2 Nf6 8. O-O-O Bb4 9. f3 Ne5 10. Nb3 b5
+  notes:
+    "4...Nc6": Challenges the d4 knight.
+    "5...Qc7": Controls e5 and prepares ...a6 and ...Nf6.
+    "8...Bb4": Pins the c3 knight and pressures e4.
+    "10...b5": Black's queenside play begins.
+  ideas:
+    - Piece activity and pins on c3.
+  tactics:
+    - ...Bxc3 to damage the structure, ...Nc4 hits.
+  whitePlans:
+    - English-Attack setup with Be3, Qd2, O-O-O and g4.
+  blackPlans:
+    - Pressure c3 and e4, expand with ...b5.
+  mistakes:
+    - Neglecting kingside development for too long.
+  keyPositions:
+    - after: "8.O-O-O"
+      title: English Attack setup
+      text: Black answers with the active ...Bb4 pin.
+  variations: []
+
+- id: sicilian-alapin
+  name: Sicilian Alapin
+  aliases: [2.c3 Sicilian]
+  canonical: "Sicilian Defense: Alapin Variation"
+  side: white
+  difficulty: beginner
+  summary: >
+    2.c3 prepares d4 to build a full pawn center and avoids mainstream Sicilian
+    theory. Black's best replies attack e4 at once with 2...Nf6 or 2...d5.
+  main: 1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. d4 cxd4 5. Nf3 Nc6 6. cxd4 d6 7. Bc4 Nb6 8. Bb5 dxe5 9. Nxe5 Bd7
+  notes:
+    "2.c3": Prepares d4 with a pawn center.
+    "2...Nf6": Counterattacks e4 and provokes e5.
+    "3.e5": Gains space and kicks the knight.
+    "6...d6": Undermines White's advanced e5 pawn.
+  ideas:
+    - White gets a classical center; Black undermines it.
+    - Often leads to isolated-queen's-pawn positions.
+  tactics:
+    - Bb5 pins, knight jumps to e5.
+  whitePlans:
+    - Build d4/e4, develop and attack with an isolated d-pawn if needed.
+  blackPlans:
+    - Hit the center immediately with ...Nf6 or ...d5.
+  mistakes:
+    - Black allowing White a free d4/e4 center.
+  keyPositions:
+    - after: "3.e5"
+      title: Space
+      text: White gains space; Black's knight is active but can be chased.
+  variations:
+    - name: 2...d5
+      kind: key
+      moves: 1. e4 c5 2. c3 d5 3. exd5 Qxd5 4. d4 Nf6 5. Nf3 Bg4 6. Be2 e6 7. O-O Nc6 8. Be3 cxd4 9. cxd4 Be7
+      description: Black develops the queen early since c3 removed the Nc3 tempo.
+
+- id: smith-morra-gambit
+  name: Smith-Morra Gambit
+  canonical: "Sicilian Defense: Smith-Morra Gambit"
+  side: white
+  difficulty: intermediate
+  summary: >
+    White gives a pawn for rapid development and open c- and d-files. Dangerous at
+    club level; Black must develop carefully.
+  main: 1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 d6 6. Bc4 e6 7. O-O Nf6 8. Qe2 Be7 9. Rd1 e5 10. h3 O-O
+  notes:
+    "3.c3": The gambit.
+    "4.Nxc3": White has a big lead in development for the pawn.
+    "8.Qe2": Prepares Rd1 against d6.
+    "9...e5": Blocks the d-file and the e-pawn break.
+  ideas:
+    - Development and open files for the pawn.
+  tactics:
+    - Nd5 and Nb5 jumps, e5 breaks, Bxe6 sacrifices.
+  whitePlans:
+    - Pressure d6 and the c-file; attack before Black consolidates.
+  blackPlans:
+    - Develop calmly, castle, and return the pawn if necessary.
+  mistakes:
+    - Black grabbing more material or delaying castling.
+  keyPositions:
+    - after: "4.Nxc3"
+      title: Gambit accepted
+      text: Black is a pawn up but White's pieces are faster.
+  variations: []
+  traps:
+    - name: Siberian Trap
+      trapper: black
+      moves: 1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 6. Bc4 Qc7 7. O-O Nf6 8. Qe2 Ng4 9. h3 Nd4 10. Nxd4 Qh2#
+      description: Black's queen and knights target h2. The natural 9.h3?? walks into ...Nd4 and mate.
+
+- id: sicilian-grand-prix
+  name: Grand Prix Attack
+  canonical: "Sicilian Defense: Grand Prix Attack"
+  side: white
+  difficulty: beginner
+  summary: >
+    2.Nc3 and 3.f4 — an aggressive anti-Sicilian aiming for a direct kingside attack
+    with f4–f5, Qe1–h4 and Bc4 or Bb5.
+  main: 1. e4 c5 2. Nc3 Nc6 3. f4 g6 4. Nf3 Bg7 5. Bb5 Nd4 6. O-O Nxb5 7. Nxb5 d6 8. d3 a6 9. Nc3 Nf6 10. Qe1 O-O
+  notes:
+    "3.f4": "Grand Prix: f4 prepares f5 and a kingside attack."
+    "5.Bb5": Pins/pressures the c6 knight.
+    "10.Qe1": Typical attacking idea — the queen swings to h4.
+  ideas:
+    - Kingside attack with f5, Qh4 and Bh6.
+  tactics:
+    - f5 sacrifices, Qh4 and Ng5 attacks.
+  whitePlans:
+    - Qe1–h4, f5 and Bh6 to attack the castled king.
+  blackPlans:
+    - Counter with ...d5 or queenside play; trade attacking pieces.
+  mistakes:
+    - Black castling into a prepared attack without counterplay.
+  keyPositions:
+    - after: "3.f4"
+      title: Grand Prix
+      text: White commits to a kingside attack.
+  variations: []
+
+- id: closed-sicilian
+  name: Closed Sicilian
+  canonical: "Sicilian Defense: Closed"
+  side: white
+  difficulty: intermediate
+  summary: >
+    White avoids opening the center with 2.Nc3 and 3.g3, building a King's-Indian-
+    like setup and attacking slowly on the kingside. Spassky's favourite.
+  main: 1. e4 c5 2. Nc3 Nc6 3. g3 g6 4. Bg2 Bg7 5. d3 d6 6. f4 e6 7. Nf3 Nge7 8. O-O O-O 9. Be3 Nd4 10. Qd2
+  notes:
+    "2.Nc3": Keeps the center closed.
+    "3.g3": Fianchetto setup.
+    "6.f4": Prepares f5 and a kingside attack.
+    "9...Nd4": Black uses the d4 outpost.
+  ideas:
+    - Slow maneuvering; White attacks on the kingside, Black on the queenside.
+  tactics:
+    - f5 breaks, ...b5–b4 queenside expansion.
+  whitePlans:
+    - f4–f5, Qd2, Bh6 kingside attack.
+  blackPlans:
+    - ...Rb8, ...b5–b4; use the d4 outpost.
+  mistakes:
+    - Black ignoring White's slow kingside build-up.
+  keyPositions:
+    - after: "6.f4"
+      title: Kingside intentions
+      text: White prepares f5; Black chooses where to put the kingside knight.
+  variations: []
+
+- id: sicilian-rossolimo
+  name: Sicilian Rossolimo
+  canonical: "Sicilian Defense: Nyezhmetdinov-Rossolimo Attack"
+  side: white
+  difficulty: intermediate
+  summary: >
+    3.Bb5 avoids Open Sicilian theory. White often gives up the bishop for the c6
+    knight to damage Black's structure.
+  main: 1. e4 c5 2. Nf3 Nc6 3. Bb5 g6 4. Bxc6 dxc6 5. d3 Bg7 6. h3 Nf6 7. Nc3 O-O 8. Be3 b6 9. Qd2 e5
+  notes:
+    "3.Bb5": Pressures the c6 knight.
+    "4.Bxc6": Damages Black's pawns; Black gets the bishop pair.
+    "6.h3": Prepares Be3 and Qd2 to trade the g7 bishop.
+  ideas:
+    - Structure vs bishops.
+  tactics:
+    - Bh6 trades, central breaks with c3/d4.
+  whitePlans:
+    - Be3, Qd2, Bh6 trade the dark-squared bishop; play against doubled pawns.
+  blackPlans:
+    - Use the bishop pair; play ...e5 and ...f5.
+  mistakes:
+    - White opening the position for Black's bishops.
+  keyPositions:
+    - after: "4...dxc6"
+      title: Structure for bishops
+      text: Black recaptures toward the center to open the c8 bishop.
+  variations: []
+
+- id: sicilian-moscow
+  name: Sicilian Moscow Variation
+  canonical: "Sicilian Defense: Moscow Variation"
+  side: white
+  difficulty: beginner
+  summary: >
+    3.Bb5+ against 2...d6 — a safe anti-Sicilian. After trades on d7 White often
+    sets up a Maróczy-style bind with c4.
+  main: 1. e4 c5 2. Nf3 d6 3. Bb5+ Bd7 4. Bxd7+ Qxd7 5. c4 Nc6 6. Nc3 Nf6 7. d4 cxd4 8. Nxd4 g6 9. f3 Bg7 10. Be3 O-O
+  notes:
+    "3.Bb5+": Avoids the Najdorf and Dragon main lines.
+    "4.Bxd7+": Trades the light-squared bishops.
+    "5.c4": Maróczy-like bind.
+  ideas:
+    - Space and simple development for White; solid play for Black.
+  tactics:
+    - Nd5 jumps against weak squares.
+  whitePlans:
+    - Keep the bind; restrict ...b5 and ...d5.
+  blackPlans:
+    - Play ...a6, ...b5 or ...e6/...d5 breaks.
+  mistakes:
+    - Black letting White keep the bind without counterplay.
+  keyPositions:
+    - after: "5.c4"
+      title: Bind
+      text: White controls d5 with pawns.
+  variations: []

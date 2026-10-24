@@ -65,13 +65,6 @@ struct PlayView: View {
                 Toggle("Casual (allow take-backs)", isOn: $casual)
             }
             startSection
-            Section {
-                Button("Start game") { startGame() }
-                    .buttonStyle(.primary)
-                    .disabled(!canStart)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-            }
             if !model.recentGames.isEmpty {
                 Section("Recent games") {
                     ForEach(model.recentGames) { g in
@@ -83,6 +76,14 @@ struct PlayView: View {
         }
         .scrollContentBackground(.hidden)
         .screenBackground()
+        .safeAreaInset(edge: .bottom) {
+            Button("Start game") { startGame() }
+                .buttonStyle(.primary)
+                .disabled(!canStart)
+                .padding(.horizontal, KA.Spacing.l)
+                .padding(.vertical, KA.Spacing.s)
+                .background(.ultraThinMaterial)
+        }
         .navigationTitle("Play")
         .sheet(isPresented: $showOpeningPicker) {
             OpeningPickerSheet(selection: $openingID)

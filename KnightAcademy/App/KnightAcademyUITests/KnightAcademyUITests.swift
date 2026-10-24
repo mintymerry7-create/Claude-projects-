@@ -57,6 +57,14 @@ final class KnightAcademyUITests: XCTestCase {
         start.tap()
         XCTAssertTrue(app.buttons["Resign"].waitForExistence(timeout: 10), "game screen is shown")
         XCTAssertTrue(app.buttons["Hint"].exists)
+
+        // Play 1.e4 through the board's VoiceOver squares; the bot must answer.
+        let e2 = app.descendants(matching: .any)["e2, White pawn"]
+        XCTAssertTrue(e2.waitForExistence(timeout: 5), "board squares are accessible")
+        e2.tap()
+        app.descendants(matching: .any)["e4, legal destination"].firstMatch.tap()
+        let moves = app.descendants(matching: .any).matching(NSPredicate(format: "label BEGINSWITH 'Moves: 1. e4 '")).firstMatch
+        XCTAssertTrue(moves.waitForExistence(timeout: 20), "bot replied to 1.e4")
     }
 
     func testPuzzlesAndLessonsOpen() {

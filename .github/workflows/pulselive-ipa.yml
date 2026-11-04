@@ -1,0 +1,51 @@
+name: PulseLive IPA
+
+on:
+  push:
+    paths:
+      - "PulseLive/**"
+      - ".github/workflows/pulselive-ipa.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    defaults:
+      run:
+        working-directory: PulseLive
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Xcode
+        run: |
+          ls /Applications | grep Xcode
+          sudo xcode-select -s "$(ls -d /Applications/Xcode_26*.app | sort -V | tail -1)"
+          xcodebuild -version
+
+      - name: XcodeGen
+        run: |
+          brew install xcodegen
+          xcodegen generate
+
+      - name: Build
+        run: |
+          xcodebuild -project PulseLive.xcodeproj -scheme PulseLive \
+            -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            build
+
+      - name: Package IPA
+        run: |
+          APP=build/Build/Products/Release-iphoneos/PulseLive.app
+          codesign -f -s - --entitlements PulseLive.entitlements "$APP"
+          mkdir -p out/Payload
+          cp -R "$APP" out/Payload/
+          cd out && zip -qry PulseLive.ipa Payload
+          ls -lh PulseLive.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PulseLive-ipa
+          path: PulseLive/out/PulseLive.ipa

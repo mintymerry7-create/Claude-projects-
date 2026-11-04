@@ -1,0 +1,36 @@
+name: PulseLive
+options:
+  bundleIdPrefix: com.isaacsantos
+  deploymentTarget:
+    iOS: "26.0"
+targets:
+  PulseLive:
+    type: application
+    platform: iOS
+    sources: [Sources]
+    entitlements:
+      path: PulseLive.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: PulseLive
+        CFBundleShortVersionString: "1.0"
+        CFBundleVersion: "1"
+        UILaunchScreen: {}
+        UIBackgroundModes: [workout-processing]
+        NSHealthShareUsageDescription: Lire ta fréquence cardiaque.
+        NSHealthUpdateUsageDescription: Session temporaire, rien n'est sauvegardé.
+        UIRequiredDeviceCapabilities: [healthkit]
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.isaacsantos.pulselive
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGN_IDENTITY: ""

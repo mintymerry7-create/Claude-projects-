@@ -300,6 +300,7 @@ extension HeartRateManager: HKWorkoutSessionDelegate {
     }
 }
 
+@available(iOS 26.0, *)
 extension HeartRateManager: HKLiveWorkoutBuilderDelegate {
     nonisolated func workoutBuilderDidCollectEvent(_ workoutBuilder: HKLiveWorkoutBuilder) {}
     nonisolated func workoutBuilder(_ workoutBuilder: HKLiveWorkoutBuilder, didCollectDataOf collectedTypes: Set<HKSampleType>) {

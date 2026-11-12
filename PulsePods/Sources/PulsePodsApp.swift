@@ -4,6 +4,7 @@ import Charts
 @main
 struct PulsePodsApp: App {
     @StateObject private var hr = HeartRateManager()
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some Scene {
         WindowGroup {
@@ -15,6 +16,9 @@ struct PulsePodsApp: App {
             .tint(.red)
             .environmentObject(hr)
             .task { await hr.requestAuthorization() }
+            .onChange(of: scenePhase) { _, phase in
+                if phase == .active { hr.appBecameActive() }
+            }
         }
     }
 }

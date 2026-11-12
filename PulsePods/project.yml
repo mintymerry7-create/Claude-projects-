@@ -23,6 +23,9 @@ targets:
       properties:
         CFBundleDisplayName: PulsePods
         UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIApplicationSupportsIndirectInputEvents: true
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         NSHealthShareUsageDescription: "PulsePods lit ta fréquence cardiaque (AirPods / Apple Watch) pour l'afficher en direct et calculer moyennes et pics."
         NSHealthUpdateUsageDescription: "PulsePods démarre une séance pour activer le capteur cardiaque des AirPods."

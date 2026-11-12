@@ -1,6 +1,7 @@
 import Foundation
 import HealthKit
 import SwiftUI
+import UIKit
 
 struct HRSample: Identifiable, Codable, Hashable {
     var id = UUID()
@@ -129,6 +130,7 @@ final class HeartRateManager: NSObject, ObservableObject {
         currentBPM = nil
         sessionStart = Date()
         isRecording = true
+        workoutAttempts = 0
         statusMessage = "Mets tes AirPods… mesure en cours."
         startAnchoredQuery(from: sessionStart!)
         if #available(iOS 26.0, *) {
@@ -183,10 +185,13 @@ final class HeartRateManager: NSObject, ObservableObject {
         statusMessage = nil
     }
 
+    private var workoutAttempts = 0
+
     @available(iOS 26.0, *)
     private func startWorkout() {
+        workoutAttempts += 1
         let config = HKWorkoutConfiguration()
-        config.activityType = .mindAndBody
+        config.activityType = .other
         config.locationType = .indoor
         do {
             let session = try HKWorkoutSession(healthStore: store, configuration: config)
@@ -196,15 +201,48 @@ final class HeartRateManager: NSObject, ObservableObject {
             builder.delegate = self
             workoutSession = session
             workoutBuilder = builder
-            let now = Date()
-            session.startActivity(with: now)
-            builder.beginCollection(withStart: now) { _, error in
-                if let error {
-                    Task { @MainActor in self.statusMessage = "Séance : \(error.localizedDescription)" }
+            session.prepare()
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(600))
+                guard self.isRecording, UIApplication.shared.applicationState == .active,
+                      self.workoutSession === session else { return }
+                let now = Date()
+                session.startActivity(with: now)
+                do {
+                    try await builder.beginCollection(at: now)
+                } catch {
+                    self.statusMessage = "Séance : \(error.localizedDescription)"
                 }
             }
         } catch {
             statusMessage = "Impossible de lancer la séance : \(error.localizedDescription)"
+        }
+    }
+
+    /// Appelé quand la séance échoue : nouvel essai si l'app est au premier plan.
+    @available(iOS 26.0, *)
+    fileprivate func workoutFailed(_ error: Error) {
+        workoutSession = nil
+        workoutBuilder = nil
+        guard isRecording else { return }
+        if workoutAttempts < 3 {
+            statusMessage = "Activation du capteur… (essai \(workoutAttempts + 1))"
+            Task { @MainActor in
+                try? await Task.sleep(for: .seconds(1.5))
+                guard self.isRecording, UIApplication.shared.applicationState == .active else { return }
+                self.startWorkout()
+            }
+        } else {
+            statusMessage = "Capteur non activé (\(error.localizedDescription)). Astuce : lance un entraînement dans l'app Forme avec tes AirPods, PulsePods affichera les mesures."
+        }
+    }
+
+    /// Relance la séance quand l'app revient au premier plan.
+    func appBecameActive() {
+        guard isRecording, workoutSession == nil else { return }
+        if #available(iOS 26.0, *) {
+            workoutAttempts = 0
+            startWorkout()
         }
     }
 
@@ -296,7 +334,10 @@ extension HeartRateManager: HKWorkoutSessionDelegate {
     nonisolated func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState,
                                     from fromState: HKWorkoutSessionState, date: Date) {}
     nonisolated func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
-        Task { @MainActor in self.statusMessage = "Erreur séance : \(error.localizedDescription)" }
+        Task { @MainActor in
+            if #available(iOS 26.0, *) { self.workoutFailed(error) }
+            else { self.statusMessage = "Erreur séance : \(error.localizedDescription)" }
+        }
     }
 }
 
